@@ -1,29 +1,46 @@
 import logo from "../assets/logo1.png";
 export default function Navbar() {
   return (
-    <nav className="flex justify-around mx-auto max-h-24 bg-slate-900 bg-opacity-25 drop-shadow-lg backdrop-blur-2xl mb-20">
-      <div className="w-3/6 flex">
-        <div className="w-1/6 flex content-center">
-          <img className="w-4/6 p-2" src={logo}></img>
+    <nav className="flex justify-around mx-auto max-h-24 bg-slate-900 bg-opacity-25 drop-shadow-2xl mb-20">
+      <div className="w-4/6 flex justify-start">
+        <div className="w-2/12 flex content-center items-center">
+          <img className="w-4/6 p-4" src={logo}></img>
+          {/* <span className="text-blue-300 text-2xl text-bold">gitshow</span> */}
         </div>
-        <ul className="w-4/12 flex justify-around text-slate-50 items-center">
+        <ul className="w-4/12 font-manrope flex justify-around text-slate-200 items-center font-medium">
           <li>
-            <a href="">Hello</a>
+            <a className="hover:text-blue-400" href="">
+              Features
+            </a>
           </li>
           <li>
-            <a href="">Madhavi</a>
+            <a className="hover:text-blue-400" href="">
+              People
+            </a>
           </li>
           <li>
-            <a href="">God!</a>
+            <a className="hover:text-blue-400" href="">
+              Support
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-blue-400" href="">
+              Blog
+            </a>
           </li>
         </ul>
       </div>
-      <div className="w-[5%] self-center">
-        <img
-          className="rounded-full w-10"
-          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          alt=""
-        />
+      <div className="w-[15%] flex items-center justify-between">
+        <a className="text-slate-200 p-4 w-full hover:text-blue-400" href="">
+          Join Now{" "}
+        </a>
+
+        <a
+          className="text-slate-200 p-4 w-full border-2 border-blue-300 rounded-full text-center hover:bg-orange-900"
+          href=""
+        >
+          Sign In
+        </a>
       </div>
     </nav>
   );
