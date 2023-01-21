@@ -8,7 +8,7 @@ export default function Navbar() {
           <img className="w-4/6 p-4" src={logo} alt="Gitshow logo"></img>
           {/* <span className="text-blue-300 text-2xl text-bold">gitshow</span> */}
         </div>
-        <ul className="w-4/12 font-manrope flex justify-around text-slate-200 items-center font-medium">
+        <ul className="w-4/12 flex justify-around text-slate-200 items-center font-medium">
           <li>
             <a className="hover:text-blue-400" href="#features">
               Features
@@ -39,7 +39,7 @@ export default function Navbar() {
           Join Now{" "}
         </a>
         <Link
-          className="text-slate-200 p-4 w-full border-2 border-blue-300 rounded-full text-center hover:bg-orange-900 hover:bg-opacity-40 hover:font-semibold"
+          className="text-slate-200 p-4 w-full bg-blue-200 bg-opacity-20 rounded-full text-center hover:bg-purple-400 hover:bg-opacity-20 hover:font-semibold"
           to={"/login"}
         >
           <button>Sign In</button>

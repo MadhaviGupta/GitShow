@@ -10,14 +10,17 @@ export default function Hero() {
           🪄
         </h1>
         <h4 className="text-blue-100 text-xl">
-          Show <span className="font-bold">what</span> you are,{" "}
-          <span className="font-bold">where</span> it is needed.
+          Show{" "}
+          <span className="font-bold font-milonga tracking-wide">what</span> you
+          are,{" "}
+          <span className="font-bold font-milonga tracking-wide">where</span> it
+          is needed.
         </h4>
         <div className="mt-10 flex flex-col w-4/6 md:w-3/6">
-          <h3 className="text-3xl text-blue-200 mb-5 font-manrope">
+          <h3 className="text-3xl tracking-wider text-blue-200 mb-5 font-milonga">
             Feeling Excited?
           </h3>
-          <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold">
+          <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-blue-300 hover:bg-opacity-40">
             Get onboard! 🚂
           </button>
         </div>
