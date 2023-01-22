@@ -7,8 +7,8 @@ export default function Login() {
   return (
     <div className="bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-screen flex justify-center items-center">
       <div className="w-8/12 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl">
-        <div className="flex h-fit px-5 py-10">
-          <div className="w-4/6">
+        <div className="flex h-fit">
+          <div className="w-4/6 p-5">
             <img className="w-1/6 m-auto" src={logo}></img>
             <h1 className="text-5xl font-milonga text-blue-300 text-center p-8">
               Alohomora! 🔮
@@ -52,7 +52,7 @@ export default function Login() {
             </p>
           </div>
           <img
-            className="w-3/6 h-full opacity-80 rounded-xl"
+            className="w-3/6  rounded-xl"
             src="https://images.unsplash.com/photo-1571936804022-90d128047136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
           ></img>
         </div>
