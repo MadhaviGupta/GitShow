@@ -39,7 +39,7 @@ export default function Navbar() {
           Join Now{" "}
         </a>
         <Link
-          className="text-slate-200 p-4 w-full bg-blue-200 bg-opacity-20 rounded-full text-center hover:bg-purple-400 hover:bg-opacity-20 hover:font-semibold"
+          className="text-slate-200 p-4 w-full bg-blue-200 bg-opacity-20 rounded-full text-center hover:bg-purple-400 hover:bg-opacity-80 hover:font-semibold transition-all duration-200"
           to={"/login"}
         >
           <button>Sign In</button>

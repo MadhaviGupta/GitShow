@@ -20,7 +20,7 @@ export default function Hero() {
           <h3 className="text-3xl tracking-wider text-blue-200 mb-5 font-milonga">
             Feeling Excited?
           </h3>
-          <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-blue-300 hover:bg-opacity-40">
+          <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-black hover:bg-opacity-80">
             Get onboard! 🚂
           </button>
         </div>
