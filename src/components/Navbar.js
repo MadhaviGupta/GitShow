@@ -32,12 +32,12 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="w-[15%] flex items-center justify-between">
-        <a
+        <Link
           className="text-slate-200 p-4 w-full hover:text-blue-400"
-          href="join"
+          to={"/join"}
         >
-          Join Now{" "}
-        </a>
+          <button>Join Now</button>
+        </Link>
         <Link
           className="text-slate-200 p-4 w-full bg-blue-200 bg-opacity-20 rounded-full text-center hover:bg-purple-400 hover:bg-opacity-80 hover:font-semibold transition-all duration-200"
           to={"/login"}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="md:w-[70%] flex flex-col md:flex-row m-auto rounded-xl">
@@ -20,9 +21,11 @@ export default function Hero() {
           <h3 className="text-3xl tracking-wider text-blue-200 mb-5 font-milonga">
             Feeling Excited?
           </h3>
-          <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-black hover:bg-opacity-80">
-            Get onboard! 🚂
-          </button>
+          <Link to={"/login"}>
+            <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-black hover:bg-opacity-80">
+              Get onboard! 🚂
+            </button>
+          </Link>
         </div>
       </div>
       <img
