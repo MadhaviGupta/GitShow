@@ -6,7 +6,7 @@ export default function Hero() {
         <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-6">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
-            Gitshow
+            GitShow
           </span>
           🪄
         </h1>
