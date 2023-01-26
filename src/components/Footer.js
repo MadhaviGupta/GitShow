@@ -5,9 +5,9 @@ export default function Footer() {
     <>
       <hr className="my-2 opacity-25 w-full"></hr>
       <div className="flex text-white">
-        <div className="flex flex-col flex-start w-60 my-5 mx-48">
-          <span className="text-3xl md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-semibold mb-5">
-            Some line describing the developers.
+        <div className="flex flex-col flex-start w-60 my-5 mx-48 justify-center">
+          <span className="text-3xl md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
+            Show, Connect, Proceed.
           </span>
         </div>
         <div className="flex p-3 items-center">

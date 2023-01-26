@@ -4,7 +4,7 @@ export default function Offers() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <span className="text-3xl md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-semibold mb-5">
+        <span className="text-3xl md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
           Discover what we offer.
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
@@ -20,8 +20,8 @@ export default function Offers() {
               👉 Show your Github Projects.
             </p>
             <p className="text-white text-xl font-medium">
-              GitShow is a showcase of all your projects. <br /> Showcase others
-              what you're building and working on.
+              Showcase others all your projects, what you're building and what
+              you're working on.
             </p>
           </div>
           <img
