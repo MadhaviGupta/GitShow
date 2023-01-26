@@ -13,19 +13,15 @@ export default function Offers() {
       <div className="flex flex-col justify-center">
         <div className="flex mx-20 my-6 justify-center">
           <div
-            className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-3 flex flex-col text-center justify-center 
+            className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-10 flex flex-col text-center justify-center 
           transition ease-in-out delay-90 hover:-translate-y-2 hover:shadow-xl"
           >
-            <p className="text-3xl tracking-wider text-blue-200 mb-5">
+            <p className="text-3xl tracking-wider text-blue-200 mb-5 font-bold">
               👉 Show your Github Projects.
             </p>
-            <p className="text-orange-700">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reiciendis dolore, eveniet doloribus sapiente quaerat libero
-              fugiat, enim voluptas nisi eos quidem soluta commodi eaque at
-              consequatur accusamus doloremque, accusantium architecto neque
-              magni ipsam! Adipisci dolorum repellat excepturi eligendi debitis
-              ipsam quos. Dicta nostrum quibusdam deserunt.
+            <p className="text-white text-xl font-medium">
+              GitShow is a showcase of all your projects. <br /> Showcase others
+              what you're building and working on.
             </p>
           </div>
           <img
@@ -41,33 +37,25 @@ export default function Offers() {
             alt="harry"
             className="rounded-2xl shadow-xl w-1/3 h-80 m-3"
           />
-          <div className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-5 flex flex-col text-center justify-center transition ease-in-out delay-90 hover:-translate-y-2 hover:shadow-xl">
-            <p className="text-2xl tracking-wider text-blue-200 mb-5">
+          <div className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-10 flex flex-col text-center justify-center transition ease-in-out delay-90 hover:-translate-y-2 hover:shadow-xl">
+            <p className="text-3xl tracking-wider text-blue-200 mb-5 font-bold">
               👉 Check what others are creating.
             </p>
-            <p className="text-orange-700">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reiciendis dolore, eveniet doloribus sapiente quaerat libero
-              fugiat, enim voluptas nisi eos quidem soluta commodi eaque at
-              consequatur accusamus doloremque, accusantium architecto neque
-              magni ipsam! Adipisci dolorum repellat excepturi eligendi debitis
-              ipsam quos. Dicta nostrum quibusdam deserunt.
+            <p className="text-white text-xl font-medium">
+              You can also see what others are building and how you can learn
+              from it.
             </p>
           </div>
         </div>
         {/* card3 */}
         <div className="flex mx-20 my-6 justify-center">
-          <div className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-5 flex flex-col text-center justify-center transition ease-in-out delay-90 hover:-translate-y-2 hover:shadow-xl">
-            <p className="text-2xl tracking-wider text-blue-200 mb-5">
+          <div className="w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-10 flex flex-col text-center justify-center transition ease-in-out delay-90 hover:-translate-y-2 hover:shadow-xl">
+            <p className="text-3xl tracking-wider text-blue-200 mb-5 font-bold">
               👉 Chat with fellow coders.
             </p>
-            <p className="text-orange-700">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reiciendis dolore, eveniet doloribus sapiente quaerat libero
-              fugiat, enim voluptas nisi eos quidem soluta commodi eaque at
-              consequatur accusamus doloremque, accusantium architecto neque
-              magni ipsam! Adipisci dolorum repellat excepturi eligendi debitis
-              ipsam quos. Dicta nostrum quibusdam deserunt.
+            <p className="text-white text-xl font-medium">
+              Get connected with your peers and chat with them about what new
+              stuff can be created.
             </p>
           </div>
           <img
