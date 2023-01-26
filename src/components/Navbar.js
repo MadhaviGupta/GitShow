@@ -6,26 +6,25 @@ export default function Navbar() {
       <div className="w-4/6 flex justify-start">
         <div className="w-2/12 flex content-center items-center">
           <img className="w-4/6 p-4" src={logo} alt="Gitshow logo"></img>
-          {/* <span className="text-blue-300 text-2xl text-bold">gitshow</span> */}
         </div>
-        <ul className="w-4/12 flex justify-around text-slate-200 items-center font-medium">
+        <ul className="w-4/12 flex justify-around text-slate-200 items-center font-semibold text-md">
           <li>
-            <a className="hover:text-blue-400" href="#features">
+            <a className="m-5 hover:text-blue-400" href="#features">
               Features
             </a>
           </li>
           <li>
-            <a className="hover:text-blue-400" href="#people">
+            <a className="m-5 hover:text-blue-400" href="#people">
               People
             </a>
           </li>
           <li>
-            <a className="hover:text-blue-400" href="#support">
+            <a className="m-5 hover:text-blue-400" href="#support">
               Support
             </a>
           </li>
           <li>
-            <a className="hover:text-blue-400" href="#blog">
+            <a className="m-5 hover:text-blue-400" href="#blog">
               Blog
             </a>
           </li>
@@ -33,7 +32,7 @@ export default function Navbar() {
       </div>
       <div className="w-[15%] flex items-center justify-between">
         <Link
-          className="text-slate-200 p-4 w-full hover:text-blue-400"
+          className="text-slate-200 p-4 w-full font-semibold hover:text-blue-400"
           to={"/join"}
         >
           <button>Join Now</button>
