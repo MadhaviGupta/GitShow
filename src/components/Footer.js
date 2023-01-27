@@ -73,8 +73,11 @@ export default function Footer() {
             GitShow
           </h2>
           <p className="text-right">
-            Built by Sujal Samai and Madhavi Gupta. Made with 💖React.js,
-            Tailwind & Firebase.
+            Made with 💖, React.js, Tailwind & Firebase.
+            <br />
+            Built by <a href="https://www.github.com/SujalSamai">
+              Sujal
+            </a> and <a href="https://www.github.com/MadhaviGupta">Madhavi</a>.
           </p>
         </div>
       </div>

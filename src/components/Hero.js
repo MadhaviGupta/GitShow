@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="md:w-[70%] flex flex-col md:flex-row m-auto rounded-xl">
-      <div className="md:w-7/12 p-8 flex flex-col justify-evenly mt-40">
+      <div className="md:w-7/12 p-8 flex flex-col justify-end mt-40">
         <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-10">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">

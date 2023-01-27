@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="w-1/12 flex items-center justify-between">
         <Link
           className="text-blue-800 p-4 w-full bg-blue-100 bg-opacity-90 rounded-full text-center hover:bg-black hover:text-blue-50 hover:bg-opacity-80 hover:font-semibold transition-all duration-200"
-          to={"/login"}
+          to={"/home"}
         >
           <button className="flex items-center justify-evenly w-20 m-auto">
             Login <FiGithub />
