@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="md:w-[70%] flex flex-col md:flex-row m-auto rounded-xl">
-      <div className="md:w-7/12 p-8 flex flex-col justify-end mt-40">
+      <div className="md:w-7/12 p-8 flex flex-col mt-32 md:mt-40">
         <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-10">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
@@ -29,7 +29,7 @@ export default function Hero() {
         </div>
       </div>
       <img
-        className="w-10/12 rounded-2xl md:w-5/12 md:h-2/4 m-auto md:rounded-lg shadow-2xl"
+        className="w-10/12 rounded-2xl md:w-5/12 md:h-2/4 m-auto md:rounded-lg shadow-2xl md:mt-60"
         src="https://media3.giphy.com/media/RyLtUMBdogHvO/giphy.gif?cid=ecf05e47i9g5zzurwzcjgcv2fzadnnzh9rb22psgo7ft40hu&rid=giphy.gif&ct=g"
         alt="hermione doing magic"
       ></img>
