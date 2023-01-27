@@ -3,68 +3,79 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <hr className="my-2 opacity-25 w-full"></hr>
-      <div className="flex text-white">
-        <div className="flex flex-col flex-start w-60 my-5 mx-48 justify-center">
-          <span className="text-3xl md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
-            Show, Connect, Proceed.
-          </span>
+      <div className="bg-slate-200 bg-opacity-90 rounded-t-[3rem] text-stone-800">
+        <div className=" mt-64 flex py-16 justify-around">
+          <div className="flex w-1/6 ml-20 items-center">
+            <span className="text-3xl md:text-5xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
+              Show, Connect, Proceed.
+            </span>
+          </div>
+          <div className="flex p-3 items-center">
+            <div className="mx-12">
+              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
+                Company
+              </p>
+              <ul>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">
+                    Lorem, ipsum dolor.
+                  </li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+              </ul>
+            </div>
+            <div className="mx-12">
+              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
+                Services
+              </p>
+              <ul>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">
+                    Lorem, ipsum dolor.
+                  </li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+              </ul>
+            </div>
+            <div className="mx-12">
+              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
+                Explore
+              </p>
+              <ul>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">
+                    Lorem, ipsum dolor.
+                  </li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                </a>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="flex p-3 items-center">
-          <div className="mx-12">
-            <p className="font-semibold text-xl my-2 underline underline-offset-2">
-              COMPANY
-            </p>
-            <ul>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">
-                  Lorem, ipsum dolor.
-                </li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-            </ul>
-          </div>
-          <div className="mx-12">
-            <p className="font-semibold text-xl my-2 underline underline-offset-2">
-              SERVICES
-            </p>
-            <ul>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">
-                  Lorem, ipsum dolor.
-                </li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-            </ul>
-          </div>
-          <div className="mx-12">
-            <p className="font-semibold text-xl my-2 underline underline-offset-2">
-              EXPLORE
-            </p>
-            <ul>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">
-                  Lorem, ipsum dolor.
-                </li>
-              </a>
-              <a href="#">
-                <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-              </a>
-            </ul>
-          </div>
+        <div className="w-9/12 h-[1px] bg-slate-700 m-auto"></div>
+        <div className="w-9/12 m-auto flex p-10 items-center justify-between">
+          <h2 className="text-4xl font-bold bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
+            GitShow
+          </h2>
+          <p className="text-right">
+            Built by Sujal Samai and Madhavi Gupta. Made with 💖React.js,
+            Tailwind & Firebase.
+          </p>
         </div>
       </div>
     </>

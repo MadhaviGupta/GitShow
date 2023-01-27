@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="md:w-[70%] flex flex-col md:flex-row m-auto rounded-xl">
-      <div className="md:w-7/12 p-8 flex flex-col justify-center">
-        <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-6">
+      <div className="md:w-7/12 p-8 flex flex-col justify-evenly mt-40">
+        <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-10">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
-            GitShow
+            Gitshow
           </span>
           🪄
         </h1>
@@ -22,7 +22,7 @@ export default function Hero() {
             Feeling Excited?
           </h3>
           <Link to={"/login"}>
-            <button className="w-4/6 p-4 bg-blue-100 bg-opacity-20 text-slate-50 rounded-full font-semibold hover:bg-black hover:bg-opacity-80">
+            <button className="w-4/6 p-4 bg-purple-900 bg-opacity-90 text-slate-50 rounded-full font-semibold hover:bg-black hover:bg-opacity-80">
               Get onboard! 🚂
             </button>
           </Link>
