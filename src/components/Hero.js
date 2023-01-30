@@ -18,16 +18,16 @@ export default function Hero() {
           is needed.
         </h4>
         <img
-          className="w-10/12 mt-16 md:hidden rounded-2xl md:w-5/12 md:h-2/4 m-auto md:rounded-lg shadow-2xl md:mt-60"
+          className="w-11/12 mt-16 md:hidden rounded-2xl md:w-5/12 md:h-2/4 m-auto md:rounded-lg shadow-2xl md:mt-60 opacity-20"
           src="https://media3.giphy.com/media/RyLtUMBdogHvO/giphy.gif?cid=ecf05e47i9g5zzurwzcjgcv2fzadnnzh9rb22psgo7ft40hu&rid=giphy.gif&ct=g"
           alt="hermione doing magic"
         ></img>
-        <div className="md:mt-10 mt-64 flex flex-col text-center md:text-left md:w-3/6">
+        <div className="md:mt-10 flex flex-col text-center md:text-left md:w-3/6 relative bottom-44 md:static">
           <h3 className="text-3xl tracking-wider text-blue-200 mb-5 font-milonga">
             Feeling Excited?
           </h3>
-          <Link to={"/login"}>
-            <button className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-4 border-2 border-white shadow-[6px_6px] hover:shadow-[0px_0px] shadow-blue-400 text-slate-50 rounded-lg font-semibold  transition-all ease-out duration-150">
+          <Link to={"/home"}>
+            <button className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 border-2 border-white shadow-[7px_7px] hover:shadow-[0px_0px] shadow-blue-400 text-slate-50 rounded-lg font-semibold  transition-all ease-out duration-150">
               Get onboard! 🚂
             </button>
           </Link>
