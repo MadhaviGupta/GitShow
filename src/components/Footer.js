@@ -1,4 +1,5 @@
 import React from "react";
+import FooterList from "./FooterList";
 
 export default function Footer() {
   return (
@@ -11,54 +12,19 @@ export default function Footer() {
             </span>
           </div>
           <div className="flex md:p-3 justify-around items-center">
-            <div className="mx-6 md:mx-12">
-              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
-                Company
-              </p>
-              <ul>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">About us</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Privacy</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Terms</li>
-                </a>
-              </ul>
-            </div>
-            <div className="mx-6 md:mx-12">
-              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
-                Explore
-              </p>
-              <ul>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Projects</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Messaging</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Contribute</li>
-                </a>
-              </ul>
-            </div>
-            <div className="mx-6 md:mx-12">
-              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
-                Support
-              </p>
-              <ul>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Help</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Contact us</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">FAQs</li>
-                </a>
-              </ul>
-            </div>
+            <FooterList
+              header="Company"
+              l1="About us"
+              l2="Privacy"
+              l3="Terms"
+            />
+            <FooterList
+              header="Explore"
+              l1="Projects"
+              l2="Messaging"
+              l3="Contribution"
+            />
+            <FooterList header="Support" l1="Help" l2="Contact us" l3="FAQs" />
           </div>
         </div>
         <div className="w-9/12 h-[1px] bg-slate-700 m-auto"></div>

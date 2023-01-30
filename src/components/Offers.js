@@ -3,8 +3,8 @@ import chat from "../assets/chat.gif";
 export default function Offers() {
   return (
     <>
-      <div className="flex flex-col items-center mt-64">
-        <span className="text-4xl md:text-5xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
+      <div className="flex flex-col items-center mt-24 w-11/12 m-auto">
+        <span className="text-4xl text-center md:text-5xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
           Discover what we offer.
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
