@@ -10,40 +10,20 @@ export default function Footer() {
               Show, Connect, Proceed.
             </span>
           </div>
-          <div className="flex md:p-3 items-center">
+          <div className="flex md:p-3 justify-around items-center">
             <div className="mx-6 md:mx-12">
               <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
                 Company
               </p>
               <ul>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                  <li className="hover:text-slate-400 my-4">About us</li>
                 </a>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">
-                    Lorem, ipsum dolor.
-                  </li>
+                  <li className="hover:text-slate-400 my-4">Privacy</li>
                 </a>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-                </a>
-              </ul>
-            </div>
-            <div className="mx-6 md:mx-12">
-              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
-                Services
-              </p>
-              <ul>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">
-                    Lorem, ipsum dolor.
-                  </li>
-                </a>
-                <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                  <li className="hover:text-slate-400 my-4">Terms</li>
                 </a>
               </ul>
             </div>
@@ -53,15 +33,29 @@ export default function Footer() {
               </p>
               <ul>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                  <li className="hover:text-slate-400 my-4">Projects</li>
                 </a>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">
-                    Lorem, ipsum dolor.
-                  </li>
+                  <li className="hover:text-slate-400 my-4">Messaging</li>
                 </a>
                 <a href="#">
-                  <li className="hover:text-slate-400 my-4">Lorem, ipsum.</li>
+                  <li className="hover:text-slate-400 my-4">Contribute</li>
+                </a>
+              </ul>
+            </div>
+            <div className="mx-6 md:mx-12">
+              <p className="font-semibold text-xl my-2 underline underline-offset-2 font-milonga tracking-wider">
+                Support
+              </p>
+              <ul>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Help</li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">Contact us</li>
+                </a>
+                <a href="#">
+                  <li className="hover:text-slate-400 my-4">FAQs</li>
                 </a>
               </ul>
             </div>

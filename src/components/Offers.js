@@ -4,7 +4,7 @@ export default function Offers() {
   return (
     <>
       <div className="flex flex-col items-center mt-64">
-        <span className="text-3xl md:text-5xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
+        <span className="text-4xl md:text-5xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-5">
           Discover what we offer.
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
@@ -13,7 +13,7 @@ export default function Offers() {
       <div className="flex flex-col justify-center">
         <div className="md:flex md:flex-row mx-8 md:mx-20 my-6 justify-center">
           <div
-            className="md:w-1/2 h-80 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl md:m-3 p-10 flex flex-col md:text-center justify-center 
+            className="md:w-1/2 h-80 bg-black bg-opacity-[0.2] backdrop-blur-lg rounded-2xl md:m-3 p-10 flex flex-col md:text-center justify-center 
           hover:bg-opacity-70 transition-all ease-in duration-300 cursor-default hover:-translate-y-2 hover:shadow-xl"
           >
             <p className="text-3xl tracking-widest text-blue-200 mb-5 flex justify-center font-bold font-milonga">
