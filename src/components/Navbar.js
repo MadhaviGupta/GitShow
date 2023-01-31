@@ -5,7 +5,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between md:justify-around mx-auto h-20 md:h-24 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
+    <nav className="flex items-center justify-between md:justify-around h-20 md:h-24 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
       <div className="w-2/12 h-full md:w-4/6 flex justify-start">
         <div className="w-full md:p-0 md:w-2/12 flex content-center items-center">
           <img className="md:w-7/12 md:p-4" src={logo} alt="Gitshow logo"></img>
@@ -43,7 +43,7 @@ export default function Navbar() {
           </button>
         </Link> */}
         <Link
-          className="text-blue-100 mr-4 py-1 md:py-2 px-2 md:px-4 border-2 rounded-lg border-blue-50 shadow-[5px_5px] hover:shadow-[1px_1px] drop-shadow-xl shadow-orange-400 transition-all ease-out duration-150"
+          className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-lg border-blue-50 shadow-[5px_5px] hover:shadow-[1px_1px] drop-shadow-xl shadow-orange-400 transition-all ease-out duration-150"
           to={"/home"}
         >
           <button className="flex items-center justify-evenly w-20 m-auto">

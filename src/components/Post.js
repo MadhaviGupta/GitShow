@@ -31,14 +31,14 @@ export default function Post() {
     <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2">
       <div className="w-full flex items-center">
         <img src={user} alt="user" className="w-1/12" />
-        <div className="w-8/12 flex flex-col ml-4">
-          <div className="flex">
+        <div className="w-9/12 flex flex-col ml-4">
+          <div className="flex items-center">
             <h4 className="mr-2">George Weasely</h4>
-            <p className="text-slate-500">@g.weasely12</p>
+            <p className="text-slate-500 text-sm">@g.weasely12</p>
           </div>
           <p className="text-slate-300 text-xs">Born Prankster and Inventor</p>
         </div>
-        <BsThreeDots className="relative left-16 md:left-[5.5rem]" />
+        <BsThreeDots className="m-auto" />
       </div>
       <div className="flex flex-col md:w-11/12 p-2 md:p-4 md:ml-12">
         <p className="my-3 md:mb-2 md:mt-0 text-sm">

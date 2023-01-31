@@ -20,7 +20,7 @@ export default function Offers() {
               <span className="hidden md:block">👉</span> Show your Github
               Projects.
             </p>
-            <p className="text-white text-xl font-medium">
+            <p className="text-white text-lg font-medium">
               Showcase others all your projects, what you're building and what
               you're working on.
             </p>
@@ -43,7 +43,7 @@ export default function Offers() {
               <span className="hidden md:block">👉</span> Check what others are
               creating.
             </p>
-            <p className="text-white text-xl font-medium">
+            <p className="text-white text-lg font-medium">
               You can also see what others are building and how you can learn
               from it.
             </p>
@@ -56,7 +56,7 @@ export default function Offers() {
               <span className="hidden md:block">👉</span> Chat with fellow
               coders.
             </p>
-            <p className="text-white text-xl font-medium">
+            <p className="text-white text-lg font-medium">
               Get connected with your peers and chat with them about what new
               stuff can be created.
             </p>

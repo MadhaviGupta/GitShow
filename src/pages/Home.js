@@ -25,9 +25,9 @@ export default function Home() {
   } else {
     return (
       <>
-        <div className="flex flex-col items-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-screen bg-cover md:px-40">
+        <div className="flex flex-col items-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover md:px-40">
           {/* part2 feed */}
-          <div className="w-11/12 mt-3 px-2 md:w-3/6 ml-0 md:ml-3 text-white">
+          <div className="w-full mt-3 px-2 md:w-3/6 ml-0 md:ml-3 text-white">
             <CreatePost />
             <Post />
           </div>
