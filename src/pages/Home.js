@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiSearchAlt } from "react-icons/bi";
@@ -14,7 +15,20 @@ import { BsLink45Deg } from "react-icons/bs";
 import { MdOutlineCreate } from "react-icons/md";
 import { FiImage, FiVideo, FiHeart, FiSend } from "react-icons/fi";
 import { FaRegCommentDots } from "react-icons/fa";
+import { comment } from "postcss";
 export default function Home() {
+  const [like, setLike] = useState(false);
+  const [comnt, setComment] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [commentCount, setCommentCount] = useState(0);
+  const handleLike = () => {
+    setLike(!like);
+    like ? setLikeCount(0) : setLikeCount(likeCount + 1);
+  };
+  const handleComment = () => {
+    setComment(!comnt);
+    setCommentCount(commentCount + 1);
+  };
   return (
     <>
       <div className="flex bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-full bg-cover px-40">
@@ -23,12 +37,12 @@ export default function Home() {
           <ul>
             <li>
               <div className="flex items-center">
-                <img className="md:w-3/6" src={logo} alt="Gitshow logo"></img>
+                <img className="md:w-3/6 w-8 h-10" src={logo} alt="Gitshow logo"></img>
               </div>
             </li>
             <li className="m-5">
               <Link to={"/home"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <AiOutlineHome className="m-2" />
                   <span className="m-1">Home</span>
                 </div>
@@ -36,7 +50,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"/explore"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <BiSearchAlt className="m-2" />
                   <span className="m-1">Explore</span>
                 </div>
@@ -44,7 +58,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"/notifications"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <FiBell className="m-2" />
                   <span className="m-1">Notifications</span>
                 </div>
@@ -52,7 +66,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"/messages"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <FiMessageSquare className="m-2" />
                   <span className="m-1">Messages</span>
                 </div>
@@ -60,7 +74,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"/profile"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <FiUser className="m-2" />
                   <span className="m-1">Profile</span>
                 </div>
@@ -68,7 +82,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"/network"}>
-                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-md p-2">
+                <div className="flex hover:text-orange-700 hover:bg-black hover:rounded-full p-2">
                   <AiOutlineUsergroupAdd className="m-2" />
                   <span className="m-1">My Network</span>
                 </div>
@@ -76,7 +90,7 @@ export default function Home() {
             </li>
             <li className="m-5">
               <Link to={"#"}>
-                <div className="flex text-orange-500 bg-black rounded-md p-2">
+                <div className="flex text-orange-500 bg-black rounded-full p-2">
                   <MdOutlineCreate className="m-2" />
                   <span className="m-1">Write Post</span>
                 </div>
@@ -106,16 +120,24 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1618944847023-38aa001235f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
               alt="feed"
-              className="w-4/5 h-4/6 mx-5 my-3"
+              className="w-4/5 h-4/6 mx-5 my-1"
             />
             <div className="flex p-2">
               <div className="flex mx-5">
-                <FiHeart className="mx-3 text-2xl text-white" />
-                <p className="text-white">3</p>
+                <div onClick={handleLike} className="cursor-pointer">
+                  {like ? (
+                    <FiHeart className="mx-3 text-2xl text-red-500" />
+                  ) : (
+                    <FiHeart className="mx-3 text-2xl text-white" />
+                  )}
+                </div>
+                <p className="text-white">{likeCount}</p>
               </div>
               <div className="flex mx-5">
-                <FaRegCommentDots className="mx-3 text-2xl text-white" />
-                <p className="text-white">3</p>
+                <div onClick={handleComment} className="cursor-pointer">
+                  <FaRegCommentDots className="mx-3 text-2xl text-white" />
+                </div>
+                <p className="text-white">{commentCount}</p>
               </div>
               <div className="mx-4">
                 <FiSend className="text-2xl text-white" />
