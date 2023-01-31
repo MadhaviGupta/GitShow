@@ -3,6 +3,7 @@ import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
+import NoPost from "../components/NoPost";
 
 export default function Home() {
   let width = window.innerWidth;
@@ -13,9 +14,10 @@ export default function Home() {
           {/* part1 navbar*/}
           <Sidebar />
           {/* part2 feed */}
-          <div className="md:w-6/12 m-3 ml-0 md:m-3 text-white bg-black bg-opacity-10 px-4 py-1 rounded-lg">
+          <div className="md:w-6/12 m-3 ml-0 md:m-3 text-white bg-black bg-opacity-10 px-4 py-1 rounded-2xl">
             <CreatePost />
             <Post />
+            <NoPost />
           </div>
           {/* part3 profile*/}
           <ProfileCard />
@@ -30,6 +32,7 @@ export default function Home() {
           <div className="w-full mt-3 px-2 md:w-3/6 ml-0 md:ml-3 text-white">
             <CreatePost />
             <Post />
+            <NoPost />
           </div>
           {/* part1 navbar*/}
           <Sidebar />

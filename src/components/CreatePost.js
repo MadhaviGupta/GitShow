@@ -14,7 +14,7 @@ export default function CreatePost() {
           ></input>
         </div>
         <div className="flex w-11/12 ml-4 justify-between">
-          <div className="flex items-center ml-5">
+          <div className="flex w-2/6 justify-around items-center ml-5">
             <FiImage className="text-slate-300 h-5 w-8" />
             <FiVideo className="text-slate-300 h-5 w-8" />
             <HiOutlineDocumentText className="text-slate-300 h-5 w-8" />

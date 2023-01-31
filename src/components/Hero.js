@@ -10,11 +10,10 @@ export default function Hero() {
           </span>
           🪄
         </h1>
-        <h4 className="text-blue-100 text-xl text-center md:text-left">
-          Show{" "}
-          <span className="font-bold font-milonga tracking-wide">what</span> you
-          are,{" "}
-          <span className="font-bold font-milonga tracking-wide">where</span> it
+        <h4 className="text-blue-100 text-xl text-center md:text-left font-manrope">
+          Show <span className="font-milonga tracking-wide text-2xl">what</span>{" "}
+          you are,{" "}
+          <span className="font-milonga tracking-wide text-2xl">where</span> it
           is needed.
         </h4>
         <img
@@ -23,7 +22,7 @@ export default function Hero() {
           alt="hermione doing magic"
         ></img>
         <div className="md:mt-10 flex flex-col text-center md:text-left md:w-3/6 relative bottom-44 md:static">
-          <h3 className="text-3xl tracking-wider text-blue-200 mb-5 font-milonga">
+          <h3 className="text-3xl text-blue-200 mb-5 font-manrope font-bold">
             Feeling Excited?
           </h3>
           <Link to={"/home"}>

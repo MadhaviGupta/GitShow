@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       inter: ["Inter", "ui-sans-serif"],
-      milonga: ["Milonga", "serif"],
+      milonga: ["New Rocker", "serif"],
+      manrope: ["Manrope", "ui-sans-serif"],
     },
   },
   plugins: [],

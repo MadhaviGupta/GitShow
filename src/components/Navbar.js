@@ -5,8 +5,8 @@ import { HiMenuAlt3 } from "react-icons/hi";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between md:justify-around h-20 md:h-24 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
-      <div className="w-2/12 h-full md:w-4/6 flex justify-start">
+    <nav className="flex px-2 items-center justify-between md:justify-around h-20 md:h-24 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
+      <div className="w-2/12 h-full md:w-4/6 flex justify-start font-manrope">
         <div className="w-full md:p-0 md:w-2/12 flex content-center items-center">
           <img className="md:w-7/12 md:p-4" src={logo} alt="Gitshow logo"></img>
         </div>

@@ -28,20 +28,20 @@ export default function Post() {
   };
 
   return (
-    <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2">
+    <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3">
       <div className="w-full flex items-center">
         <img src={user} alt="user" className="w-1/12" />
         <div className="w-9/12 flex flex-col ml-4">
           <div className="flex items-center">
             <h4 className="mr-2">George Weasely</h4>
-            <p className="text-slate-500 text-sm">@g.weasely12</p>
+            <p className="text-slate-500 text-sm font-manrope">@g.weasely12</p>
           </div>
           <p className="text-slate-300 text-xs">Born Prankster and Inventor</p>
         </div>
         <BsThreeDots className="m-auto" />
       </div>
       <div className="flex flex-col md:w-11/12 p-2 md:p-4 md:ml-12">
-        <p className="my-3 md:mb-2 md:mt-0 text-sm">
+        <p className="my-3 md:mb-2 md:mt-0 text-sm font-manrope">
           George Weasley (born 1 April 1978) is a major character in the Harry
           Potter series written by J.K. Rowling. He was a pure-blood wizard, a
           son of Molly and Arthur Weasley, a brother of Bill, Charlie, Percy,
