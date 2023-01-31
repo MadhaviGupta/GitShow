@@ -1,33 +1,67 @@
 import user from "../assets/user.png";
 import { FiHeart, FiSend } from "react-icons/fi";
 import { FaRegCommentDots } from "react-icons/fa";
+import { BsThreeDots } from "react-icons/bs";
+import { AiOutlineRetweet } from "react-icons/ai";
+import { BiHeart } from "react-icons/bi";
+import { RxDotFilled } from "react-icons/rx";
 
 export default function Post() {
   return (
-    <div className="my-2 flex flex-col items-center w-full h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl">
-      <div className="flex justify-items-start m-3">
-        <img src={user} alt="user" className="w-8 h-8" />
-        <p className="my-1 mx-2">George Weasely</p>
+    <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2">
+      <div className="w-full flex items-center">
+        <img src={user} alt="user" className="w-1/12" />
+        <div className="w-8/12 flex flex-col ml-4">
+          <div className="flex">
+            <h4 className="mr-2">George Weasely</h4>
+            <p className="text-slate-500">@g.weasely12</p>
+          </div>
+          <p className="text-slate-300 text-xs">Born Prankster and Inventor</p>
+        </div>
+        <BsThreeDots className="relative left-16 md:left-[5.5rem]" />
       </div>
-      <img
-        src="https://images.unsplash.com/photo-1618944847023-38aa001235f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-        alt="feed"
-        className="w-4/5 h-4/6 mx-5 my-3"
-      />
-      <div className="flex p-2">
-        <div className="flex mx-5">
-          <FiHeart className="mx-3 text-2xl text-white" />
-          <p className="text-white">3</p>
+      <div className="flex flex-col md:w-11/12 p-2 md:p-4 md:ml-12">
+        <p className="my-3 md:mb-2 md:mt-0 text-sm">
+          George Weasley (born 1 April 1978) is a major character in the Harry
+          Potter series written by J.K. Rowling. He was a pure-blood wizard, a
+          son of Molly and Arthur Weasley, a brother of Bill, Charlie, Percy,
+          Ron, Ginny, and twin brother of the late Fred Weasley.
+        </p>
+        <img
+          src="https://images.unsplash.com/photo-1618944847023-38aa001235f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+          alt="feed"
+          className="rounded-xl"
+        />
+      </div>
+      <div className="md:w-11/12 md:ml-12 px-4 flex justify-between bg-black bg-opacity-10 py-2">
+        <div className="flex items-center text-xs">
+          <BiHeart className=" text-red-700" />
+          <h5 className="text-slate-200 ml-1">91 Likes</h5>
         </div>
-        <div className="flex mx-5">
-          <FaRegCommentDots className="mx-3 text-2xl text-white" />
-          <p className="text-white">3</p>
-        </div>
-        <div className="mx-4">
-          <FiSend className="text-2xl text-white" />
+        <div className="flex items-center text-xs">
+          <p>5 comments</p>
+          <RxDotFilled />
+          <p>2 reposts</p>
         </div>
       </div>
-      <hr className="my-2 opacity-25 w-full"></hr>
+      <div className="flex md:w-11/12 md:ml-12 mt-4 justify-around text-sm">
+        <div className="flex ">
+          <FiHeart className="text-xl mr-2 text-white" />
+          <p className="text-white">Like</p>
+        </div>
+        <div className="flex">
+          <FaRegCommentDots className="text-xl mr-2 text-white" />
+          <p className="text-white">Comment</p>
+        </div>
+        <div className="flex">
+          <AiOutlineRetweet className="text-xl mr-2 text-white" />
+          <p className="text-white">Repost</p>
+        </div>
+        <div className="flex">
+          <FiSend className="text-xl mr-2 text-white" />
+          <p className="text-white">Share</p>
+        </div>
+      </div>
     </div>
   );
 }

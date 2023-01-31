@@ -3,7 +3,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsLink45Deg } from "react-icons/bs";
 export default function ProfileCard() {
   return (
-    <div className="w-3/12 h-full bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-6 md:flex flex-col text-center justify-center">
+    <div className="w-2/12 fixed right-48 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-6 md:flex flex-col text-center justify-center">
       <div className="flex flex-col items-center text-white">
         <div className="rounded-full bg-black bg-opacity-30 p-2">
           <img src={harry} alt="user" className="w-16 h-16" />
