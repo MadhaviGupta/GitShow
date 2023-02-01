@@ -1,4 +1,3 @@
-import user from "../assets/user.png";
 import { FiHeart, FiSend } from "react-icons/fi";
 import { FaRegCommentDots, FaHeart } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
@@ -7,7 +6,7 @@ import { BiHeart } from "react-icons/bi";
 import { RxDotFilled } from "react-icons/rx";
 import { useState } from "react";
 
-export default function Post() {
+export default function Post(props) {
   const [like, setLike] = useState(false);
   const [comnt, setComment] = useState(false);
   const [repost, setRepost] = useState(false);
@@ -27,33 +26,33 @@ export default function Post() {
     repost ? setRepostCount(0) : setRepostCount(repostCount + 1);
   };
 
+  // let descLen = props.description.length;
   return (
     <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3">
       <div className="w-full flex items-center">
-        <img src={user} alt="user" className="w-1/12" />
-        <div className="w-9/12 flex flex-col ml-4">
-          <div className="flex items-center">
-            <h4 className="mr-2">George Weasely</h4>
-            <p className="text-slate-500 text-sm font-manrope">@g.weasely12</p>
+        <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />
+        <div className="w-9/12 flex flex-col">
+          <div className="flex items-center ml-4">
+            <h4 className="mr-2">{props.name} </h4>
+            <p className="text-slate-500 text-sm font-manrope">
+              @{props.username}
+            </p>
           </div>
-          <p className="text-slate-300 text-xs">Born Prankster and Inventor</p>
+          <p className="text-slate-300 text-xs ml-4">{props.bio}</p>
         </div>
-        <BsThreeDots className="m-auto" />
+        <div className="w-1/6 flex justify-end">
+          <BsThreeDots className="" />
+        </div>
       </div>
-      <div className="flex flex-col md:w-11/12 p-2 md:p-4 md:ml-12">
-        <p className="my-3 md:mb-2 md:mt-0 text-sm font-manrope">
-          George Weasley (born 1 April 1978) is a major character in the Harry
-          Potter series written by J.K. Rowling. He was a pure-blood wizard, a
-          son of Molly and Arthur Weasley, a brother of Bill, Charlie, Percy,
-          Ron, Ginny, and twin brother of the late Fred Weasley.
+      <div className="flex flex-col py-4">
+        <p className="my-3 md:mb-2 md:mt-0 text-sm tracking-wide">
+          {props.description}
         </p>
-        <img
-          src="https://images.unsplash.com/photo-1618944847023-38aa001235f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-          alt="feed"
-          className="rounded-xl"
-        />
+        {props.image && (
+          <img src={props.image} alt="feed" className="rounded-xl" />
+        )}
       </div>
-      <div className="md:w-11/12 md:ml-12 px-4 flex justify-between bg-black bg-opacity-10 py-2">
+      <div className=" px-4 flex justify-between bg-black bg-opacity-10 py-2">
         <div className="flex items-center text-xs">
           <BiHeart className=" text-red-700" />
           <h5 className="text-slate-200 ml-1">{likeCount}</h5>
@@ -64,7 +63,7 @@ export default function Post() {
           <p>{repostCount} reposts</p>
         </div>
       </div>
-      <div className="flex md:w-11/12 md:ml-12 mt-4 justify-around text-sm">
+      <div className="flex mt-4 justify-around text-sm">
         <div onClick={handleLike} className="flex ">
           {like ? (
             <FaHeart className="text-xl mr-2 text-red-600" />

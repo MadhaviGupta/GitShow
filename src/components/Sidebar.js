@@ -4,9 +4,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { FiBell } from "react-icons/fi";
 import { FiMessageSquare } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
-import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import logo from "../assets/logo1.png";
-import { MdOutlineCreate } from "react-icons/md";
 
 export default function Sidebar() {
   return (
@@ -23,7 +21,7 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mt-10 md:mb-2">
           <Link to={"/home"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
+            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
               <TiHomeOutline className="md:m-2 m-auto" />
               <span className="m-1 hidden md:block">Home</span>
             </div>
@@ -31,7 +29,7 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/explore"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
+            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
               <BiSearchAlt className="md:m-2 m-auto" />
               <span className="m-1 hidden md:block">Explore</span>
             </div>
@@ -39,7 +37,7 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/notifications"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
+            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
               <FiBell className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Notifications</span>
             </div>
@@ -47,7 +45,7 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/messages"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
+            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
               <FiMessageSquare className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Messages</span>
             </div>
@@ -55,23 +53,16 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/profile"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
+            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
               <FiUser className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Profile</span>
             </div>
           </Link>
         </li>
-        <li className="w-full md:mb-6">
-          <Link to={"/network"}>
-            <div className="flex hover:text-orange-600 hover:bg-black hover:rounded-lg p-2">
-              <AiOutlineUsergroupAdd className="m-auto md:m-2" />
-              <span className="m-1 hidden md:block">My Network</span>
-            </div>
-          </Link>
-        </li>
-        <li className="md:block hidden w-full">
+
+        <li className="md:block hidden w-full mt-5">
           <Link to={"#"}>
-            <div className="flex text-orange-500 bg-black rounded-lg p-2 justify-center">
+            <div className="flex text-purple-500 bg-black bg-opacity-80 hover:bg-opacity-100 hover:font-semibold transition-all ease-in duration-150 rounded-lg p-2 justify-center">
               {/* <MdOutlineCreate className="m-auto md:m-2" /> */}
               <span className="m-1 hidden md:block">Write Post</span>
             </div>

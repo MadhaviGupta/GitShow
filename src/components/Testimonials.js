@@ -26,7 +26,7 @@ export default function Testimonials() {
       <div className="h-auto mx-10 md:mx-48">
         <div className="flex flex-col md:flex-row justify-around h-auto">
           <TestimonialCard
-            name="Utkarsh Chourasiya"
+            name="Utkarsh Chourasia"
             desg="GoLang Developer"
             desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
           dolore, eveniet doloribus sapiente quaerat libero fugiat, enim

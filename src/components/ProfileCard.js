@@ -1,4 +1,3 @@
-import harry from "../assets/harry.png";
 import { SlLocationPin } from "react-icons/sl";
 import { BsLink45Deg } from "react-icons/bs";
 export default function ProfileCard() {
@@ -6,7 +5,11 @@ export default function ProfileCard() {
     <div className="w-2/12 fixed right-48 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-6 md:flex flex-col text-center justify-center">
       <div className="flex flex-col items-center text-white">
         <div className="rounded-full bg-black bg-opacity-30 p-2">
-          <img src={harry} alt="user" className="w-16 h-16" />
+          <img
+            src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/09/29/15/hp.jpg?quality=75&width=982&height=726&auto=webp"
+            alt="user"
+            className="w-16 h-16 rounded-[50%]"
+          />
         </div>
         <p className="text-xl m-1">Harry Potter</p>
         <p className="text-slate-400 italic text-sm">@HarryPotter</p>
