@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import TopProjects from "./components/TopProjects";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";

@@ -6,9 +6,9 @@ import TopProjects from "../components/TopProjects";
 export default function Explore() {
   return (
     <>
-      <div className="md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover">
+      <div className="w-full md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover">
         {/* <Sidebar /> */}
-        <div className="flex justify-center w-12/12">
+        <div className="flex justify-center w-full">
           <div className="md:w-3/5 w-5/6 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3">
             <div className="flex justify-center w-full md:mt-10">
               <input
@@ -24,7 +24,6 @@ export default function Explore() {
             <TopProfile />
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );

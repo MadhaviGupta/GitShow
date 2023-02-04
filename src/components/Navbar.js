@@ -24,15 +24,13 @@ export default function Navbar() {
           ></img>
         </div>
         <div
-          onClick={() => {
-            setOpen(!open);
-          }}
+          onClick={() => setOpen(!open)}
           className="text-slate-100 md:hidden absolute right-4 top-6 cursor-pointer text-3xl"
         >
           {open ? <RxCross1 /> : <HiMenuAlt3 />}
         </div>
         <ul
-          className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 text-slate-200 md:items-center font-semibold md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${
+          className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
             open ? "top-20 opacity-100" : "top-[-490px]"
           } md:opacity-100 opacity-20 rounded-lg`}
         >
