@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import { BiSearchAlt } from "react-icons/bi";
 import TopProfile from "../components/TopProfile";
 import TopProjects from "../components/TopProjects";
@@ -34,7 +34,7 @@ export default function Explore() {
             <TopProfile />
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

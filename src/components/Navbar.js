@@ -34,16 +34,8 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="md:w-1/12 flex items-center justify-around">
-        {/* <Link
-          className="text-blue-100 p-4 w-full bg-black bg-opacity-50 rounded-full text-center hover:bg-black hover:text-blue-50 hover:bg-opacity-80 hover:font-semibold transition-all duration-200"
-          to={"/home"}
-        >
-          <button className="flex items-center justify-evenly w-20 m-auto">
-            Login <FiGithub />
-          </button>
-        </Link> */}
         <Link
-          className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-lg border-blue-50 shadow-[5px_5px] hover:shadow-[1px_1px] drop-shadow-xl shadow-yellow-500 transition-all ease-out duration-150"
+          className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150"
           to={"/home"}
         >
           <button className="flex items-center justify-evenly w-20 m-auto">

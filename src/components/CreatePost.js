@@ -7,6 +7,7 @@ import firebase from "firebase";
 
 export default function CreatePost() {
   const [input, setInput] = useState("");
+  const [file, setFile] = useState();
   const handleSubmit = (e) => {
     e.preventDefault();
     db.collection("posts").add({
@@ -22,6 +23,7 @@ export default function CreatePost() {
     setInput("");
     // alert(input);
   };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -42,11 +44,33 @@ export default function CreatePost() {
             onChange={(e) => setInput(e.target.value)}
           ></input>
         </div>
+
         <div className="flex w-11/12 ml-4 justify-between">
           <div className="flex w-2/6 justify-around items-center ml-5">
-            <FiImage className="text-slate-300 h-5 w-8" />
-            <FiVideo className="text-slate-300 h-5 w-8" />
-            <HiOutlineDocumentText className="text-slate-300 h-5 w-8" />
+            <label>
+              <FiImage className="text-slate-300 h-5 w-8 cursor-pointer" />
+              <input
+                type="file"
+                className="hidden"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </label>
+            <label>
+              <FiVideo className="text-slate-300 h-5 w-8 cursor-pointer" />
+              <input
+                type="file"
+                className="hidden"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </label>
+            <label>
+              <HiOutlineDocumentText className="text-slate-300 h-5 w-8 cursor-pointer" />
+              <input
+                type="file"
+                className="hidden"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </label>
           </div>
           <button
             type="submit"

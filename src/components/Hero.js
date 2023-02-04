@@ -26,7 +26,7 @@ export default function Hero() {
             Feeling Excited?
           </h3>
           <Link to={"/home"}>
-            <button className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 border-2 border-white shadow-[7px_7px] hover:shadow-[0px_0px] shadow-blue-700 text-slate-50 rounded-lg font-semibold  transition-all ease-out duration-150">
+            <button className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 bg-purple-800 bg-opacity-40 border-2 border-white hover:bg-opacity-100 hover:border-purple-800 text-slate-50 rounded-full font-semibold  transition-all ease-out duration-150">
               Get onboard! 🚂
             </button>
           </Link>
