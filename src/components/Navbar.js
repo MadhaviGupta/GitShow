@@ -1,11 +1,37 @@
 import logo from "../assets/logo1.png";
-import { Link } from "react-router-dom";
 import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, provider } from "../firebase.config";
+import firebase from "firebase";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  function authenticateUser() {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result.additionalUserInfo.profile);
+        navigate("/home");
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode + errorMessage);
+      });
+  }
+
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in");
+    } else {
+      console.log("User is signed out");
+    }
+  });
+
   let Links = [
     { name: "Features", link: "#" },
     { name: "People", link: "#" },
@@ -47,14 +73,14 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="md:w-1/12 flex items-center justify-around w-4/12 mx-4">
-        <Link
-          className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150"
-          to={"/home"}
-        >
-          <button className="flex items-center justify-evenly w-20 m-auto">
+        <div className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150">
+          <button
+            onClick={authenticateUser}
+            className="flex items-center justify-evenly w-20 m-auto"
+          >
             Login <FiGithub />
           </button>
-        </Link>
+        </div>
       </div>
     </nav>
   );

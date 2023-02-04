@@ -1,5 +1,4 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
 import { BiSearchAlt } from "react-icons/bi";
 import TopProfile from "../components/TopProfile";
 import TopProjects from "../components/TopProjects";
@@ -19,7 +18,7 @@ export default function Explore() {
                 <BiSearchAlt className="my-5 w-8 h-8 text-white hover:text-blue-200" />
               </button>
             </div>
-            
+
             <TopProjects />
             <TopProfile />
           </div>

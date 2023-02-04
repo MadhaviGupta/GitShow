@@ -1,6 +1,23 @@
 import { SlLocationPin } from "react-icons/sl";
 import { BsLink45Deg } from "react-icons/bs";
+import firebase from "firebase";
+import { useNavigate } from "react-router-dom";
 export default function ProfileCard() {
+  const navigate = useNavigate();
+  function githubSignout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(
+        function () {
+          console.log("Signout successful!");
+          navigate("/");
+        },
+        function (error) {
+          console.log("Signout failed");
+        }
+      );
+  }
   return (
     <div className="w-2/12 fixed right-48 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-6 md:flex flex-col text-center justify-center">
       <div className="flex flex-col items-center text-white">
@@ -33,6 +50,12 @@ export default function ProfileCard() {
           <span className="font-semibold mx-1.5">15 following</span>
         </div>
       </div>
+      <button
+        onClick={githubSignout}
+        className="bg-black bg-opacity-50 hover:bg-opacity-100 text-purple-500 p-4 rounded-lg"
+      >
+        Log Out
+      </button>
     </div>
   );
 }
