@@ -33,9 +33,13 @@ export default function TopProjects() {
           className="rounded-xl my-8"
         ></img>
       </div>
-      <div className="flex w-full">
+      <div className="flex flex-col md:flex-row w-full">
         {projects.map((project) => (
-          <TopProjectCard name={project.name} desc={project.desc} />
+          <TopProjectCard
+            key={project.name}
+            name={project.name}
+            desc={project.desc}
+          />
         ))}
       </div>
     </>

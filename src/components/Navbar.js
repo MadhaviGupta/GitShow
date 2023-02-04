@@ -14,7 +14,7 @@ export default function Navbar() {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result.additionalUserInfo.profile);
+        console.log(result);
         navigate("/home");
       })
       .catch((error) => {
@@ -26,8 +26,10 @@ export default function Navbar() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+      // navigate("/home");
       console.log("User is signed in");
     } else {
+      // navigate("/");
       console.log("User is signed out");
     }
   });
@@ -41,8 +43,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav className="flex px-2 items-center justify-between md:justify-around h-20 md:h-28 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
-      <div className="w-2/12 h-full md:w-4/6 flex justify-start font-manrope">
-        <div className="md:p-0 md:w-2/12 w-7/12 p-0.5 md:flex content-center items-center">
+      <div className="w-2/12 h-full md:w-4/6 flex justify-start font-manrope items-center">
+        <div className="md:p-0 md:w-2/12 w-10/12 md:flex content-center items-center">
           <img
             className="md:w-28 md:h-28 md:p-4 p-1"
             src={logo}

@@ -38,10 +38,11 @@ export default function TopProfile() {
           className="rounded-xl my-10"
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex flex-col md:flex-row justify-center">
         {user.slice(0, 2).map((userObj) => (
           <a href={`https://www.github.com/${userObj.login}`}>
             <TopProfileCard
+              key={userObj.name}
               name={userObj.name}
               username={userObj.login}
               location={userObj.location}
