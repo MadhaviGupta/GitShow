@@ -1,33 +1,15 @@
 import harry from "../assets/harry.png";
-import { useNavigate } from "react-router-dom";
-import { auth, provider } from "../firebase.config";
-import firebase from "firebase";
-export default function Hero() {
-  const navigate = useNavigate();
 
-  function authenticateUser() {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        navigate("/home");
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode + errorMessage);
-      });
-  }
-
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // navigate("/home");
-      console.log("User is signed in");
-    } else {
-      // navigate("/");
-      console.log("User is signed out");
-    }
-  });
+export default function Hero(props) {
+  // firebase.auth().onAuthStateChanged(function (user) {
+  //   if (user) {
+  //     // navigate("/home");
+  //     console.log("User is signed in");
+  //   } else {
+  //     // navigate("/");
+  //     console.log("User is signed out");
+  //   }
+  // });
 
   return (
     <div className="md:w-full flex flex-col md:flex-row m-auto rounded-xl">
@@ -56,7 +38,7 @@ export default function Hero() {
           </h3>
           <div>
             <button
-              onClick={authenticateUser}
+              onClick={props.authenticateUser}
               className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 bg-purple-800 bg-opacity-40 border-2  hover:bg-opacity-100 hover:border-purple-800 text-slate-50 rounded-full font-semibold  transition-all ease-out duration-150"
             >
               Get onboard! 🚂

@@ -2,7 +2,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsLink45Deg } from "react-icons/bs";
 import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
-export default function ProfileCard() {
+export default function ProfileCard(props) {
   const navigate = useNavigate();
   function githubSignout() {
     firebase

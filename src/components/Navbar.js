@@ -3,36 +3,17 @@ import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth, provider } from "../firebase.config";
-import firebase from "firebase";
 
-export default function Navbar() {
-  const navigate = useNavigate();
-
-  function authenticateUser() {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        navigate("/home");
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode + errorMessage);
-      });
-  }
-
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // navigate("/home");
-      console.log("User is signed in");
-    } else {
-      // navigate("/");
-      console.log("User is signed out");
-    }
-  });
+export default function Navbar(props) {
+  // firebase.auth().onAuthStateChanged(function (user) {
+  //   if (user) {
+  //     // navigate("/home");
+  //     console.log("User is signed in");
+  //   } else {
+  //     // navigate("/");
+  //     console.log("User is signed out");
+  //   }
+  // });
 
   let Links = [
     { name: "Features", link: "#" },
@@ -77,7 +58,7 @@ export default function Navbar() {
       <div className="md:w-1/12 hidden md:flex items-center justify-around w-4/12 mx-4 mr-6">
         <div className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150">
           <button
-            onClick={authenticateUser}
+            onClick={props.authenticateUser}
             className="flex items-center justify-evenly w-20 m-auto"
           >
             Login <FiGithub />

@@ -29,7 +29,6 @@ export default function Post(props) {
 
   let linkDiv;
   if (props.githubLink || props.liveLink) {
-    console.log("Link Present");
     linkDiv = (
       <div className="flex w-full m-auto my-2 justify-between bg-black bg-opacity-10 rounded-full">
         {props.githubLink && (
