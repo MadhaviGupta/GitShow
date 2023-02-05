@@ -1,10 +1,11 @@
-import { FiHeart, FiSend } from "react-icons/fi";
+import { FiGithub, FiHeart, FiSend } from "react-icons/fi";
 import { FaRegCommentDots, FaHeart } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
 import { RxDotFilled } from "react-icons/rx";
 import { useState } from "react";
+import { HiLink } from "react-icons/hi";
 
 export default function Post(props) {
   const [like, setLike] = useState(false);
@@ -49,8 +50,30 @@ export default function Post(props) {
           {props.description}
         </p>
         {props.image && (
-          <img src={props.image} alt="feed" className="rounded-xl" />
+          <img
+            src={props.image}
+            alt="feed"
+            className="rounded-xl max-h-[22rem]"
+          />
         )}
+        <div className="flex w-1/5 m-auto my-2 justify-between bg-black bg-opacity-30 rounded-full">
+          {props.githubLink && (
+            <a
+              href={props.githubLink}
+              className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2"
+            >
+              <FiGithub className="h-4 w-4" />
+            </a>
+          )}
+          {props.liveLink && (
+            <a
+              href={props.liveLink}
+              className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2"
+            >
+              <HiLink className="h-4 w-4" />
+            </a>
+          )}
+        </div>
       </div>
       <div className=" px-4 flex justify-between bg-black bg-opacity-10 py-2">
         <div className="flex items-center text-xs">

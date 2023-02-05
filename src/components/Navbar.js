@@ -58,14 +58,14 @@ export default function Navbar() {
           {open ? <RxCross1 /> : <HiMenuAlt3 />}
         </div>
         <ul
-          className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
+          className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 opacity-95  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
             open ? "top-20 opacity-100" : "top-[-490px]"
           } md:opacity-100 opacity-20 rounded-lg`}
         >
           {Links.map((link) => (
             <li key={link.name} className="md:my-0 my-6">
               <a
-                className="md:m-5 text-white hover:bg-gradient-to-br hover: from-blue-400 to-orange-500 hover:text-transparent bg-clip-text hover:text-lg"
+                className="md:m-5 text-white bg-gradient-to-br from-blue-400 to-orange-500 hover:text-transparent bg-clip-text"
                 href={link.link}
               >
                 {link.name}
@@ -74,7 +74,7 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="md:w-1/12 flex items-center justify-around w-4/12 mx-4">
+      <div className="md:w-1/12 hidden md:flex items-center justify-around w-4/12 mx-4 mr-6">
         <div className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150">
           <button
             onClick={authenticateUser}

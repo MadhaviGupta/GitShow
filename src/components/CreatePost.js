@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { FiImage, FiVideo } from "react-icons/fi";
-import { HiOutlineDocumentText } from "react-icons/hi";
-import user from "../assets/user.png";
+import { FiImage, FiGithub } from "react-icons/fi";
+import { HiLink } from "react-icons/hi";
 import db from "../firebase.config";
 import firebase from "firebase";
 
 export default function CreatePost() {
   const [input, setInput] = useState("");
-  const [file, setFile] = useState();
+  const [image, setImage] = useState("");
+  const [githubLink, setGithubLink] = useState("");
+  const [liveLink, setLiveLink] = useState("");
+  const [clicked, setClicked] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     db.collection("posts").add({
@@ -16,12 +19,15 @@ export default function CreatePost() {
       username: "HarryPotter",
       bio: "The boy who lived",
       description: input,
-      image:
-        "http://assets1.ignimgs.com/vid/thumbnails/user/2013/12/18/20823568_harry-ron-and-hermione-harry-potter-19115125-1500-1843.jpg",
+      image: image,
+      githubLink: githubLink,
+      liveLink: liveLink,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput("");
-    // alert(input);
+    setImage("");
+    setGithubLink("");
+    setLiveLink("");
   };
 
   return (
@@ -45,36 +51,47 @@ export default function CreatePost() {
           ></input>
         </div>
 
-        <div className="flex w-11/12 ml-4 justify-between">
-          <div className="flex w-2/6 justify-around items-center ml-5">
-            <label>
-              <FiImage className="text-slate-300 h-5 w-8 cursor-pointer" />
-              <input
-                type="file"
-                className="hidden"
-                onChange={(e) => setFile(e.target.files[0])}
-              />
-            </label>
-            <label>
-              <FiVideo className="text-slate-300 h-5 w-8 cursor-pointer" />
-              <input
-                type="file"
-                className="hidden"
-                onChange={(e) => setFile(e.target.files[0])}
-              />
-            </label>
-            <label>
-              <HiOutlineDocumentText className="text-slate-300 h-5 w-8 cursor-pointer" />
-              <input
-                type="file"
-                className="hidden"
-                onChange={(e) => setFile(e.target.files[0])}
-              />
-            </label>
+        <div className={`w-full ${clicked ? "static" : "hidden"}`}>
+          <div className="flex w-full items-center">
+            <FiImage className="w-8 h-8 rounded-[50%] ml-3" />
+            <input
+              className="w-full h-10 m-3 ml-5 p-3 rounded-md bg-blue-400 bg-opacity-10"
+              placeholder="Paste Image Link.."
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            ></input>
           </div>
+          <div className="flex w-full items-center">
+            <FiGithub className="w-8 h-8 ml-3 rounded-[50%]" />
+            <input
+              className="w-full h-10 m-3 p-3 ml-5 rounded-md bg-blue-400 bg-opacity-10"
+              placeholder="Github Repo Link..."
+              value={githubLink}
+              onChange={(e) => setGithubLink(e.target.value)}
+            ></input>
+          </div>
+          <div className="flex w-full items-center">
+            <HiLink className="w-8 h-8 ml-3 rounded-[50%]" />
+            <input
+              className="w-full h-10 m-3 p-3 ml-5 rounded-md bg-blue-400 bg-opacity-10"
+              placeholder="Live Link..."
+              value={liveLink}
+              onChange={(e) => setLiveLink(e.target.value)}
+            ></input>
+          </div>
+        </div>
+
+        <div className="flex w-full justify-end items-center">
+          <button
+            type="button"
+            onClick={() => setClicked(!clicked)}
+            className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:font-semibold"
+          >
+            {clicked ? "Hide" : "Add"} Links
+          </button>
           <button
             type="submit"
-            className="bg-black bg-opacity-80 p-2 rounded-lg w-2/12 text-purple-400 hover:bg-opacity-100 hover:font-semibold"
+            className="bg-black bg-opacity-80 p-2 mx-3 rounded-lg text-purple-400 hover:bg-opacity-100 hover:font-semibold"
           >
             Post
           </button>
