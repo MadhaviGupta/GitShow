@@ -74,7 +74,16 @@ export default function Home() {
             {post.map(
               ({
                 id,
-                data: { logo, name, username, bio, description, image },
+                data: {
+                  logo,
+                  name,
+                  username,
+                  bio,
+                  description,
+                  image,
+                  githubLink,
+                  liveLink,
+                },
               }) => {
                 return (
                   <Post
@@ -85,6 +94,8 @@ export default function Home() {
                     bio={bio}
                     description={description}
                     image={image}
+                    githubLink={githubLink}
+                    liveLink={liveLink}
                   />
                 );
               }
