@@ -41,7 +41,7 @@ export default function Navbar(props) {
         <ul
           className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 opacity-95  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
             open ? "top-20 opacity-100" : "top-[-490px]"
-          } md:opacity-100 opacity-20 rounded-lg`}
+          } md:opacity-100 opacity-90 rounded-lg`}
         >
           {Links.map((link) => (
             <li key={link.name} className="md:my-0 my-6">

@@ -17,16 +17,6 @@ export default function TopProfile() {
 
   return (
     <>
-      {/* <main>
-        <h1>User List</h1>
-        <ul>
-          {user &&
-            user.length > 0 &&
-            user.map((userObj, index) => (
-              <li key={userObj.id}>{userObj.name}</li>
-            ))}
-        </ul>
-      </main> */}
       <div className="text-4xl text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4">
         Most Active GitHub Users
       </div>
