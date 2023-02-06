@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../src/firebase.config";
-import { useEffect, useState } from "react";
 
 export default function App() {
   let userName;
