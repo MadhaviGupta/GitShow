@@ -3,7 +3,7 @@ import { FiLink } from "react-icons/fi";
 import { TfiLocationPin } from "react-icons/tfi";
 import { FaTwitter } from "react-icons/fa";
 import { BsFolder } from "react-icons/bs";
-import { MdOutlineEmail } from "react-icons/md";
+import { ImOffice } from "react-icons/im";
 import { HiUser } from "react-icons/hi";
 export default function SearchProfile(props) {
   return (
@@ -31,9 +31,12 @@ export default function SearchProfile(props) {
             </a>
           </div>
           <div className="flex text-lg m-1.5">
-            <MdOutlineEmail className="m-1 w-5 h-5" />
-            {props.email} | <TfiLocationPin className="m-1 w-5 h-5" />
+            <TfiLocationPin className="m-1 w-5 h-5" />
             {props.location}
+          </div>
+          <div className="flex text-lg m-1.5">
+            <ImOffice className="m-1 w-5 h-5" />
+            {props.company}
           </div>
           <div className="flex text-lg m-1.5">
             <HiUser className="m-1 w-5 h-5" />

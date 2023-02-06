@@ -33,7 +33,7 @@ export default function Explore() {
                 onChange={handleChange}
               ></input>
               <button onClick={handleSearch}>
-                <BiSearchAlt className="my-3 w-8 h-8 text-white hover:text-blue-200" />
+                <BiSearchAlt className="m-3 w-8 h-8 text-white hover:text-blue-200" />
               </button>
             </div>
             <SearchProfile
@@ -42,6 +42,7 @@ export default function Explore() {
               name={user.name}
               login={user.login}
               blog={user.blog}
+              company={user.company}
               email={user.email}
               location={user.location}
               bio={user.bio}
