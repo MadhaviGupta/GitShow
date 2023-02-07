@@ -4,8 +4,12 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { FaTwitter } from "react-icons/fa";
 import { BsFolder } from "react-icons/bs";
 import { ImOffice } from "react-icons/im";
-import { HiUser } from "react-icons/hi";
+import { FaRegUser } from "react-icons/fa";
 export default function SearchProfile(props) {
+  let link = `${props.blog}`;
+  if (link.substring(0, 8) != "https://") {
+    link = "https://" + link;
+  }
   return (
     <>
       <div className="flex justify-center">
@@ -18,36 +22,47 @@ export default function SearchProfile(props) {
           <div key={props.id} className="tracking-wider text-2xl font-semibold">
             {props.name}
           </div>
-          <div className="text-lg italic tracking-wide flex m-2">
+          <div className="md:text-lg italic tracking-wide flex m-2">
             @
             <a href={`https://github.com/${props.login}`} className="underline">
               {props.login}
             </a>
           </div>
+          {props.blog && (
+            <div className="flex md:text-lg m-1.5">
+              <FiLink className="m-1 md:w-5 md:h-5" />
+              <a href={link} className="underline">
+                {props.blog}
+              </a>
+            </div>
+          )}
+          {props.location && (
+            <div className="flex text-lg m-1.5">
+              <TfiLocationPin className="m-1 md:w-5 md:h-5" />
+              {props.location}
+            </div>
+          )}
+          {props.company && (
+            <div className="flex text-lg m-1.5">
+              <ImOffice className="m-1 md:w-5 md:h-5" />
+              {props.company}
+            </div>
+          )}
+          {props.bio && (
+            <div className="flex text-lg m-1.5 justify-center text-center">
+              <FaRegUser className="m-1 md:w-5 md:h-5" />
+              {props.bio}
+            </div>
+          )}
+          {props.twitter_username && (
+            <div className="flex text-lg m-1.5">
+              <FaTwitter className="m-1 md:w-5 md:h-5" />
+              {props.twitter_username}
+            </div>
+          )}
           <div className="flex text-lg m-1.5">
-            <FiLink className="m-1 w-5 h-5" />
-            <a href={`${props.blog}`} className="underline">
-              {props.blog}
-            </a>
-          </div>
-          <div className="flex text-lg m-1.5">
-            <TfiLocationPin className="m-1 w-5 h-5" />
-            {props.location}
-          </div>
-          <div className="flex text-lg m-1.5">
-            <ImOffice className="m-1 w-5 h-5" />
-            {props.company}
-          </div>
-          <div className="flex text-lg m-1.5">
-            <HiUser className="m-1 w-5 h-5" />
-            {props.bio}
-          </div>
-          <div className="flex text-lg m-1.5">
-            <FaTwitter className="m-1 w-5 h-5" />
-            {props.twitter_username}
-          </div>
-          <div className="flex text-lg m-1.5">
-            <BsFolder className="m-1 w-5 h-5" /> {props.public_repos} Repos
+            <BsFolder className="m-1 md:w-5 md:h-5" /> {props.public_repos}{" "}
+            Repos
           </div>
           <div className="text-lg m-1.5">
             <span className="mx-2">Followers: {props.followers}</span> |{" "}
