@@ -60,14 +60,13 @@ export default function Sidebar() {
           </Link>
         </li>
 
-        <li className="md:block hidden w-full mt-5">
+        {/* <li className="md:block hidden w-full mt-5">
           <Link to={"#"}>
             <div className="flex text-purple-500 bg-black bg-opacity-80 hover:bg-opacity-100 hover:font-semibold transition-all ease-in duration-150 rounded-lg p-2 justify-center">
-              {/* <MdOutlineCreate className="m-auto md:m-2" /> */}
               <span className="m-1 hidden md:block">Write Post</span>
             </div>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

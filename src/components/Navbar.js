@@ -3,6 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   // firebase.auth().onAuthStateChanged(function (user) {
@@ -56,14 +57,14 @@ export default function Navbar(props) {
         </ul>
       </div>
       <div className="md:w-1/12 hidden md:flex items-center justify-around w-4/12 mx-4 mr-6">
-        <div className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150">
-          <button
-            onClick={props.authenticateUser}
-            className="flex items-center justify-evenly w-20 m-auto"
-          >
+        <Link
+          to={"/login"}
+          className="text-blue-100 mx-2 py-1 md:py-2 px-2 md:px-4 border-2 rounded-full border-blue-50 hover:bg-black hover:text-white hover:border-black transition-all ease-out duration-150"
+        >
+          <button className="flex items-center justify-evenly w-20 m-auto">
             Login <FiGithub />
           </button>
-        </div>
+        </Link>
       </div>
     </nav>
   );

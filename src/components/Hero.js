@@ -1,16 +1,7 @@
 import harry from "../assets/harry.png";
+import { Link } from "react-router-dom";
 
-export default function Hero(props) {
-  // firebase.auth().onAuthStateChanged(function (user) {
-  //   if (user) {
-  //     // navigate("/home");
-  //     console.log("User is signed in");
-  //   } else {
-  //     // navigate("/");
-  //     console.log("User is signed out");
-  //   }
-  // });
-
+export default function Hero() {
   return (
     <div className="md:w-full flex flex-col md:flex-row m-auto rounded-xl">
       <img
@@ -36,14 +27,11 @@ export default function Hero(props) {
           <h3 className="text-3xl text-blue-200 mb-5 font-manrope font-bold">
             Feeling Excited?
           </h3>
-          <div>
-            <button
-              onClick={props.authenticateUser}
-              className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 bg-purple-800 bg-opacity-40 border-2  hover:bg-opacity-100 hover:border-purple-800 text-slate-50 rounded-full font-semibold  transition-all ease-out duration-150"
-            >
+          <Link to={"/login"}>
+            <button className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 bg-purple-800 bg-opacity-40 border-2  hover:bg-opacity-100 hover:border-purple-800 text-slate-50 rounded-full font-semibold  transition-all ease-out duration-150">
               Get onboard! 🚂
             </button>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="hidden md:block md:absolute top-48 right-40">

@@ -8,10 +8,10 @@ export default function Explore() {
   const [searchip, setSearchIp] = useState();
 
   const [user, setUser] = useState();
-  const fetchData = () => {
-    return fetch(`https://api.github.com/users/${value}`)
-      .then((response) => response.json())
-      .then((data) => setUser(data));
+  const fetchData = async () => {
+    const response = await fetch(`https://api.github.com/users/${value}`);
+    const data = await response.json();
+    return setUser(data);
   };
   let value;
   const handleSearch = (e) => {

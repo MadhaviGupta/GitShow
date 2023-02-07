@@ -4,7 +4,7 @@ import { HiLink } from "react-icons/hi";
 import db from "../firebase.config";
 import firebase from "firebase";
 
-export default function CreatePost() {
+export default function CreatePost(props) {
   const [input, setInput] = useState("");
   const [image, setImage] = useState("");
   const [githubLink, setGithubLink] = useState("");
@@ -14,10 +14,10 @@ export default function CreatePost() {
   const handleSubmit = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      logo: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/09/29/15/hp.jpg?quality=75&width=982&height=726&auto=webp",
-      name: "Harry Potter",
-      username: "HarryPotter",
-      bio: "The boy who lived",
+      logo: props.avatar,
+      name: props.name,
+      username: props.login,
+      bio: props.bio,
       description: input,
       image: image,
       githubLink: githubLink,
@@ -39,7 +39,7 @@ export default function CreatePost() {
       <div className="flex flex-col text-center justify-center items-center">
         <div className="flex w-full items-center">
           <img
-            src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/09/29/15/hp.jpg?quality=75&width=982&height=726&auto=webp"
+            src={props.avatar}
             alt="user"
             className="w-12 h-12 rounded-[50%]"
           />

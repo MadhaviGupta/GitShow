@@ -11,7 +11,7 @@ export default function ProfileCard(props) {
       .then(
         function () {
           console.log("Signout successful!");
-          navigate("/");
+          navigate("/login");
         },
         function (error) {
           console.log("Signout failed");
@@ -23,31 +23,30 @@ export default function ProfileCard(props) {
       <div className="flex flex-col items-center text-white">
         <div className="rounded-full bg-black bg-opacity-30 p-2">
           <img
-            src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/09/29/15/hp.jpg?quality=75&width=982&height=726&auto=webp"
+            src={props.avatar}
             alt="user"
             className="w-16 h-16 rounded-[50%]"
           />
         </div>
-        <p className="text-xl m-1">Harry Potter</p>
-        <p className="text-slate-400 italic text-sm">@HarryPotter</p>
+        <p className="text-xl m-1">{props.name}</p>
+        <p className="text-slate-400 italic text-sm">@{props.login}</p>
         <div className="m-5 flex">
-          <p className="text-sm">
-            The boy who lived!
-            <br />
-            Seeker.
-          </p>
+          <p className="text-sm">{props.bio}</p>
         </div>
         <div className="flex text-sm">
-          <SlLocationPin className="mx-1.5 w-4 h-4 my-0.5" /> Little Whinging,
-          Surrey
+          <SlLocationPin className="mx-1.5 w-4 h-4 my-0.5" /> {props.location}
         </div>
         <div className="flex text-sm my-2">
           <BsLink45Deg className="mx-1.5 w-4 h-4 my-1" />{" "}
-          <a href="#">harrypotter.com</a>
+          <a href={props.blog}>{props.blog}</a>
         </div>
         <div className="flex text-sm m-5">
-          <span className="font-semibold mx-1.5">19 followers</span>
-          <span className="font-semibold mx-1.5">15 following</span>
+          <span className="font-semibold mx-1.5">
+            {props.followers} followers
+          </span>
+          <span className="font-semibold mx-1.5">
+            {props.following} following
+          </span>
         </div>
       </div>
       <button
