@@ -5,8 +5,10 @@ import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
 import NoPost from "../components/NoPost";
 import db from "../firebase.config";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
-export default function Home(props) {
+export default function Home() {
   let width = window.innerWidth;
   const [userData, setUserData] = useState([]);
   const [post, setPost] = useState([]);
@@ -23,8 +25,12 @@ export default function Home(props) {
       });
   }, []);
 
+  const user = useSelector(selectUser);
+
   const fetchData = async () => {
-    const response = await fetch(`https://api.github.com/users/${props.user}`);
+    const response = await fetch(
+      `https://api.github.com/users/${user.username}`
+    );
     const data = await response.json();
     return setUserData(data);
   };
@@ -32,8 +38,6 @@ export default function Home(props) {
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(userData);
 
   if (width > 768) {
     return (

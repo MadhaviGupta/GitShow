@@ -11,7 +11,7 @@ export default function ProfileCard(props) {
       .then(
         function () {
           console.log("Signout successful!");
-          navigate("/login");
+          navigate("/");
         },
         function (error) {
           console.log("Signout failed");

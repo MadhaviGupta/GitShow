@@ -1,5 +1,4 @@
 import harry from "../assets/harry.png";
-import { Link } from "react-router-dom";
 
 export default function Hero(props) {
   return (

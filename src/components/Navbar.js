@@ -3,19 +3,8 @@ import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
-  // firebase.auth().onAuthStateChanged(function (user) {
-  //   if (user) {
-  //     // navigate("/home");
-  //     console.log("User is signed in");
-  //   } else {
-  //     // navigate("/");
-  //     console.log("User is signed out");
-  //   }
-  // });
-
   let Links = [
     { name: "Features", link: "#" },
     { name: "People", link: "#" },

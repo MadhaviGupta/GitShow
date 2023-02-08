@@ -7,7 +7,7 @@ import { ImOffice } from "react-icons/im";
 import { FaRegUser } from "react-icons/fa";
 export default function SearchProfile(props) {
   let link = `${props.blog}`;
-  if (link.substring(0, 8) != "https://") {
+  if (link.substring(0, 8) !== "https://") {
     link = "https://" + link;
   }
   return (
@@ -57,7 +57,12 @@ export default function SearchProfile(props) {
           {props.twitter_username && (
             <div className="flex text-lg m-1.5">
               <FaTwitter className="m-1 md:w-5 md:h-5" />
-              {props.twitter_username}
+              <a
+                href={`https://twitter.com/${props.twitter_username}`}
+                className="underline"
+              >
+                {props.twitter_username}
+              </a>
             </div>
           )}
           <div className="flex text-lg m-1.5">
@@ -68,13 +73,6 @@ export default function SearchProfile(props) {
             <span className="mx-2">Followers: {props.followers}</span> |{" "}
             <span className="mx-2">Following: {props.following}</span>
           </div>
-
-          {/* Repo info if needed to add */}
-          {/* <div>
-                  <a href={`https://api.github.com/users/${user.login}/repos`}>
-                    Get Repo Information
-                  </a>
-                </div> */}
         </div>
       </div>
     </>
