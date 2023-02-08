@@ -11,11 +11,11 @@ export default function App() {
   let user = username;
   return (
     <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route
+      <Route path="/" element={<Landing setUsername={setUsername} />} />
+      {/* <Route
         path="/login"
         element={<Login username={username} setUsername={setUsername} />}
-      />
+      /> */}
       <Route path="/home" element={<Home user={user} />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/profile" element={<Profile />} />

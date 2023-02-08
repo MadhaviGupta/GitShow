@@ -12,6 +12,7 @@ export default function Login(props) {
       auth
         .signInWithPopup(provider)
         .then((result) => {
+          console.log(result.additionalUserInfo.username);
           navigate("/home");
           // console.log(username);
         })
