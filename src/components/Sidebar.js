@@ -5,8 +5,27 @@ import { FiBell } from "react-icons/fi";
 import { FiMessageSquare } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import logo from "../assets/logo1.png";
-
+import { useEffect, useState } from "react";
 export default function Sidebar() {
+  const [active, setActive] = useState("");
+  const path = window.location.pathname;
+  useEffect(() => {
+    if (path === "/home") {
+      setActive("home");
+    }
+    if (path === "/explore") {
+      setActive("explore");
+    }
+    if (path === "/notification") {
+      setActive("notification");
+    }
+    if (path === "/message") {
+      setActive("message");
+    }
+    if (path === "/profile") {
+      setActive("profile");
+    }
+  }, []);
   return (
     <div className="w-full z-50 fixed bottom-0 mt-10 md:top-0 md:left-48 md:w-1/6 md:h-screen bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl md:m-3 md:p-3 flex flex-row md:flex-col md:items-center text-white text-xl">
       <ul className="w-full flex justify-around items-center md:items-start md:flex-col p-2 md:p-0">
@@ -21,7 +40,13 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mt-10 md:mb-2">
           <Link to={"/home"}>
-            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
+            <div
+              className={`flex ${
+                active === "home"
+                  ? "text-purple-400 bg-black rounded-lg"
+                  : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
+              } p-2`}
+            >
               <TiHomeOutline className="md:m-2 m-auto" />
               <span className="m-1 hidden md:block">Home</span>
             </div>
@@ -29,7 +54,13 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/explore"}>
-            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
+            <div
+              className={`flex ${
+                active === "explore"
+                  ? "text-purple-400 bg-black rounded-lg"
+                  : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
+              } p-2`}
+            >
               <BiSearchAlt className="md:m-2 m-auto" />
               <span className="m-1 hidden md:block">Explore</span>
             </div>
@@ -37,7 +68,13 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/notifications"}>
-            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
+            <div
+              className={`flex ${
+                active === "notification"
+                  ? "text-purple-400 bg-black rounded-lg"
+                  : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
+              } p-2`}
+            >
               <FiBell className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Notifications</span>
             </div>
@@ -45,7 +82,13 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/messages"}>
-            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
+            <div
+              className={`flex ${
+                active === "message"
+                  ? "text-purple-400 bg-black rounded-lg"
+                  : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
+              } p-2`}
+            >
               <FiMessageSquare className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Messages</span>
             </div>
@@ -53,7 +96,13 @@ export default function Sidebar() {
         </li>
         <li className="w-full md:mb-2">
           <Link to={"/profile"}>
-            <div className="flex hover:text-purple-400 hover:bg-black hover:rounded-lg p-2">
+            <div
+              className={`flex ${
+                active === "profile"
+                  ? "text-purple-400 bg-black rounded-lg"
+                  : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
+              } p-2`}
+            >
               <FiUser className="m-auto md:m-2" />
               <span className="m-1 hidden md:block">Profile</span>
             </div>
