@@ -38,7 +38,7 @@ export default function ProfileCard(props) {
         </div>
         <div className="flex text-sm my-2">
           <BsLink45Deg className="mx-1.5 w-4 h-4 my-1" />{" "}
-          <a href={props.blog}>{props.blog}</a>
+          <a href={props.blog} className="underline">{props.blog}</a>
         </div>
         <div className="flex text-sm m-5">
           <span className="font-semibold mx-1.5">
