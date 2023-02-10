@@ -22,7 +22,7 @@ export default function Explore() {
   };
   return (
     <>
-      <div className="w-full flex flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover md:justify-end">
+      <div className="w-full font-manrope tracking-wide flex flex-row bg-gradient-to-br from-orange-800 to-blue-900 h-auto bg-cover md:justify-end">
         <Sidebar />
         <div className="flex md:w-5/6 justify-center">
           <div className="md:w-4/6 w-full md:ml-4 mx-2 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3 p-6">

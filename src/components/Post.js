@@ -30,7 +30,7 @@ export default function Post(props) {
   let linkDiv;
   if (props.githubLink || props.liveLink) {
     linkDiv = (
-      <div className="flex w-full m-auto my-2 justify-between bg-black bg-opacity-10 rounded-full">
+      <div className="flex  w-full m-auto my-2 justify-between bg-black bg-opacity-10 rounded-full">
         {props.githubLink && (
           <a
             href={props.githubLink}
@@ -51,7 +51,7 @@ export default function Post(props) {
     );
   }
   return (
-    <div className="flex flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3">
+    <div className="flex font-manrope tracking-wide flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3">
       <div className="w-full flex items-center">
         <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />
         <div className="w-9/12 flex flex-col">

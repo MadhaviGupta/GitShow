@@ -23,7 +23,7 @@ export default function TopProjects() {
 
   return (
     <>
-      <div className="text-4xl text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4">
+      <div className="text-4xl font-inter text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4">
         Find Top GitHub Projects
       </div>
       <div className="flex mx-4 justify-center">

@@ -33,7 +33,7 @@ export default function CreatePost(props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl px-4 py-2 flex flex-col"
+      className="w-full font-manrope tracking-wide h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl px-4 py-2 flex flex-col"
     >
       <h1 className="text-xl font-semibold">Home</h1>
       <div className="flex flex-col text-center justify-center items-center">
