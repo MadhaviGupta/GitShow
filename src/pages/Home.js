@@ -26,11 +26,12 @@ export default function Home() {
   }, []);
 
   const user = useSelector(selectUser);
-
+  let arr = document.cookie.split("=");
+  const userVal = arr[1];
+  let userCookie = userVal.split(";");
+  const userName = userCookie[0];
   const fetchData = async () => {
-    const response = await fetch(
-      `https://api.github.com/users/${user.username}`
-    );
+    const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
     return setUserData(data);
   };

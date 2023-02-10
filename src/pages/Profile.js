@@ -6,10 +6,12 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
+import RepoInfo from "../components/RepoInfo";
 
 export default function Profile(props) {
   const navigate = useNavigate();
   function githubSignout() {
+    document.cookie = "";
     firebase
       .auth()
       .signOut()
@@ -27,10 +29,13 @@ export default function Profile(props) {
 
   const user = useSelector(selectUser);
 
+  let arr = document.cookie.split("=");
+  const userVal = arr[1];
+  let userCookie = userVal.split(";");
+  const userName = userCookie[0];
+
   const fetchData = async () => {
-    const response = await fetch(
-      `https://api.github.com/users/${user.username}`
-    );
+    const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
     return setUserData(data);
   };
@@ -146,13 +151,14 @@ export default function Profile(props) {
           <div className="flex w-full md:w-4/5 mx-auto justify-around">
             <div className="flex items-center p-2">
               <MdGridOn className="text-3xl md:text-lg md:mx-1" />
-              Posts
+              <span className="hidden md:block">Posts</span>
             </div>
             <div className="flex items-center p-2">
               <BsFolder2Open className="text-3xl md:text-lg md:mx-1" />
-              Repos
+              <span className="hidden md:block">Repos </span>
             </div>
           </div>
+          <RepoInfo />
         </div>
       </div>
     </>

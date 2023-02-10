@@ -4,11 +4,11 @@ export default function Hero(props) {
   return (
     <div className="md:w-full flex flex-col md:flex-row m-auto rounded-xl">
       <img
-        className="w-full m-auto rounded-md h-[44rem] md:h-[50rem] opacity-[0.15] md:opacity-25"
+        className="w-full m-auto rounded-md h-[44rem] md:h-[50rem] opacity-20 md:opacity-25"
         src="https://cdn.pixabay.com/photo/2018/06/15/11/16/hogwarts-3476786_960_720.png"
         alt="hero-img"
       ></img>
-      <div className="md:w-6/12 px-10 py-6 absolute top-20 md:top-44 md:left-64">
+      <div className="md:w-6/12 md:px-10 py-6 absolute top-20 md:top-44 md:left-64">
         <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-16 text-center md:text-left">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">

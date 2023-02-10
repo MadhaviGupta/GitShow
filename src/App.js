@@ -11,7 +11,7 @@ import { auth, provider } from "./firebase.config";
 import { useEffect } from "react";
 
 export default function App() {
-  const user = useSelector(selectUser);
+  // const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -21,10 +21,12 @@ export default function App() {
       .signInWithPopup(provider)
       .then((userAuth) => {
         githubUsername = userAuth.additionalUserInfo.username;
+        document.cookie = githubUsername;
+        console.log("Cookie" + document.cookie);
         console.log("App: " + githubUsername);
         dispatch(
           loginUser({
-            username: githubUsername,
+            userObj: githubUsername,
           })
         );
         navigate("/home");
@@ -42,11 +44,9 @@ export default function App() {
   //     if (userAuth) {
   //       dispatch(
   //         loginUser({
-  //           username: githubUsername,
+  // username: githubUsername,
   //         })
   //       );
-  //     } else {
-  //       dispatch(logoutUser());
   //     }
   //   });
   // }, []);
