@@ -22,14 +22,15 @@ export default function RepoInfo() {
   }
   const [userData, setUserData] = useState([]);
 
-  const user = useSelector(selectUser);
+  // const user = useSelector(selectUser);
+  const cookie = document.cookie;
 
   const fetchData = async () => {
     const response = await fetch(
-      `https://api.github.com/users/${user.username}/repos`
+      `https://api.github.com/users/${cookie}/repos`
     );
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return setUserData(data);
   };
   useEffect(() => {
