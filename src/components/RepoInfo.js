@@ -24,13 +24,13 @@ export default function RepoInfo(props) {
   }
   return (
     <>
-      <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-5/6 md:rounded-2xl p-5 md:mt-6 mx-auto text-slate-100">
+      <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-5/6 md:rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100">
         {/* commitcount remaining to add */}
         <div className="flex justify-between">
           <div>
             <a href={props.html_url} className="flex">
               <span className="text-2xl hover:underline">{props.name}</span>
-              <HiOutlineExternalLink className="md:my-[3px] mx-1.5 text-2xl" />
+              <HiOutlineExternalLink className="md:my-[3px] my-[4px] mx-1.5 text-2xl" />
             </a>
             {props.desc && (
               <div className="flex md:mt-2 text-slate-400">{props.desc}</div>
@@ -38,22 +38,22 @@ export default function RepoInfo(props) {
           </div>
           <div className="flex flex-col">
             <div className="flex my-1">
-              <BsStarFill className="md:my-[3px] mx-1.5" />
-              Star: {props.star_count}
+              <BsStarFill className="md:my-[3px] my-[2.5px] mx-1.5" />
+              <span>Star: {props.star_count}</span>
             </div>
             <div className="flex my-1">
-              <BiGitRepoForked className="md:my-[3px] mx-1" />
+              <BiGitRepoForked className="md:my-[3px] my-[2.5px] mx-1" />
               Forks: {props.forks_count}
             </div>
           </div>
         </div>
-        <div className="flex my-4">
+        <div className="flex my-4 justify-between">
           <div className="flex">
-            <BsCodeSlash className="md:my-[3px] mx-1.5" />
+            <BsCodeSlash className="md:my-[3px] my-[4px] mx-1.5" />
             Language: {props.language}
           </div>
-          <div className="flex mx-5">
-            <AiOutlineCode className="md:my-[3px] mx-1.5" />
+          <div className="flex">
+            <AiOutlineCode className="md:my-[3px] my-[2.5px] mx-1.5" />
             <a href={props.clone_url} className="hover:underline">
               Clone URL
             </a>
