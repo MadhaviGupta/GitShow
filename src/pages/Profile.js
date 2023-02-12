@@ -26,7 +26,15 @@ export default function Profile(props) {
       );
   }
   const [userData, setUserData] = useState([]);
-
+  const [repo, setRepo] = useState([]);
+  const [content, setContent] = useState("post");
+  const handleContent = () => {
+    if (content === "post") {
+      setContent("repo");
+    } else {
+      setContent("post");
+    }
+  };
   const user = useSelector(selectUser);
 
   const cookie = document.cookie;
@@ -38,14 +46,23 @@ export default function Profile(props) {
   };
   useEffect(() => {
     fetchData();
+    fetchDataRepo();
   }, []);
+
+  const fetchDataRepo = async () => {
+    const response = await fetch(
+      `https://api.github.com/users/${cookie}/repos`
+    );
+    const data = await response.json();
+    return setRepo(data);
+  };
   let link = `${userData.blog}`;
   if (link.substring(0, 8) !== "https://") {
     link = "https://" + link;
   }
   return (
     <>
-      <div className="flex flex-col md:justify-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-screen bg-cover md:px-40">
+      <div className="flex flex-col md:justify-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover md:px-40">
         <Sidebar />
         <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
           <div className="flex flex-col mt-8">
@@ -146,16 +163,35 @@ export default function Profile(props) {
           </div>
           <div className="mt-4 md:mt-20 h-[1px] bg-slate-700 md:w-5/6 mx-auto"></div>
           <div className="flex w-full md:w-4/5 mx-auto justify-around">
-            <div className="flex items-center p-2">
-              <MdGridOn className="text-3xl md:text-lg md:mx-1" />
+            <div
+              className="flex items-center p-2 cursor-pointer hover:text-slate-300"
+              onClick={handleContent}
+            >
+              <MdGridOn className="text-3xl md:text-lg md:mx-2" />
               <span className="hidden md:block">Posts</span>
             </div>
-            <div className="flex items-center p-2">
-              <BsFolder2Open className="text-3xl md:text-lg md:mx-1" />
-              <span className="hidden md:block">Repos </span>
+            <div
+              className="flex items-center p-2 cursor-pointer hover:text-slate-300"
+              onClick={handleContent}
+            >
+              <BsFolder2Open className="text-3xl md:text-lg md:mx-2" />
+              <span className="hidden md:block">Repositories </span>
             </div>
           </div>
-          <RepoInfo />
+          {content === "post"
+            ? "Posts yet to add"
+            : repo.map((repos) => (
+                <RepoInfo
+                  key={repos.id}
+                  name={repos.name}
+                  desc={repos.description}
+                  url={repos.html_url}
+                  star_count={repos.stargazers_count}
+                  forks_count={repos.forks_count}
+                  language={repos.language}
+                  clone_url={repos.clone_url}
+                />
+              ))}
         </div>
       </div>
     </>
