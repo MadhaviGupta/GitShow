@@ -32,11 +32,11 @@ export default function Post(props) {
   let linkDiv;
   if (props.githubLink || props.liveLink) {
     linkDiv = (
-      <div className="flex my-2 bg-opacity-10 rounded-full justify-end">
+      <div className="flex my-2 bg-opacity-10 rounded-full justify-between">
         {props.githubLink && (
           <a
             href={props.githubLink}
-            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out"
+            className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out"
           >
             <FiGithub className="h-4 w-4" />
           </a>
@@ -44,7 +44,7 @@ export default function Post(props) {
         {props.liveLink && (
           <a
             href={props.liveLink}
-            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out flex justify-end"
+            className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out flex justify-end"
           >
             <HiLink className="h-4 w-4" />
           </a>
@@ -56,21 +56,20 @@ export default function Post(props) {
     <div
       className={`bg-black font-manrope rounded-md tracking-wide bg-opacity-20 w-full md:w-${props.width} md:rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100`}
     >
-      {/* <div className="flex font-manrope tracking-wide flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3"> */}
       <div className="w-full flex items-center">
         <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />
         <div className="w-9/12 flex flex-col">
-          <div className="flex items-center ml-4">
+          <div className="md:flex items-center ml-4">
             <h4 className="mr-2">{props.name} </h4>
-            <p className="text-slate-500 text-sm font-manrope">
+            <p className="text-slate-400 md:text-sm text-xs font-manrope">
               @{props.username}
             </p>
           </div>
-          <p className="text-slate-300 text-xs ml-4">{props.bio}</p>
+          <p className="text-slate-300 text-xs ml-4 mt-1">{props.bio}</p>
         </div>
         {linkDiv}
         {props.username == cookie && (
-          <div className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end">
+          <div className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end">
             <MdOutlineDelete className="" />
           </div>
         )}

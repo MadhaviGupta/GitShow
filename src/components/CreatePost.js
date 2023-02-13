@@ -13,21 +13,25 @@ export default function CreatePost(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    db.collection("posts").add({
-      logo: props.avatar,
-      name: props.name,
-      username: props.login,
-      bio: props.bio,
-      description: input,
-      image: image,
-      githubLink: githubLink,
-      liveLink: liveLink,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setInput("");
-    setImage("");
-    setGithubLink("");
-    setLiveLink("");
+    if (input === "") {
+      alert("Enter something to post!");
+    } else {
+      db.collection("posts").add({
+        logo: props.avatar,
+        name: props.name,
+        username: props.login,
+        bio: props.bio,
+        description: input,
+        image: image,
+        githubLink: githubLink,
+        liveLink: liveLink,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      setInput("");
+      setImage("");
+      setGithubLink("");
+      setLiveLink("");
+    }
   };
 
   return (
@@ -85,13 +89,13 @@ export default function CreatePost(props) {
           <button
             type="button"
             onClick={() => setClicked(!clicked)}
-            className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:font-semibold"
+            className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
           >
             {clicked ? "Hide" : "Add"} Links
           </button>
           <button
             type="submit"
-            className="bg-black bg-opacity-80 p-2 mx-3 rounded-lg text-purple-400 hover:bg-opacity-100 hover:font-semibold"
+            className="bg-black bg-opacity-80 p-2 mx-3 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
           >
             Post
           </button>

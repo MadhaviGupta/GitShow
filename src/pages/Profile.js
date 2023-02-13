@@ -141,7 +141,7 @@ export default function Profile(props) {
                     <div className="flex">Company: {userData.company}</div>
                   )}
                   {userData.bio && (
-                    <div className="flex mt-5">{userData.bio}</div>
+                    <div className="flex mt-1">Bio: {userData.bio}</div>
                   )}
                 </div>
               </div>
