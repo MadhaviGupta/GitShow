@@ -24,7 +24,7 @@ export default function RepoInfo(props) {
   }
   return (
     <>
-      <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-5/6 md:rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100">
+      <div className="bg-black font-manrope rounded-md tracking-wide bg-opacity-20 w-full md:w-5/6 md:rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100">
         {/* commitcount remaining to add */}
         <div className="flex justify-between">
           <div>

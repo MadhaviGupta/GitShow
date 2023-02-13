@@ -28,13 +28,7 @@ export default function Profile(props) {
   const [userData, setUserData] = useState([]);
   const [repo, setRepo] = useState([]);
   const [content, setContent] = useState("post");
-  const handleContent = () => {
-    if (content === "post") {
-      setContent("repo");
-    } else {
-      setContent("post");
-    }
-  };
+
   const user = useSelector(selectUser);
 
   const cookie = document.cookie;
@@ -165,14 +159,14 @@ export default function Profile(props) {
           <div className="flex w-full md:w-4/5 mx-auto justify-around">
             <div
               className="flex items-center p-2 cursor-pointer hover:text-slate-300"
-              onClick={handleContent}
+              onClick={() => setContent("post")}
             >
               <MdGridOn className="text-3xl md:text-lg md:mx-2" />
               <span className="hidden md:block">Posts</span>
             </div>
             <div
               className="flex items-center p-2 cursor-pointer hover:text-slate-300"
-              onClick={handleContent}
+              onClick={() => setContent("repo")}
             >
               <BsFolder2Open className="text-3xl md:text-lg md:mx-2" />
               <span className="hidden md:block">Repositories </span>
@@ -193,6 +187,7 @@ export default function Profile(props) {
                 />
               ))}
         </div>
+        <div className="md:hidden mt-12"></div>
       </div>
     </>
   );
