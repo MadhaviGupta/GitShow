@@ -53,7 +53,10 @@ export default function Post(props) {
     );
   }
   return (
-    <div className="flex font-manrope tracking-wide flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3">
+    <div
+      className={`bg-black font-manrope rounded-md tracking-wide bg-opacity-20 w-full md:w-${props.width} md:rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100`}
+    >
+      {/* <div className="flex font-manrope tracking-wide flex-col p-4 bg-black bg-opacity-20 rounded-2xl mt-2 mb-4 md:mb-3"> */}
       <div className="w-full flex items-center">
         <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />
         <div className="w-9/12 flex flex-col">

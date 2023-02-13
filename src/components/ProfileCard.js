@@ -19,6 +19,10 @@ export default function ProfileCard(props) {
         }
       );
   }
+  let link = `${props.blog}`;
+  if (link.substring(0, 8) !== "https://") {
+    link = "https://" + link;
+  }
   return (
     <div className="w-2/12 fixed right-48 bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl m-3 p-6 md:flex flex-col text-center justify-center">
       <div className="flex flex-col items-center text-white">
@@ -39,7 +43,7 @@ export default function ProfileCard(props) {
         </div>
         <div className="flex text-sm my-2">
           <BsLink45Deg className="mx-1.5 w-4 h-4 my-1" />{" "}
-          <a href={props.blog} className="underline">
+          <a href={link} className="underline">
             {props.blog}
           </a>
         </div>

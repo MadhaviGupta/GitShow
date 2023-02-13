@@ -219,6 +219,7 @@ export default function Profile(props) {
                       image={image}
                       githubLink={githubLink}
                       liveLink={liveLink}
+                      width={"5/6"}
                     />
                   );
                 }
@@ -236,7 +237,6 @@ export default function Profile(props) {
                 />
               ))}
         </div>
-        <div className="md:hidden mt-12"></div>
       </div>
     </>
   );

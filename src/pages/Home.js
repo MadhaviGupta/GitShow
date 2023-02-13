@@ -77,6 +77,7 @@ export default function Home() {
                     image={image}
                     githubLink={githubLink}
                     liveLink={liveLink}
+                    width={"full"}
                   />
                 );
               }
