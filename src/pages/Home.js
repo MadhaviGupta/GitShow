@@ -47,7 +47,6 @@ export default function Home() {
           <div className="md:w-6/12 m-3 ml-0 md:m-3 text-white px-4 py-1 rounded-2xl">
             <CreatePost
               avatar={userData.avatar_url}
-              id={userData.id}
               name={userData.name}
               login={userData.login}
               bio={userData.bio}
@@ -69,6 +68,7 @@ export default function Home() {
                 return (
                   <Post
                     key={id}
+                    id={id}
                     logo={logo}
                     name={name}
                     username={username}
@@ -107,7 +107,12 @@ export default function Home() {
       <>
         <div className="flex flex-col items-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover md:px-40">
           <div className="w-full mt-3 px-2 md:w-3/6 ml-0 md:ml-3 text-white">
-            <CreatePost avatar={userData.avatar_url} />
+            <CreatePost
+              avatar={userData.avatar_url}
+              name={userData.name}
+              login={userData.login}
+              bio={userData.bio}
+            />
             {post.map(
               ({
                 id,
@@ -125,6 +130,7 @@ export default function Home() {
                 return (
                   <Post
                     key={id}
+                    id={id}
                     logo={logo}
                     name={name}
                     username={username}

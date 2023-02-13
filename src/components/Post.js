@@ -4,9 +4,10 @@ import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
 import { RxDotFilled } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
+import db from "../firebase.config";
 
 export default function Post(props) {
   const [like, setLike] = useState(false);
@@ -26,6 +27,9 @@ export default function Post(props) {
   const handleRepost = () => {
     setRepost(!repost);
     repost ? setRepostCount(0) : setRepostCount(repostCount + 1);
+  };
+  const handleDelete = () => {
+    db.collection("posts").doc(props.id).delete();
   };
   const cookie = document.cookie;
 
@@ -69,7 +73,10 @@ export default function Post(props) {
         </div>
         {linkDiv}
         {props.username == cookie && (
-          <div className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end">
+          <div
+            onClick={handleDelete}
+            className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end"
+          >
             <MdOutlineDelete className="" />
           </div>
         )}
