@@ -7,6 +7,8 @@ import { selectUser } from "../features/userSlice";
 import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
 import RepoInfo from "../components/RepoInfo";
+import Post from "../components/Post";
+import db from "../firebase.config";
 
 export default function Profile(props) {
   const navigate = useNavigate();
@@ -28,6 +30,7 @@ export default function Profile(props) {
   const [userData, setUserData] = useState([]);
   const [repo, setRepo] = useState([]);
   const [content, setContent] = useState("post");
+  const [post, setPost] = useState([]);
 
   const user = useSelector(selectUser);
 
@@ -41,6 +44,20 @@ export default function Profile(props) {
   useEffect(() => {
     fetchData();
     fetchDataRepo();
+  }, []);
+
+  useEffect(() => {
+    db.collection("posts")
+      .where("username", "==", cookie)
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setPost(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
   }, []);
 
   const fetchDataRepo = async () => {
@@ -158,14 +175,18 @@ export default function Profile(props) {
           <div className="mt-4 md:mt-20 h-[1px] bg-slate-700 md:w-5/6 mx-auto"></div>
           <div className="flex w-full md:w-4/5 mx-auto justify-around">
             <div
-              className="flex items-center p-2 cursor-pointer hover:text-slate-300"
+              className={`flex items-center p-2 cursor-pointer hover:text-slate-300 ${
+                content === "post" && "border-b-[1px] border-white"
+              }`}
               onClick={() => setContent("post")}
             >
               <MdGridOn className="text-3xl md:text-lg md:mx-2" />
               <span className="hidden md:block">Posts</span>
             </div>
             <div
-              className="flex items-center p-2 cursor-pointer hover:text-slate-300"
+              className={`flex items-center p-2 cursor-pointer hover:text-slate-300 ${
+                content === "repo" && "border-b-[1px] border-white"
+              }`}
               onClick={() => setContent("repo")}
             >
               <BsFolder2Open className="text-3xl md:text-lg md:mx-2" />
@@ -173,7 +194,35 @@ export default function Profile(props) {
             </div>
           </div>
           {content === "post"
-            ? "Posts yet to add"
+            ? post.map(
+                ({
+                  id,
+                  data: {
+                    logo,
+                    name,
+                    username,
+                    bio,
+                    description,
+                    image,
+                    githubLink,
+                    liveLink,
+                  },
+                }) => {
+                  return (
+                    <Post
+                      key={id}
+                      logo={logo}
+                      name={name}
+                      username={username}
+                      bio={bio}
+                      description={description}
+                      image={image}
+                      githubLink={githubLink}
+                      liveLink={liveLink}
+                    />
+                  );
+                }
+              )
             : repo.map((repos) => (
                 <RepoInfo
                   key={repos.id}

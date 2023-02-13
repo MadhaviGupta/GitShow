@@ -6,6 +6,7 @@ import { BiHeart } from "react-icons/bi";
 import { RxDotFilled } from "react-icons/rx";
 import { useState } from "react";
 import { HiLink } from "react-icons/hi";
+import { MdOutlineDelete } from "react-icons/md";
 
 export default function Post(props) {
   const [like, setLike] = useState(false);
@@ -26,15 +27,16 @@ export default function Post(props) {
     setRepost(!repost);
     repost ? setRepostCount(0) : setRepostCount(repostCount + 1);
   };
+  const cookie = document.cookie;
 
   let linkDiv;
   if (props.githubLink || props.liveLink) {
     linkDiv = (
-      <div className="flex  w-full m-auto my-2 justify-between bg-black bg-opacity-10 rounded-full">
+      <div className="flex my-2 bg-opacity-10 rounded-full justify-end">
         {props.githubLink && (
           <a
             href={props.githubLink}
-            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 hover:w-32 transition-all duration-200 ease-out"
+            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out"
           >
             <FiGithub className="h-4 w-4" />
           </a>
@@ -42,7 +44,7 @@ export default function Post(props) {
         {props.liveLink && (
           <a
             href={props.liveLink}
-            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 hover:w-32 transition-all duration-200 ease-out flex justify-end"
+            className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out flex justify-end"
           >
             <HiLink className="h-4 w-4" />
           </a>
@@ -63,9 +65,12 @@ export default function Post(props) {
           </div>
           <p className="text-slate-300 text-xs ml-4">{props.bio}</p>
         </div>
-        <div className="w-1/6 flex justify-end">
-          <BsThreeDots className="" />
-        </div>
+        {linkDiv}
+        {props.username == cookie && (
+          <div className="m-1 rounded-full bg-purple-400 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end">
+            <MdOutlineDelete className="" />
+          </div>
+        )}
       </div>
       <div className="flex flex-col py-4">
         <p className="my-3 md:mb-2 md:mt-0 text-sm tracking-wide">
@@ -78,7 +83,6 @@ export default function Post(props) {
             className="rounded-xl max-h-[22rem]"
           />
         )}
-        {linkDiv}
       </div>
 
       <div className=" px-4 flex justify-between bg-black bg-opacity-10 py-2">
