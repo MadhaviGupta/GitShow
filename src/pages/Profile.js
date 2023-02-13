@@ -76,6 +76,9 @@ export default function Profile(props) {
       <div className="flex flex-col md:justify-center md:flex-row bg-gradient-to-br from-orange-800 to-blue-900 font-inter h-auto bg-cover md:px-40">
         <Sidebar />
         <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
+          <h1 className="text-2xl font-semibold w-3/12 flex justify-center">
+            Profile
+          </h1>
           <div className="flex flex-col mt-8">
             <div className="flex items-start justify-around">
               <div className="w-3/6 md:w-2/6 flex flex-col justify-center items-center">
@@ -172,7 +175,7 @@ export default function Profile(props) {
               Following: {userData.following}
             </span>
           </div>
-          <div className="mt-4 md:mt-20 h-[1px] bg-slate-700 md:w-5/6 mx-auto"></div>
+          <div className="mt-4 md:mt-20 h-[1px] bg-slate-600 md:w-5/6 mx-auto"></div>
           <div className="flex w-full md:w-4/5 mx-auto justify-around">
             <div
               className={`flex items-center p-2 cursor-pointer hover:text-slate-300 ${
@@ -236,6 +239,7 @@ export default function Profile(props) {
                   clone_url={repos.clone_url}
                 />
               ))}
+          <div className="mt-10"></div>
         </div>
       </div>
     </>
