@@ -21,6 +21,8 @@ export default function CreatePost(props) {
         name: props.name,
         username: props.login,
         bio: props.bio,
+        like: 0,
+        likedBy: [],
         description: input,
         image: image,
         githubLink: githubLink,

@@ -8,18 +8,39 @@ import { useEffect, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
 import db from "../firebase.config";
+import firebase from "firebase";
 
 export default function Post(props) {
   const [like, setLike] = useState(false);
   const [comnt, setComment] = useState(false);
   const [repost, setRepost] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState(props.like);
   const [commentCount, setCommentCount] = useState(0);
   const [repostCount, setRepostCount] = useState(0);
+
   const handleLike = () => {
     setLike(!like);
-    like ? setLikeCount(0) : setLikeCount(likeCount + 1);
+    like ? setLikeCount(likeCount - 1) : setLikeCount(likeCount + 1);
+    like && props.likedBy.push(props.username);
   };
+
+  let isLiked;
+  like
+    ? (isLiked = firebase.firestore.FieldValue.arrayUnion(props.username))
+    : (isLiked = firebase.firestore.FieldValue.arrayRemove(props.username));
+
+  useEffect(() => {
+    props.likedBy.includes(props.username) ? setLike(!like) : setLike(like);
+  }, []);
+
+  useEffect(() => {
+    const postLike = db.collection("posts").doc(props.id);
+    const res = postLike.update({
+      like: likeCount,
+      likedBy: isLiked,
+    });
+  }, [likeCount, isLiked]);
+
   const handleComment = () => {
     setComment(!comnt);
     comnt ? setCommentCount(0) : setCommentCount(commentCount + 1);
@@ -40,6 +61,7 @@ export default function Post(props) {
         {props.githubLink && (
           <a
             href={props.githubLink}
+            target="_blank"
             className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out"
           >
             <FiGithub className="h-4 w-4" />
@@ -48,6 +70,7 @@ export default function Post(props) {
         {props.liveLink && (
           <a
             href={props.liveLink}
+            target="_blank"
             className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out flex justify-end"
           >
             <HiLink className="h-4 w-4" />
@@ -71,15 +94,17 @@ export default function Post(props) {
           </div>
           <p className="text-slate-300 text-xs ml-4 mt-1">{props.bio}</p>
         </div>
-        {linkDiv}
-        {props.username == cookie && (
-          <div
-            onClick={handleDelete}
-            className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer flex justify-end"
-          >
-            <MdOutlineDelete className="" />
-          </div>
-        )}
+        <div className="flex w-2/6 items-center justify-end">
+          {linkDiv}
+          {props.username == cookie && (
+            <div
+              onClick={handleDelete}
+              className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer h-max"
+            >
+              <MdOutlineDelete className="" />
+            </div>
+          )}
+        </div>
       </div>
       <div className="flex flex-col py-4">
         <p className="my-3 md:mb-2 md:mt-0 text-sm tracking-wide">
@@ -97,7 +122,7 @@ export default function Post(props) {
       <div className=" px-4 flex justify-between bg-black bg-opacity-10 py-2">
         <div className="flex items-center text-xs">
           <BiHeart className=" text-red-700" />
-          <h5 className="text-slate-200 ml-1">{likeCount}</h5>
+          <h5 className="text-slate-200 ml-1">{props.like}</h5>
         </div>
         <div className="flex items-center text-xs">
           <p>{commentCount} comments</p>

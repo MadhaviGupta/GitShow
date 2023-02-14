@@ -59,6 +59,8 @@ export default function Home() {
                   name,
                   username,
                   bio,
+                  like,
+                  likedBy,
                   description,
                   image,
                   githubLink,
@@ -72,6 +74,8 @@ export default function Home() {
                     logo={logo}
                     name={name}
                     username={username}
+                    like={like}
+                    likedBy={likedBy}
                     bio={bio}
                     description={description}
                     image={image}
@@ -121,6 +125,8 @@ export default function Home() {
                   name,
                   username,
                   bio,
+                  like,
+                  likedBy,
                   description,
                   image,
                   githubLink,
@@ -135,6 +141,8 @@ export default function Home() {
                     name={name}
                     username={username}
                     bio={bio}
+                    like={like}
+                    likedBy={likedBy}
                     description={description}
                     image={image}
                     githubLink={githubLink}
