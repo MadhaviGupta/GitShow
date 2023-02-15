@@ -18,19 +18,22 @@ export default function Post(props) {
   const [commentCount, setCommentCount] = useState(0);
   const [repostCount, setRepostCount] = useState(0);
 
+  const cookie = document.cookie;
+
+  // handling like functionality
   const handleLike = () => {
     setLike(!like);
     like ? setLikeCount(likeCount - 1) : setLikeCount(likeCount + 1);
-    like && props.likedBy.push(props.username);
+    like && props.likedBy.push(cookie);
   };
 
   let isLiked;
   like
-    ? (isLiked = firebase.firestore.FieldValue.arrayUnion(props.username))
-    : (isLiked = firebase.firestore.FieldValue.arrayRemove(props.username));
+    ? (isLiked = firebase.firestore.FieldValue.arrayUnion(cookie))
+    : (isLiked = firebase.firestore.FieldValue.arrayRemove(cookie));
 
   useEffect(() => {
-    props.likedBy.includes(props.username) ? setLike(!like) : setLike(like);
+    props.likedBy.includes(cookie) ? setLike(!like) : setLike(like);
   }, []);
 
   useEffect(() => {
@@ -49,11 +52,13 @@ export default function Post(props) {
     setRepost(!repost);
     repost ? setRepostCount(0) : setRepostCount(repostCount + 1);
   };
+
+  //handling delete
   const handleDelete = () => {
     db.collection("posts").doc(props.id).delete();
   };
-  const cookie = document.cookie;
 
+  //JSX for the links present in the post
   let linkDiv;
   if (props.githubLink || props.liveLink) {
     linkDiv = (
@@ -79,6 +84,7 @@ export default function Post(props) {
       </div>
     );
   }
+
   return (
     <div
       className={`bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-${props.width} rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100`}
@@ -118,7 +124,7 @@ export default function Post(props) {
           />
         )}
       </div>
-
+      {/* count section for likes, comments */}
       <div className=" px-4 flex justify-between bg-black bg-opacity-10 py-2">
         <div className="flex items-center text-xs">
           <BiHeart className=" text-red-700" />
@@ -130,6 +136,7 @@ export default function Post(props) {
           <p>{repostCount} reposts</p>
         </div>
       </div>
+      {/* section where like, comment, share, repost button are present */}
       <div className="flex mt-4 justify-around text-sm">
         <div onClick={handleLike} className="flex ">
           {like ? (

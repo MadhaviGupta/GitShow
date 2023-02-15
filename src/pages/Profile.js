@@ -205,6 +205,8 @@ export default function Profile(props) {
                     name,
                     username,
                     bio,
+                    like,
+                    likedBy,
                     description,
                     image,
                     githubLink,
@@ -218,6 +220,8 @@ export default function Profile(props) {
                       name={name}
                       username={username}
                       bio={bio}
+                      like={like}
+                      likedBy={likedBy}
                       description={description}
                       image={image}
                       githubLink={githubLink}
