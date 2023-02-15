@@ -33,7 +33,7 @@ export default function Post(props) {
     : (isLiked = firebase.firestore.FieldValue.arrayRemove(cookie));
 
   useEffect(() => {
-    props.likedBy.includes(cookie) ? setLike(!like) : setLike(like);
+    props.likedBy.includes(cookie) ? setLike(true) : setLike(false);
   }, []);
 
   useEffect(() => {
