@@ -1,6 +1,5 @@
 import { FiGithub, FiHeart, FiSend } from "react-icons/fi";
 import { FaRegCommentDots, FaHeart } from "react-icons/fa";
-import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
 import { RxDotFilled } from "react-icons/rx";
@@ -9,7 +8,7 @@ import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
 import db from "../firebase.config";
 import firebase from "firebase";
-
+// debugger;
 export default function Post(props) {
   const [like, setLike] = useState(false);
   const [comnt, setComment] = useState(false);
@@ -17,6 +16,7 @@ export default function Post(props) {
   const [likeCount, setLikeCount] = useState(props.like);
   const [commentCount, setCommentCount] = useState(0);
   const [repostCount, setRepostCount] = useState(0);
+  const [showComment, setShowComment] = useState(false);
 
   const cookie = document.cookie;
 
@@ -38,19 +38,18 @@ export default function Post(props) {
 
   useEffect(() => {
     const postLike = db.collection("posts").doc(props.id);
-    const res = postLike.update({
+    postLike.update({
       like: likeCount,
       likedBy: isLiked,
     });
   }, [likeCount, isLiked]);
 
+  //handling comment section
   const handleComment = () => {
     setComment(!comnt);
-    comnt ? setCommentCount(0) : setCommentCount(commentCount + 1);
-  };
-  const handleRepost = () => {
-    setRepost(!repost);
-    repost ? setRepostCount(0) : setRepostCount(repostCount + 1);
+    setShowComment(!showComment);
+    console.log(showComment);
+    // comnt ? setCommentCount(0) : setCommentCount(commentCount + 1);
   };
 
   //handling delete
@@ -67,6 +66,7 @@ export default function Post(props) {
           <a
             href={props.githubLink}
             target="_blank"
+            rel="noreferrer"
             className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out"
           >
             <FiGithub className="h-4 w-4" />
@@ -76,6 +76,7 @@ export default function Post(props) {
           <a
             href={props.liveLink}
             target="_blank"
+            rel="noreferrer"
             className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out flex justify-end"
           >
             <HiLink className="h-4 w-4" />
@@ -102,7 +103,7 @@ export default function Post(props) {
         </div>
         <div className="flex w-2/6 items-center justify-end">
           {linkDiv}
-          {props.username == cookie && (
+          {props.username === cookie && (
             <div
               onClick={handleDelete}
               className="m-1 rounded-full bg-purple-500 hover:bg-purple-700 p-2 transition-all duration-200 ease-out cursor-pointer h-max"
@@ -137,25 +138,39 @@ export default function Post(props) {
         </div>
       </div>
       {/* section where like, comment, share, repost button are present */}
-      <div className="flex mt-4 justify-around text-sm">
-        <div onClick={handleLike} className="flex ">
-          {like ? (
-            <FaHeart className="text-xl mr-2 text-red-600" />
-          ) : (
-            <FiHeart className="text-xl mr-2 text-white" />
-          )}
-          <p className="text-white">Like</p>
-        </div>
-        <div onClick={handleComment} className="flex">
-          {comnt ? (
-            <FaRegCommentDots className="text-xl mr-2 text-blue-400" />
-          ) : (
-            <FaRegCommentDots className="text-xl mr-2 text-white" />
-          )}
+      <div className="flex flex-col">
+        <div className="flex mt-4 justify-around text-sm w-full">
+          <div onClick={handleLike} className="flex ">
+            {like ? (
+              <FaHeart className="text-xl mr-2 text-red-600" />
+            ) : (
+              <FiHeart className="text-xl mr-2 text-white" />
+            )}
+            <p className="text-white">Like</p>
+          </div>
+          <div onClick={handleComment} className="flex">
+            {comnt ? (
+              <FaRegCommentDots className="text-xl mr-2 text-blue-400" />
+            ) : (
+              <FaRegCommentDots className="text-xl mr-2 text-white" />
+            )}
 
-          <p className="text-white">Comment</p>
+            <p className="text-white">Comment</p>
+          </div>
         </div>
-        <div onClick={handleRepost} className="flex">
+        <form className={`${showComment ? "static" : "hidden"}`}>
+          <input
+            className="bg-black bg-opacity-10 mt-4 p-2 rounded-md border-[1px] border-slate-500 w-full"
+            type="text"
+            placeholder="Add your comment.."
+          ></input>
+          <button className="" type="submit">
+            Post
+          </button>
+        </form>
+      </div>
+
+      {/* <div onClick={handleRepost} className="flex">
           {repost ? (
             <AiOutlineRetweet className="text-xl mr-2 text-green-500" />
           ) : (
@@ -167,8 +182,7 @@ export default function Post(props) {
         <div className="flex">
           <FiSend className="text-xl mr-2 text-white" />
           <p className="text-white">Share</p>
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 }
