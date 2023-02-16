@@ -6,8 +6,8 @@ import { useState } from "react";
 
 export default function Navbar(props) {
   let Links = [
-    { name: "Features", link: "#" },
-    { name: "People", link: "#" },
+    { name: "Features", link: "#features" },
+    { name: "Users", link: "#people" },
     { name: "Support", link: "#" },
     { name: "Blog", link: "#" },
   ];
@@ -29,14 +29,14 @@ export default function Navbar(props) {
           {open ? <RxCross1 /> : <HiMenuAlt3 />}
         </div>
         <ul
-          className={`md:flex md:justify-end md:bg-none bg-gradient-to-br from-orange-800 to-blue-900 opacity-95  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
+          className={`md:flex md:justify-end md:bg-none  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
             open ? "top-20 opacity-100" : "top-[-490px]"
           } md:opacity-100 opacity-90 rounded-lg`}
         >
           {Links.map((link) => (
             <li key={link.name} className="md:my-0 my-6">
               <a
-                className="md:m-5 text-white bg-gradient-to-br from-blue-400 to-orange-500 hover:text-transparent bg-clip-text"
+                className="md:m-5 text-white hover:text-blue-300"
                 href={link.link}
               >
                 {link.name}

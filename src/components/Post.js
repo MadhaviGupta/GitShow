@@ -1,22 +1,18 @@
-import { FiGithub, FiHeart, FiSend } from "react-icons/fi";
+import { FiGithub, FiHeart } from "react-icons/fi";
 import { FaRegCommentDots, FaHeart } from "react-icons/fa";
-import { AiOutlineRetweet } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
-import { RxDotFilled } from "react-icons/rx";
 import { useEffect, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
 import db from "../firebase.config";
 import firebase from "firebase";
-// debugger;
 export default function Post(props) {
   const [like, setLike] = useState(false);
-  const [comnt, setComment] = useState(false);
-  const [repost, setRepost] = useState(false);
   const [likeCount, setLikeCount] = useState(props.like);
-  const [commentCount, setCommentCount] = useState(0);
-  const [repostCount, setRepostCount] = useState(0);
   const [showComment, setShowComment] = useState(false);
+  const [comnt, setComment] = useState(false);
+  const [commentCount, setCommentCount] = useState(0);
+  const [commentValue, setCommentValue] = useState("");
 
   const cookie = document.cookie;
 
@@ -48,8 +44,24 @@ export default function Post(props) {
   const handleComment = () => {
     setComment(!comnt);
     setShowComment(!showComment);
-    console.log(showComment);
-    // comnt ? setCommentCount(0) : setCommentCount(commentCount + 1);
+  };
+
+  let addComment = firebase.firestore.FieldValue.arrayUnion({
+    username: cookie,
+    comment: commentValue,
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const postComment = db.collection("posts").doc(props.id);
+    setCommentCount((prevVal) => {
+      return prevVal + 1;
+    });
+    postComment.update({
+      commentCnt: commentCount,
+      commentObj: addComment,
+    });
+
+    setCommentValue("");
   };
 
   //handling delete
@@ -132,15 +144,18 @@ export default function Post(props) {
           <h5 className="text-slate-200 ml-1">{props.like}</h5>
         </div>
         <div className="flex items-center text-xs">
-          <p>{commentCount} comments</p>
-          <RxDotFilled />
-          <p>{repostCount} reposts</p>
+          <p>
+            {props.commentCnt == null ? "0" : props.commentCnt}{" "}
+            {props.commentCnt < 2 || props.commentCnt == null
+              ? "comment"
+              : "comments"}
+          </p>
         </div>
       </div>
       {/* section where like, comment, share, repost button are present */}
       <div className="flex flex-col">
         <div className="flex mt-4 justify-around text-sm w-full">
-          <div onClick={handleLike} className="flex ">
+          <div onClick={handleLike} className="flex cursor-pointer">
             {like ? (
               <FaHeart className="text-xl mr-2 text-red-600" />
             ) : (
@@ -148,7 +163,7 @@ export default function Post(props) {
             )}
             <p className="text-white">Like</p>
           </div>
-          <div onClick={handleComment} className="flex">
+          <div onClick={handleComment} className="flex cursor-pointer">
             {comnt ? (
               <FaRegCommentDots className="text-xl mr-2 text-blue-400" />
             ) : (
@@ -158,15 +173,30 @@ export default function Post(props) {
             <p className="text-white">Comment</p>
           </div>
         </div>
-        <form className={`${showComment ? "static" : "hidden"}`}>
-          <input
-            className="bg-black bg-opacity-10 mt-4 p-2 rounded-md border-[1px] border-slate-500 w-full"
-            type="text"
-            placeholder="Add your comment.."
-          ></input>
-          <button className="" type="submit">
-            Post
-          </button>
+        <form
+          className={`${showComment ? "static" : "hidden"}`}
+          onSubmit={handleSubmit}
+        >
+          <div className="flex">
+            <textarea
+              rows={1}
+              cols={2}
+              required
+              className="bg-black bg-opacity-10 mt-4 p-2 rounded-md border-[1px] border-slate-500 w-full"
+              type="text"
+              value={commentValue}
+              onChange={(e) => setCommentValue(e.target.value)}
+              placeholder="Add your comment.."
+            ></textarea>
+            <div className="flex justify-end items-center mt-4 mx-3">
+              <button
+                type="submit"
+                className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
+              >
+                Post
+              </button>
+            </div>
+          </div>
         </form>
       </div>
 

@@ -25,10 +25,7 @@ export default function Home() {
       });
   }, []);
 
-  const user = useSelector(selectUser);
-  // console.log(document.cookie);
   const cookie = document.cookie;
-  // console.log(cookie);
   const fetchData = async () => {
     const response = await fetch(`https://api.github.com/users/${cookie}`);
     const data = await response.json();
@@ -61,6 +58,8 @@ export default function Home() {
                   bio,
                   like,
                   likedBy,
+                  commentCnt,
+                  commentObj,
                   description,
                   image,
                   githubLink,
@@ -76,6 +75,8 @@ export default function Home() {
                     username={username}
                     like={like}
                     likedBy={likedBy}
+                    commentCnt={commentCnt}
+                    commentObj={commentObj}
                     bio={bio}
                     description={description}
                     image={image}
@@ -127,6 +128,8 @@ export default function Home() {
                   bio,
                   like,
                   likedBy,
+                  commentCnt,
+                  commentObj,
                   description,
                   image,
                   githubLink,
@@ -143,6 +146,8 @@ export default function Home() {
                     bio={bio}
                     like={like}
                     likedBy={likedBy}
+                    commentCnt={commentCnt}
+                    commentObj={commentObj}
                     description={description}
                     image={image}
                     githubLink={githubLink}

@@ -3,17 +3,9 @@ import Explore from "./pages/Explore";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
-// import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser, logoutUser, selectUser } from "./features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "./firebase.config";
-import { useEffect } from "react";
-
 export default function App() {
-  // const user = useSelector(selectUser);
-  const dispatch = useDispatch();
-
   const navigate = useNavigate();
   let githubUsername;
   function authenticateUser() {
@@ -22,13 +14,7 @@ export default function App() {
       .then((userAuth) => {
         githubUsername = userAuth.additionalUserInfo.username;
         document.cookie = githubUsername;
-        console.log("Cookie" + document.cookie);
-        console.log("App: " + githubUsername);
-        dispatch(
-          loginUser({
-            userObj: githubUsername,
-          })
-        );
+
         navigate("/home");
       })
       .catch((error) => {
@@ -37,19 +23,6 @@ export default function App() {
         console.log(errorCode + errorMessage);
       });
   }
-
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((userAuth) => {
-  //     console.log("Github2" + githubUsername);
-  //     if (userAuth) {
-  //       dispatch(
-  //         loginUser({
-  // username: githubUsername,
-  //         })
-  //       );
-  //     }
-  //   });
-  // }, []);
 
   return (
     <Routes>

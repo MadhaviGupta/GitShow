@@ -23,6 +23,8 @@ export default function CreatePost(props) {
         bio: props.bio,
         like: 0,
         likedBy: [],
+        commentCnt: 0,
+        commentObj: [],
         description: input,
         image: image,
         githubLink: githubLink,
@@ -49,12 +51,13 @@ export default function CreatePost(props) {
             alt="user"
             className="w-12 h-12 rounded-[50%]"
           />
-          <input
-            className="w-full h-14 m-3 p-3 rounded-md bg-blue-400 bg-opacity-10"
+          <textarea
+            rows={2}
+            className="w-full m-3 p-3 rounded-md bg-blue-400 bg-opacity-10"
             placeholder="Write something..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-          ></input>
+          ></textarea>
         </div>
 
         <div className={`w-full ${clicked ? "static" : "hidden"}`}>
