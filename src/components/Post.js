@@ -163,10 +163,10 @@ export default function Post(props) {
             <p className="text-white">Like</p>
           </div>
           <div onClick={handleComment} className="flex cursor-pointer">
-            {comnt && showModal ? (
-              <FaRegCommentDots className="text-xl mr-2 text-blue-400" />
+            {showModal ? (
+              <FaRegCommentDots className="text-xl mr-2 text-blue-300" />
             ) : (
-              <FaRegCommentDots className="text-xl mr-2 text-white" />
+              <FaRegCommentDots className="text-xl mr-2 text-white hover:text-blue-300" />
             )}
 
             <p className="text-white">Comment</p>

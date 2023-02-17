@@ -27,7 +27,7 @@ export default function Sidebar() {
     }
   }, []);
   return (
-    <div className="w-full font-manrope tracking-wide z-50 fixed bottom-0 mt-10 md:top-0 md:left-48 md:w-1/6 md:h-screen bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl md:m-3 md:p-3 flex flex-row md:flex-col md:items-center text-white text-xl">
+    <div className="w-full font-manrope tracking-wide z-50 fixed bottom-0 mt-10 md:top-0 md:left-48 md:w-1/6 md:h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl md:m-3 md:p-3 flex flex-row md:flex-col md:items-center text-white text-xl">
       <ul className="w-full flex justify-around items-center md:items-start md:flex-col p-2 md:p-0">
         <li className="md:flex hidden">
           <div className="flex items-center">

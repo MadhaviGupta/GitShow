@@ -48,6 +48,17 @@ export default function Modal(props) {
                   </div>
                 </div>
               </div>
+              <div className="flex py-2 px-4 text-white border-slate-700 border-b">
+                <div className="flex items-center">
+                  <img src={user} className="md:w-8 md:h-8 w-6 h-6 mr-2"></img>
+                </div>
+                <div className="flex flex-col ml-2">
+                  <span className="text-sm">User Name</span>
+                  <div className="text-xs text-white mt-1">
+                    lodfkdsjfdsnjdbfadjfbdufb dfdsofdfofbdoifbou
+                  </div>
+                </div>
+              </div>
               {/* add new comment section */}
               <div className="border-b border-slate-700 p-3">
                 <form
