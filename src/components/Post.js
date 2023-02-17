@@ -10,7 +10,6 @@ import Modal from "./Modal";
 export default function Post(props) {
   const [like, setLike] = useState(false);
   const [likeCount, setLikeCount] = useState(props.like);
-  const [showComment, setShowComment] = useState(false);
   const [comnt, setComment] = useState(false);
   const [commentValue, setCommentValue] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -44,12 +43,11 @@ export default function Post(props) {
   //handling comment section
   const handleComment = () => {
     setComment(!comnt);
-    setShowComment(!showComment);
+    setShowModal(!showModal);
   };
-  const handleModal = () => {
-    setShowModal(true);
+  const closeModal = () => {
+    setShowModal(false);
   };
-
   let addComment = firebase.firestore.FieldValue.arrayUnion({
     username: cookie,
     comment: commentValue,
@@ -144,10 +142,7 @@ export default function Post(props) {
           <BiHeart className=" text-red-700" />
           <h5 className="text-slate-200 ml-1">{props.like}</h5>
         </div>
-        <div
-          className="flex items-center text-xs cursor-pointer hover:underline"
-          onClick={handleModal}
-        >
+        <div className="flex items-center text-xs">
           <p>
             {props.commentCnt == null ? "0" : props.commentCnt}{" "}
             {props.commentCnt < 2 || props.commentCnt == null
@@ -168,7 +163,7 @@ export default function Post(props) {
             <p className="text-white">Like</p>
           </div>
           <div onClick={handleComment} className="flex cursor-pointer">
-            {comnt ? (
+            {comnt && showModal ? (
               <FaRegCommentDots className="text-xl mr-2 text-blue-400" />
             ) : (
               <FaRegCommentDots className="text-xl mr-2 text-white" />
@@ -177,33 +172,15 @@ export default function Post(props) {
             <p className="text-white">Comment</p>
           </div>
         </div>
-        <form
-          className={`${showComment ? "static" : "hidden"}`}
-          onSubmit={handleSubmit}
-        >
-          <div className="flex">
-            <textarea
-              rows={1}
-              cols={2}
-              required
-              className="bg-black bg-opacity-10 mt-4 p-2 rounded-md border-[1px] border-slate-500 w-full"
-              type="text"
-              value={commentValue}
-              onChange={(e) => setCommentValue(e.target.value)}
-              placeholder="Add your comment.."
-            ></textarea>
-            <div className="flex justify-end items-center mt-4 mx-3">
-              <button
-                type="submit"
-                className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
-              >
-                Post
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        handleSubmit={handleSubmit}
+        commentValue={commentValue}
+        setCommentValue={setCommentValue}
+        closeModal={closeModal}
+      />
 
       {/* <div onClick={handleRepost} className="flex">
           {repost ? (
