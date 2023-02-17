@@ -6,12 +6,14 @@ import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
 import db from "../firebase.config";
 import firebase from "firebase";
+import Modal from "./Modal";
 export default function Post(props) {
   const [like, setLike] = useState(false);
   const [likeCount, setLikeCount] = useState(props.like);
   const [showComment, setShowComment] = useState(false);
   const [comnt, setComment] = useState(false);
   const [commentValue, setCommentValue] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const cookie = document.cookie;
 
@@ -43,6 +45,9 @@ export default function Post(props) {
   const handleComment = () => {
     setComment(!comnt);
     setShowComment(!showComment);
+  };
+  const handleModal = () => {
+    setShowModal(true);
   };
 
   let addComment = firebase.firestore.FieldValue.arrayUnion({
@@ -102,7 +107,7 @@ export default function Post(props) {
         <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />
         <div className="w-9/12 flex flex-col">
           <div className="md:flex items-center ml-4">
-            <h4 className="mr-2">{props.name} </h4>
+            <h4 className="mr-2">{props.name}</h4>
             <p className="text-slate-400 md:text-sm text-xs font-manrope">
               @{props.username}
             </p>
@@ -139,7 +144,10 @@ export default function Post(props) {
           <BiHeart className=" text-red-700" />
           <h5 className="text-slate-200 ml-1">{props.like}</h5>
         </div>
-        <div className="flex items-center text-xs">
+        <div
+          className="flex items-center text-xs cursor-pointer hover:underline"
+          onClick={handleModal}
+        >
           <p>
             {props.commentCnt == null ? "0" : props.commentCnt}{" "}
             {props.commentCnt < 2 || props.commentCnt == null
@@ -195,6 +203,7 @@ export default function Post(props) {
           </div>
         </form>
       </div>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
 
       {/* <div onClick={handleRepost} className="flex">
           {repost ? (

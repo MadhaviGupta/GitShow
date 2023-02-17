@@ -4,6 +4,7 @@ import TopProfile from "../components/TopProfile";
 import TopProjects from "../components/TopProjects";
 import Sidebar from "../components/Sidebar";
 import SearchProfile from "../components/SearchProfile";
+
 export default function Explore() {
   const [searchip, setSearchIp] = useState();
 
