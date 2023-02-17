@@ -11,7 +11,6 @@ export default function Post(props) {
   const [likeCount, setLikeCount] = useState(props.like);
   const [showComment, setShowComment] = useState(false);
   const [comnt, setComment] = useState(false);
-  const [commentCount, setCommentCount] = useState(0);
   const [commentValue, setCommentValue] = useState("");
 
   const cookie = document.cookie;
@@ -53,11 +52,8 @@ export default function Post(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const postComment = db.collection("posts").doc(props.id);
-    setCommentCount((prevVal) => {
-      return prevVal + 1;
-    });
     postComment.update({
-      commentCnt: commentCount,
+      commentCnt: props.commentCnt + 1,
       commentObj: addComment,
     });
 

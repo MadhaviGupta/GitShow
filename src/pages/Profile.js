@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import { MdGridOn } from "react-icons/md";
 import { BsFolder2Open } from "react-icons/bs";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
 import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
 import RepoInfo from "../components/RepoInfo";
@@ -31,8 +29,6 @@ export default function Profile(props) {
   const [repo, setRepo] = useState([]);
   const [content, setContent] = useState("post");
   const [post, setPost] = useState([]);
-
-  const user = useSelector(selectUser);
 
   const cookie = document.cookie;
 
