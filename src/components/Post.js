@@ -7,6 +7,7 @@ import { MdOutlineDelete } from "react-icons/md";
 import db from "../firebase.config";
 import firebase from "firebase";
 import Modal from "./Modal";
+
 export default function Post(props) {
   const [like, setLike] = useState(false);
   const [likeCount, setLikeCount] = useState(props.like);
@@ -174,6 +175,10 @@ export default function Post(props) {
         </div>
       </div>
       <Modal
+        logo={props.logo}
+        name={props.username}
+        description={props.description}
+        commentObj={props.commentObj}
         showModal={showModal}
         setShowModal={setShowModal}
         handleSubmit={handleSubmit}
