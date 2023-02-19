@@ -1,4 +1,4 @@
-import chat from "../assets/chat.gif";
+import chat from "../../assets/chat.gif";
 
 export default function Offers() {
   return (

@@ -1,4 +1,4 @@
-import logo from "../assets/logo1.png";
+import logo from "../../assets/logo1.png";
 import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
@@ -29,8 +29,8 @@ export default function Navbar(props) {
           {open ? <RxCross1 /> : <HiMenuAlt3 />}
         </div>
         <ul
-          className={`md:flex md:justify-end md:bg-none bg-black  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-8 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
-            open ? "top-20 opacity-20" : "top-[-490px]"
+          className={`md:flex md:justify-end md:bg-none  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-8 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
+            open ? "top-20 opacity-20 bg-black " : "top-[-490px] bg-transparent"
           } md:opacity-100 opacity-90 rounded-lg`}
         >
           {Links.map((link) => (

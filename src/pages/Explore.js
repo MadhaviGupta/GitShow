@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import TopProfile from "../components/TopProfile";
-import TopProjects from "../components/TopProjects";
+import TopProfile from "../components/explore/TopProfile";
+import TopProjects from "../components/explore/TopProjects";
 import Sidebar from "../components/Sidebar";
-import SearchProfile from "../components/SearchProfile";
+import SearchProfile from "../components/explore/SearchProfile";
 
 export default function Explore() {
   const [searchip, setSearchIp] = useState();

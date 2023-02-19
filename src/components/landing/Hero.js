@@ -1,4 +1,4 @@
-import harry from "../assets/harry.png";
+import harry from "../../assets/harry.png";
 
 export default function Hero(props) {
   return (

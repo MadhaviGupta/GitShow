@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/landing/Navbar";
 import "../App.css";
-import Offers from "../components/Offers";
-import Testimonials from "../components/Testimonials";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
+import Offers from "../components/landing/Offers";
+import Testimonials from "../components/landing/Testimonials";
+import Footer from "../components/landing/Footer";
+import Hero from "../components/landing/Hero";
 
 export default function Landing(props) {
   return (
