@@ -56,11 +56,11 @@ export default function Post(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const postComment = db.collection("posts").doc(props.id);
+    console.log(props.commentCnt);
     postComment.update({
-      commentCnt: props.commentCnt + 1,
+      commentCnt: props.commentCnt === 0 ? 1 : props.commentCnt + 1,
       commentObj: addComment,
     });
-
     setCommentValue("");
   };
 
@@ -68,6 +68,12 @@ export default function Post(props) {
   const handleDelete = () => {
     db.collection("posts").doc(props.id).delete();
   };
+
+  if (showModal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "visible";
+  }
 
   //JSX for the links present in the post
   let linkDiv;
@@ -100,7 +106,7 @@ export default function Post(props) {
 
   return (
     <div
-      className={`bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-${props.width} rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100`}
+      className={`bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-${props.width} rounded-2xl p-4 mt-4 md:mt-6 md:mx-auto text-slate-100 `}
     >
       <div className="w-full flex items-center">
         <img src={props.logo} alt="user" className="w-12 h-12 rounded-[50%]" />

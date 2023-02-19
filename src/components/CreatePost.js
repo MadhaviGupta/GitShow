@@ -35,6 +35,7 @@ export default function CreatePost(props) {
       setImage("");
       setGithubLink("");
       setLiveLink("");
+      setClicked(false);
     }
   };
 
