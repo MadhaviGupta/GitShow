@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "./firebase.config";
+import Notifications from "./pages/Notifications";
 export default function App() {
   const navigate = useNavigate();
   let githubUsername;
@@ -32,6 +33,7 @@ export default function App() {
       />
       <Route path="/home" element={<Home />} />
       <Route path="/explore" element={<Explore />} />
+      <Route path="/notifications" element={<Notifications />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
   );

@@ -5,8 +5,7 @@ import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
 import NoPost from "../components/NoPost";
 import db from "../firebase.config";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   let width = window.innerWidth;
@@ -25,6 +24,7 @@ export default function Home() {
       });
   }, []);
 
+  const navigate = useNavigate();
   const cookie = document.cookie;
   const fetchData = async () => {
     const response = await fetch(`https://api.github.com/users/${cookie}`);
@@ -33,6 +33,10 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (!cookie) {
+      console.log(cookie);
+      navigate("/");
+    }
     fetchData();
   }, []);
 
