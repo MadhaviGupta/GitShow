@@ -6,9 +6,9 @@ export default function Modal(props) {
   return (
     <>
       {props.showModal ? (
-        <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
-          <div className="md:w-5/12 w-11/12 mx-auto">
-            <div className="rounded-lg flex flex-col justify-between w-full h-screen bg-stone-700 bg-opacity-90 font-manrope tracking-wide backdrop-blur-md outline-none focus:outline-none">
+        <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[70] outline-none focus:outline-none ">
+          <div className="md:w-[37%] w-full mx-auto">
+            <div className="rounded-xl flex flex-col justify-between w-full h-screen md:h-[45rem] bg-[#30445c] font-manrope tracking-wide backdrop-blur-md outline-none focus:outline-none">
               <div className="flex flex-col">
                 <div className="flex items-start justify-between p-6 border-b border-solid border-slate-500 rounded-t">
                   <div className="flex flex-col w-10/12">

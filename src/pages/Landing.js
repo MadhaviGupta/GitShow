@@ -7,7 +7,7 @@ import Hero from "../components/landing/Hero";
 
 export default function Landing(props) {
   return (
-    <div className="bg-gradient-to-br from-orange-800 to-blue-900 bg-opacity-20 font-inter h-full bg-cover">
+    <div className="bg-[#1B2430] font-inter h-full bg-cover">
       <Navbar authenticateUser={props.authenticateUser} />
       <Hero authenticateUser={props.authenticateUser} />
       <Offers />

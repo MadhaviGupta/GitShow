@@ -13,7 +13,7 @@ export default function Navbar(props) {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex px-2 items-center justify-between md:justify-around h-20 md:h-28 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
+    <nav className="flex px-2 items-center justify-between md:justify-around h-24 md:h-28 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
       <div className="w-2/12 h-full md:w-4/6 flex justify-start font-manrope items-center">
         <div className="md:p-0 md:w-2/12 w-11/12 md:flex content-center items-center">
           <img
@@ -29,12 +29,17 @@ export default function Navbar(props) {
           {open ? <RxCross1 /> : <HiMenuAlt3 />}
         </div>
         <ul
-          className={`md:flex md:justify-end md:bg-none  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 pb-8 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out tracking-wider ${
-            open ? "top-20 opacity-20 bg-black " : "top-[-490px] bg-transparent"
-          } md:opacity-100 opacity-90 rounded-lg`}
+          className={`md:flex md:justify-end md:bg-none  text-slate-200 md:items-center  md:text-lg text-xl md:pb-0 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in-out tracking-wider ${
+            open
+              ? "top-24 bg-[#30445c] backdrop-blur-sm h-screen"
+              : "top-[-490px] bg-transparent"
+          } md:opacity-100 rounded-lg`}
         >
           {Links.map((link) => (
-            <li key={link.name} className="md:my-0 my-6">
+            <li
+              key={link.name}
+              className="md:my-0 my-6 flex justify-center mt-10"
+            >
               <a
                 className="md:m-5 text-white hover:text-blue-300"
                 href={link.link}
