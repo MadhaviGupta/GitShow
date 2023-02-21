@@ -7,9 +7,9 @@ export default function Modal(props) {
     <>
       {props.showModal ? (
         <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[70] outline-none focus:outline-none ">
-          <div className="md:w-[37%] w-full mx-auto">
-            <div className="rounded-xl flex flex-col justify-between w-full h-screen md:h-[45rem] bg-[#30445c] font-manrope tracking-wide backdrop-blur-md outline-none focus:outline-none">
-              <div className="flex flex-col">
+          <div className="md:w-[37%] w-full mx-auto p-5 md:p-0">
+            <div className="rounded-xl flex flex-col justify-between md:w-full md:h-[45rem] h-[28rem] bg-[#30445c] font-manrope tracking-wide backdrop-blur-md outline-none focus:outline-none">
+              <div className="flex flex-col overflow-y-scroll">
                 <div className="flex items-start justify-between p-6 border-b border-solid border-slate-500 rounded-t">
                   <div className="flex flex-col w-10/12">
                     <div className="flex items-center">
@@ -32,6 +32,7 @@ export default function Modal(props) {
                     <RxCross1 />
                   </button>
                 </div>
+                {/* <div className=" overflow-y-scroll"> */}
                 {props.commentObj &&
                   props.commentObj.map((obj) => {
                     return (
@@ -42,6 +43,7 @@ export default function Modal(props) {
                       />
                     );
                   })}
+                {/* </div> */}
               </div>
               {/* other users comment section */}
 
