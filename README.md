@@ -1,4 +1,4 @@
-<img align="center" alt="logo" src="https://user-images.githubusercontent.com/87236576/220377486-66956a42-a714-4ba2-aa28-89ae62def07c.png">
+<img width="154" align="center" alt="logo" src="https://user-images.githubusercontent.com/87236576/220377486-66956a42-a714-4ba2-aa28-89ae62def07c.png">
 
 # GitShow 🪄
 ## _For Programmers, by Programmers_
