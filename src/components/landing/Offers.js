@@ -17,7 +17,7 @@ export default function Offers() {
         <div className="mx-4 md:flex md:flex-row md:mx-0 my-6 justify-center items-center">
           <div
             className="md:w-1/3 h-80 rounded-2xl md:my-32 p-10 flex flex-col justify-center items-left
-          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-default hover:-translate-y-2 hover:shadow-xl"
+          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-default hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-500/20"
           >
             <p className="text-4xl md:text-5xl text-blue-200 mb-5 flex justify-center font-bold font-manrope w-2/3">
               Show your Github Projects.
@@ -52,7 +52,7 @@ export default function Offers() {
         </div>
         {/* card3 */}
         <div className="mx-4 md:flex md:mx-0 md:my-32 justify-center -my-24">
-          <div className="md:w-1/3 h-80 transition-all ease-in duration-300 cursor-default backdrop-blur-lg rounded-2xl md:m-3 p-10 flex flex-col justify-center items-left delay-90 hover:-translate-y-2 hover:shadow-xl">
+          <div className="md:w-1/3 h-80 transition-all ease-in duration-300 cursor-default backdrop-blur-lg rounded-2xl md:m-3 p-10 flex flex-col justify-center items-left delay-90 hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-500/20">
             <p className="text-4xl md:text-5xl text-blue-200 mb-5 font-bold font-manrope flex justify-center w-2/3">
               Chat with fellow coders.
             </p>

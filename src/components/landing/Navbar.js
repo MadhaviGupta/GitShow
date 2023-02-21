@@ -8,8 +8,8 @@ export default function Navbar(props) {
   let Links = [
     { name: "Features", link: "#features" },
     { name: "Users", link: "#people" },
-    { name: "Support", link: "#" },
-    { name: "Blog", link: "#" },
+    { name: "Support", link: "/contact" },
+    { name: "Blog", link: "/blog" },
   ];
   const [open, setOpen] = useState(false);
   return (

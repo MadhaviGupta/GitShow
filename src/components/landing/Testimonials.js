@@ -3,7 +3,7 @@ import user from "../../assets/user.png";
 
 function TestimonialCard(props) {
   return (
-    <div className="md:w-2/6 min-h-[20rem] text-orange-600 hover:text-purple-700 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-500 ease-out rounded-xl my-4 mx-2 p-5 flex shadow-xl">
+    <div className="md:w-2/6 min-h-[20rem] text-blue-800 hover:text-blue-400 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-2 p-5 flex shadow-xl">
       <div className="flex flex-col items-center text-center">
         <img src={user} alt="user" className="w-12 h-12" />
         <p className="m-2 text-2xl font-semibold">{props.name}</p>
@@ -22,7 +22,7 @@ export default function Testimonials() {
         className="flex flex-col items-center md:mt-64 w-10/12 m-auto md:w-full"
       >
         <span className="text-4xl md:text-5xl md:text-left text-center text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-16">
-          What customers say about GitShow.
+          What users say about GitShow.
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
       </div>

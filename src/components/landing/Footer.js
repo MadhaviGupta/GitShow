@@ -15,16 +15,30 @@ export default function Footer() {
             <FooterList
               header="Company"
               l1="About us"
+              link1="#"
               l2="Privacy"
+              link2="#"
               l3="Terms"
+              link3="#"
             />
             <FooterList
               header="Explore"
               l1="Projects"
+              link1="#projects"
               l2="Messaging"
+              link2="#"
               l3="Contribution"
+              link3="#"
             />
-            <FooterList header="Support" l1="Help" l2="Contact us" l3="FAQs" />
+            <FooterList
+              header="Support"
+              l1="Help"
+              link1="/contact"
+              l2="Contact us"
+              link2="/contact"
+              l3="FAQs"
+              link3="/blog"
+            />
           </div>
         </div>
         <div className="w-9/12 h-[1px] bg-slate-700 m-auto"></div>

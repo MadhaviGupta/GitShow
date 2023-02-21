@@ -38,7 +38,7 @@ export default function Sidebar() {
             ></img>
           </div>
         </li>
-        <li className="w-full md:mt-10 md:mb-2">
+        <li className="w-full md:mt-10 md:mb-2 mx-2 md:mx-0">
           <Link to={"/home"}>
             <div
               className={`flex ${
@@ -52,7 +52,7 @@ export default function Sidebar() {
             </div>
           </Link>
         </li>
-        <li className="w-full md:mb-2">
+        <li className="w-full md:mb-2 mx-2 md:mx-0">
           <Link to={"/explore"}>
             <div
               className={`flex ${
@@ -66,7 +66,7 @@ export default function Sidebar() {
             </div>
           </Link>
         </li>
-        <li className="w-full md:mb-2">
+        <li className="w-full md:mb-2 mx-2 md:mx-0">
           <Link to={"/notifications"}>
             <div
               className={`flex ${
@@ -80,7 +80,7 @@ export default function Sidebar() {
             </div>
           </Link>
         </li>
-        <li className="w-full md:mb-2">
+        <li className="w-full md:mb-2 mx-2 md:mx-0">
           <Link to={"/messages"}>
             <div
               className={`flex ${
@@ -94,7 +94,7 @@ export default function Sidebar() {
             </div>
           </Link>
         </li>
-        <li className="w-full md:mb-2">
+        <li className="w-full md:mb-2 mx-2 md:mx-0">
           <Link to={"/profile"}>
             <div
               className={`flex ${
@@ -108,14 +108,6 @@ export default function Sidebar() {
             </div>
           </Link>
         </li>
-
-        {/* <li className="md:block hidden w-full mt-5">
-          <Link to={"#"}>
-            <div className="flex text-purple-500 bg-black bg-opacity-80 hover:bg-opacity-100 hover:font-semibold transition-all ease-in duration-150 rounded-lg p-2 justify-center">
-              <span className="m-1 hidden md:block">Write Post</span>
-            </div>
-          </Link>
-        </li> */}
       </ul>
     </div>
   );
