@@ -5,7 +5,7 @@ import Testimonials from "../components/landing/Testimonials";
 import Footer from "../components/landing/Footer";
 import Hero from "../components/landing/Hero";
 import { useEffect, useState } from "react";
-import { CubeSpinner } from "react-spinners-kit";
+import { PongSpinner } from "react-spinners-kit";
 
 export default function Landing(props) {
   const [loading, setLoading] = useState(false);
@@ -19,8 +19,8 @@ export default function Landing(props) {
     <>
       {loading ? (
         <div className="bg-[#1B2430] h-screen flex flex-col justify-center items-center">
-          <CubeSpinner size={100} frontColor="#DC5033" />
-          <h1 className="text-6xl text-white mt-14 font-extrabold font-inter">
+          <PongSpinner size={150} color="#DC5033" />
+          <h1 className="text-4xl md:text-6xl text-white mt-14 font-extrabold font-inter text-center">
             Are you Ready?
           </h1>
         </div>
