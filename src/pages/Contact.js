@@ -9,9 +9,7 @@ function FAQs(props) {
         className="flex justify-between text-white text-lg cursor-pointer hover:bg-slate-50 p-2 my-2 hover:bg-opacity-5 rounded-lg"
         onClick={props.handleOpen}
       >
-        <span className="mx-3">
-          {props.question}
-        </span>
+        <span className="mx-3">{props.question}</span>
         {props.open ? (
           <TiArrowSortedUp className="text-3xl" />
         ) : (
@@ -69,7 +67,7 @@ function ContactUs() {
           <div className="flex justify-center mt-10">
             <button
               type="submit"
-              className="bg-blue-800 p-3 rounded-lg hover:text-slate-300"
+              className="p-3 rounded-lg hover:text-slate-300 bg-blue-900 tracking-wider"
             >
               Send Message
             </button>
@@ -82,14 +80,23 @@ function ContactUs() {
 
 export default function Contact() {
   const [content, setContent] = useState(true);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState({
+    state1: false,
+    state2: false,
+    state3: false,
+  });
   // content == true ? show FAQs : show Contact Form
   const handleContent = () => {
     setContent(!content);
   };
   // open == true ? show answers + arrowup : show questions only + aarrowdown
   const handleOpen = () => {
-    setOpen(!open);
+    setOpen((prev) => {
+      return {
+        ...prev,
+        state1: !prev.state1,
+      };
+    });
   };
   return (
     <>
@@ -123,7 +130,7 @@ export default function Contact() {
         {content ? (
           <>
             <FAQs
-              open={open}
+              open={open.state1}
               handleOpen={handleOpen}
               question={"How to use GitShow?"}
               answer={
@@ -131,7 +138,7 @@ export default function Contact() {
               }
             />
             <FAQs
-              open={open}
+              open={open.state2}
               handleOpen={handleOpen}
               question={"What is GitShow?"}
               answer={
