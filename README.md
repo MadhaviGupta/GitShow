@@ -4,8 +4,6 @@
 # GitShow 🪄
 ## _For Programmers, by Programmers_
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 GitShow is an outright social-media platform for programmers, 
 where you can showcase your projects hosted on the GitHub in a beautiful way.
 
@@ -16,7 +14,7 @@ where you can showcase your projects hosted on the GitHub in a beautiful way.
 ## Features 👀
 
 - Show your GitHub Projects in a more friendly way.
-- Check what others are creating, through just searhing their GitHub username.
+- Check what others are creating, by just searhing their GitHub username.
 - Network and Chat with fellow open source contributors throughout the world.
 - Get love & suggestions from all over the world.
 - Find your Pair Programmer & Collaborate with them on new projects.
@@ -59,7 +57,8 @@ GitShow uses a number of open source projects to work properly:
     ```
     Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
+<br/>
+<br/>
 **Free Software, Hell Yeah!**
 
 [Repository]: <https://github.com/MadhaviGupta/GitShow/>
