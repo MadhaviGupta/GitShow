@@ -20,3 +20,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes animate_to_right {
+  from {
+    position: relative;
+    left: -20%;
+  }
+  to{
+    left:40%;
+  }
+}
+
+.move-right{
+  width: 180px;
+  animation-name: animate_to_right;
+  animation-duration: 6s;
+}

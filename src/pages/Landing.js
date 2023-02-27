@@ -5,8 +5,7 @@ import Testimonials from "../components/landing/Testimonials";
 import Footer from "../components/landing/Footer";
 import Hero from "../components/landing/Hero";
 import { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import harry_animate from "../assets/harry-animate.png";
 
 export default function Landing(props) {
   const [loading, setLoading] = useState(false);
@@ -14,21 +13,18 @@ export default function Landing(props) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
-    Aos.init({ duration: 1000 });
+    }, 2000);
   }, []);
   return (
     <>
       {loading ? (
-        <div className="bg-[#1B2430] h-screen flex flex-col justify-center items-center text-center">
-          <h1
-            className="text-4xl md:text-6xl text-white mt-14 font-extrabold font-inter text-center"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in"
-          >
-            Are you Ready?
-          </h1>
+        <div className="bg-[#1B2430] h-screen flex items-center justify-center">
+          <div className="w-5/6 m-auto flex flex-col items-center">
+            <img src={harry_animate} className="move-right"></img>
+            <h1 className="text-5xl font-extrabold text-white mt-6">
+              Loading...
+            </h1>
+          </div>
         </div>
       ) : (
         <div className="bg-[#1B2430] font-inter h-full bg-cover ">

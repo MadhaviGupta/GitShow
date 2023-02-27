@@ -54,24 +54,12 @@ const faqs = [
 function FAQs(props) {
   return (
     <>
-      <div
-        key={props.key}
-        className="flex justify-between text-white text-lg cursor-pointer hover:bg-slate-50 p-2 my-2 hover:bg-opacity-5 rounded-lg"
-        onClick={props.handleOpen}
-      >
-        <span className="mx-3">{props.question}</span>
-        {props.open ? (
-          <TiArrowSortedUp className="text-3xl" />
-        ) : (
-          <TiArrowSortedDown className="text-3xl" />
-        )}
-      </div>
-      {/* answers */}
-      {props.open ? (
-        <div className=" text-slate-200 text-md tracking-wide my-3">
-          <div className="mx-3">{props.answer}</div>
-        </div>
-      ) : null}
+      <details className="text-white text-lg cursor-pointer hover:bg-slate-50 p-2 my-2 hover:bg-opacity-5 rounded-lg">
+        <summary className="mb-3">{props.question}</summary>
+        <span className="text-purple-300 text-base tracking-wide">
+          {props.answer}
+        </span>
+      </details>
       <hr className="w-full" />
     </>
   );
@@ -79,106 +67,64 @@ function FAQs(props) {
 
 function ContactUs() {
   return (
-    <div className="flex flex-col items-center md:flex-row md:justify-center bg-black md:h-full bg-opacity-30 backdrop-blur-lg h-auto md:w-2/3 w-5/6 md:py-14 py-10 m-auto rounded-3xl my-5">
-      <div className="md:m-8 m-3 md:w-2/5 w-3/5 flex justify-center">
-        <img
-          src="https://i.gifer.com/fr7.gif"
-          alt="mail"
-          className="rounded-lg"
-        />
-      </div>
-      <div className="flex flex-col text-white md:w-2/6 w-4/6">
-        <form onSubmit={{}}>
-          <div className="flex flex-col my-2">
-            <span className="text-md my-1.5">Name</span>
-            <input
-              type="text"
-              placeholder="Harry Potter"
-              className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
-            ></input>
-          </div>
-          <div className="flex flex-col my-2">
-            <span className="text-md my-1.5">Email</span>
-            <input
-              type="email"
-              placeholder="harrypotter934@gmail.com"
-              className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
-            ></input>
-          </div>
-          <div className="flex flex-col my-2">
-            <span className="text-md my-1.5">Your Message</span>
-            <textarea
-              className="bg-blue-100 placeholder-slate-600 p-3 rounded-lg text-sm text-black"
-              placeholder="Your message here"
-            ></textarea>
-          </div>
-          <div className="flex justify-center mt-10">
-            <button
-              type="submit"
-              className="p-3 rounded-lg hover:text-slate-300 bg-blue-900 tracking-wider"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="flex flex-col md:flex-row justify-between w-11/12 md:w-4/6 mx-auto bg-black md:h-full bg-opacity-30 backdrop-blur-lg px-8 py-12 rounded-3xl">
+      <img
+        src="https://media.tenor.com/lyQua8yOW_4AAAAM/harry-potter-letter.gif"
+        alt="mail"
+        className="rounded-lg hidden md:block md:w-5/12"
+      />
+
+      <form onSubmit={{}} className="text-white md:w-3/6 ">
+        <div className="flex flex-col my-2">
+          <span className="text-md my-1.5 font-bold">Name</span>
+          <input
+            type="text"
+            placeholder="Harry Potter"
+            className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
+          ></input>
+        </div>
+        <div className="flex flex-col my-2">
+          <span className="text-md my-1.5 font-bold">Email</span>
+          <input
+            type="email"
+            placeholder="harrypotter934@gmail.com"
+            className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
+          ></input>
+        </div>
+        <div className="flex flex-col my-2">
+          <span className="text-md my-1.5 font-bold">Your Message</span>
+          <textarea
+            className="bg-blue-100 placeholder-slate-600 p-3 rounded-lg text-sm text-black"
+            placeholder="Your message here"
+          ></textarea>
+        </div>
+        <div className="flex justify-center mt-10">
+          <button
+            type="submit"
+            className="bg-black bg-opacity-50 hover:bg-opacity-100 text-purple-500 p-4 rounded-lg"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
 
 export default function Contact() {
   const [content, setContent] = useState(true);
-  const [open, setOpen] = useState({
-    state1: false,
-    state2: false,
-    state3: false,
-    state4: false,
-    state5: false,
-    state6: false,
-  });
   const [data, setData] = useState(faqs);
   // content == true ? show FAQs : show Contact Form
   const handleContent = () => {
     setContent(!content);
   };
-  // open == true ? show answers + arrowup : show questions only + aarrowdown
-  const handleOpen = () => {
-    const newState = faqs.map((obj) => {
-      if (obj.id === 1) {
-        setOpen((prev) => {
-          return {
-            ...prev,
-            state1: !prev.state1,
-          };
-        });
-      }
-      if (obj.id === 2) {
-        setOpen((prev) => {
-          return {
-            ...prev,
-            state2: !prev.state2,
-          };
-        });
-      }
-      if (obj.id === 3) {
-        setOpen((prev) => {
-          return {
-            ...prev,
-            state3: !prev.state3,
-          };
-        });
-      }
-      return obj;
-    });
-    setData(newState);
-  };
   return (
     <>
       <Navbar />
-      <div className="bg-[#1B2430] font-manrope md:h-full h-screen bg-cover pb-40">
+      <div className="bg-[#1B2430] font-manrope h-full bg-cover pb-40">
         <div className="flex justify-center text-center text-4xl font-bold tracking-wide overflow-y-hidden ">
           <div className="flex flex-col mt-36">
-            <span className="m-4 bg-gradient-to-br text-5xl from-blue-400 to-orange-500 text-transparent bg-clip-text">
+            <span className="m-4 bg-gradient-to-br text-4xl md:text-5xl font-extrabold from-blue-400 to-orange-500 text-transparent bg-clip-text">
               How can we help you?
             </span>
           </div>
@@ -202,11 +148,9 @@ export default function Contact() {
           </div>
         </div>
         {content ? (
-          <div className="flex flex-col bg-black bg-opacity-30 backdrop-blur-lg h-auto md:w-2/3 w-5/6 md:p-4 p-3 my-2 m-auto rounded-3xl tracking-wide">
+          <div className="flex flex-col bg-black bg-opacity-30 backdrop-blur-lg h-auto md:w-2/3 w-11/12 md:p-4 p-3 my-2 m-auto rounded-3xl tracking-wide">
             {faqs.map((faq) => (
               <FAQs
-                open={open.state1}
-                handleOpen={handleOpen}
                 key={faq.name}
                 question={faq.question}
                 answer={faq.answer}

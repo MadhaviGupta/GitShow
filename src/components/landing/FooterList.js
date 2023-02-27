@@ -1,7 +1,7 @@
 export default function FooterList(props) {
   return (
     <div className="mx-6 md:mx-12">
-      <p className="font-semibold text-xl my-2 underline underline-offset-2 font-manrope tracking-wider">
+      <p className="font-semibold text-lg underline my-2 font-manrope tracking-wider">
         {props.header}
       </p>
       <ul>
