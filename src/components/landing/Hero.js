@@ -29,8 +29,7 @@ export default function Hero(props) {
           <div>
             <button
               onClick={props.authenticateUser}
-              className="w-3/6 mt-5 md:mt-2 md:w-4/6 p-3 md:p-4 text-lg bg-blue-900 hover:bg-opacity-40
-            hover:border-slate-300 text-slate-50 rounded-full font-semibold  transition-all ease-out duration-400"
+              className="w-3/6 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope text-lg border button-85"
             >
               Get onboard! 🚂
             </button>

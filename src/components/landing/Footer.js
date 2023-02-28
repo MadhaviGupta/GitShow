@@ -48,7 +48,7 @@ export default function Footer() {
               l2="Messaging"
               link2="#"
               l3="Contribution"
-              link3="#"
+              link3="https://github.com/MadhaviGupta/GitShow"
             />
             <FooterList
               header="Reach us"
