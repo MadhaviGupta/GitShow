@@ -55,7 +55,7 @@ function FAQs(props) {
   return (
     <>
       <details className="text-white text-lg cursor-pointer hover:bg-slate-50 p-2 my-2 hover:bg-opacity-5 rounded-lg">
-        <summary className="mb-3">{props.question}</summary>
+        <summary className="mb-3 font-medium">{props.question}</summary>
         <span className="text-purple-300 text-base tracking-wide">
           {props.answer}
         </span>
@@ -124,7 +124,7 @@ export default function Contact() {
       <div className="bg-[#1B2430] font-manrope h-full bg-cover pb-40">
         <div className="flex justify-center text-center text-4xl font-bold tracking-wide overflow-y-hidden ">
           <div className="flex flex-col mt-36">
-            <span className="m-4 bg-gradient-to-br text-4xl md:text-5xl font-extrabold from-blue-400 to-orange-500 text-transparent bg-clip-text">
+            <span className="m-4 bg-gradient-to-br text-4xl md:text-5xl font-bold text-white font-inter">
               How can we help you?
             </span>
           </div>

@@ -8,8 +8,8 @@ export default function Hero(props) {
         src="https://cdn.pixabay.com/photo/2018/06/15/11/16/hogwarts-3476786_960_720.png"
         alt="hero-img"
       ></img>
-      <div className="md:w-6/12 md:px-10 py-6 absolute top-28 md:top-40 md:left-64">
-        <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-20 text-center md:text-left">
+      <div className="md:w-6/12 md:px-10 py-6 absolute top-28 md:top-36 md:left-64">
+        <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-16 text-center md:text-left">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
             GitShow

@@ -161,13 +161,13 @@ export default function Profile(props) {
             </div>
           </div>
           <div className="flex items-center mt-6 justify-center md:hidden">
-            <div className="p-4 bg-black bg-opacity-50 rounded-l-lg">
+            <div className="w-1/3 px-2 py-4 bg-black bg-opacity-50 rounded-l-lg">
               Repositories: {userData.public_repos}
             </div>
-            <span className="p-4 border-x-[1px] border-slate-600 bg-black bg-opacity-50">
+            <span className="w-1/3 px-2 py-4 border-x-[1px] border-slate-600 bg-black bg-opacity-50">
               Followers: {userData.followers}
             </span>{" "}
-            <span className="p-4 bg-black bg-opacity-50 rounded-r-lg">
+            <span className="w-1/3 px-2 py-4 bg-black bg-opacity-50 rounded-r-lg">
               Following: {userData.following}
             </span>
           </div>
