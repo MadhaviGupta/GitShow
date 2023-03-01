@@ -1,6 +1,12 @@
 import harry from "../../assets/harry.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 export default function Hero(props) {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="md:w-full flex flex-col md:flex-row m-auto rounded-xl">
       <img
@@ -11,7 +17,7 @@ export default function Hero(props) {
       <div className="md:w-6/12 md:px-10 py-6 absolute top-28 md:top-36 md:left-64">
         <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-16 text-center md:text-left">
           Welcome to{" "}
-          <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
             GitShow
           </span>
           🪄
@@ -37,7 +43,7 @@ export default function Hero(props) {
         </div>
       </div>
       <div className="hidden md:block md:absolute top-48 right-40">
-        <img alt="harry-illustration" src={harry}></img>
+        <img alt="harry-illustration" src={harry} data-aos="zoom-in-left" ></img>
       </div>
     </div>
   );
