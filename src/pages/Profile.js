@@ -7,9 +7,12 @@ import { useNavigate } from "react-router-dom";
 import RepoInfo from "../components/RepoInfo";
 import Post from "../components/Post";
 import db from "../firebase.config";
+import useProtectedRoute from "../features/useProtectedRoute";
 
 export default function Profile(props) {
+  useProtectedRoute();
   const navigate = useNavigate();
+
   function githubSignout() {
     document.cookie = "";
     firebase
@@ -29,6 +32,7 @@ export default function Profile(props) {
   const [repo, setRepo] = useState([]);
   const [content, setContent] = useState("post");
   const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const cookie = document.cookie;
 
@@ -39,6 +43,7 @@ export default function Profile(props) {
   };
   useEffect(() => {
     fetchData();
+    setLoading(false);
     fetchDataRepo();
   }, []);
 
@@ -69,7 +74,11 @@ export default function Profile(props) {
   }
   return (
     <>
-      <div className="flex flex-col md:justify-center md:flex-row bg-[#1B2430] font-inter h-auto bg-cover md:px-40">
+      <div
+        className={`flex flex-col md:justify-center md:flex-row bg-[#1B2430] font-inter ${
+          loading ? "h-screen" : "h-auto"
+        } bg-cover md:px-40`}
+      >
         <Sidebar />
         <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
           <h1 className="text-2xl font-semibold w-3/12 flex justify-center">

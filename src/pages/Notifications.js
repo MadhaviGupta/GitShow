@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import db from "../firebase.config";
 import NotificationCard from "../components/NotificationCard";
+import useProtectedRoute from "../features/useProtectedRoute";
 
 export default function Notifications() {
+  useProtectedRoute();
   const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
@@ -16,10 +19,15 @@ export default function Notifications() {
           }))
         );
       });
+    setLoading(false);
   }, []);
 
   return (
-    <div className="w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end h-full text-white">
+    <div
+      className={`w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end ${
+        loading ? "h-screen" : "h-full"
+      } text-white`}
+    >
       <Sidebar />
       <div className="flex md:w-5/6 w-full justify-center">
         <div className="md:w-4/6 w-full md:ml-4 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3 p-4 md:p-6">

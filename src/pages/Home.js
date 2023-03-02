@@ -5,13 +5,20 @@ import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
 import NoPost from "../components/NoPost";
 import db from "../firebase.config";
+import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
+import { VscLoading } from "react-icons/vsc";
+import useProtectedRoute from "../features/useProtectedRoute";
 
 export default function Home() {
+  useProtectedRoute();
   let width = window.innerWidth;
   const [userData, setUserData] = useState([]);
   const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    fetchData();
     db.collection("posts")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
@@ -29,21 +36,18 @@ export default function Home() {
   const fetchData = async () => {
     const response = await fetch(`https://api.github.com/users/${cookie}`);
     const data = await response.json();
+    setLoading(false);
     return setUserData(data);
   };
-
-  useEffect(() => {
-    if (!cookie) {
-      console.log(cookie);
-      navigate("/");
-    }
-    fetchData();
-  }, []);
 
   if (width > 768) {
     return (
       <>
-        <div className="flex flex-col justify-center md:flex-row bg-[#1B2430] h-auto bg-cover md:px-40">
+        <div
+          className={`flex flex-col justify-center md:flex-row bg-[#1B2430] ${
+            loading ? "h-screen" : "h-auto"
+          } md:px-40`}
+        >
           <Sidebar />
           <div className="md:w-6/12 m-3 ml-0 md:m-3 text-white px-4 py-1 rounded-2xl">
             <CreatePost
@@ -52,45 +56,50 @@ export default function Home() {
               login={userData.login}
               bio={userData.bio}
             />
-            {post.map(
-              ({
-                id,
-                data: {
-                  logo,
-                  name,
-                  username,
-                  bio,
-                  like,
-                  likedBy,
-                  commentCnt,
-                  commentObj,
-                  description,
-                  image,
-                  githubLink,
-                  liveLink,
-                },
-              }) => {
-                return (
-                  <Post
-                    key={id}
-                    id={id}
-                    logo={logo}
-                    name={name}
-                    username={username}
-                    like={like}
-                    likedBy={likedBy}
-                    commentCnt={commentCnt}
-                    commentObj={commentObj}
-                    bio={bio}
-                    description={description}
-                    image={image}
-                    githubLink={githubLink}
-                    liveLink={liveLink}
-                    width={"full"}
-                  />
-                );
-              }
+            {loading ? (
+              <VscLoading />
+            ) : (
+              post.map(
+                ({
+                  id,
+                  data: {
+                    logo,
+                    name,
+                    username,
+                    bio,
+                    like,
+                    likedBy,
+                    commentCnt,
+                    commentObj,
+                    description,
+                    image,
+                    githubLink,
+                    liveLink,
+                  },
+                }) => {
+                  return (
+                    <Post
+                      key={id}
+                      id={id}
+                      logo={logo}
+                      name={name}
+                      username={username}
+                      like={like}
+                      likedBy={likedBy}
+                      commentCnt={commentCnt}
+                      commentObj={commentObj}
+                      bio={bio}
+                      description={description}
+                      image={image}
+                      githubLink={githubLink}
+                      liveLink={liveLink}
+                      width={"full"}
+                    />
+                  );
+                }
+              )
             )}
+
             <NoPost />
           </div>
           <ProfileCard
@@ -114,7 +123,11 @@ export default function Home() {
   } else {
     return (
       <>
-        <div className="flex flex-col items-center md:flex-row bg-[#1B2430] font-inter h-auto bg-cover md:px-40">
+        <div
+          className={`flex flex-col items-center md:flex-row bg-[#1B2430] font-inter ${
+            loading ? "h-screen" : "h-auto"
+          } bg-cover md:px-40`}
+        >
           <div className="w-full mt-3 px-2 md:w-3/6 ml-0 md:ml-3 text-white">
             <CreatePost
               avatar={userData.avatar_url}

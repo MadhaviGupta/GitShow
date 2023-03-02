@@ -4,11 +4,14 @@ import TopProfile from "../components/explore/TopProfile";
 import TopProjects from "../components/explore/TopProjects";
 import Sidebar from "../components/Sidebar";
 import SearchProfile from "../components/explore/SearchProfile";
+import useProtectedRoute from "../features/useProtectedRoute";
 
 export default function Explore() {
+  useProtectedRoute();
   const [searchip, setSearchIp] = useState();
 
   const [user, setUser] = useState();
+
   const fetchData = async () => {
     const response = await fetch(`https://api.github.com/users/${value}`);
     const data = await response.json();
