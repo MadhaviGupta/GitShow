@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, provider } from "./firebase.config";
 import Notifications from "./pages/Notifications";
 import Contact from "./pages/Contact";
+
 export default function App() {
   const navigate = useNavigate();
   let githubUsername;
@@ -16,7 +17,6 @@ export default function App() {
       .then((userAuth) => {
         githubUsername = userAuth.additionalUserInfo.username;
         document.cookie = githubUsername;
-
         navigate("/home");
       })
       .catch((error) => {

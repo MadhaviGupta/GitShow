@@ -21,8 +21,8 @@ export default function Testimonials() {
         id="people"
         className="flex flex-col items-center md:mt-64 w-10/12 m-auto md:w-full"
       >
-        <span className="text-4xl md:text-5xl md:text-left text-center text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-16">
-          What users say about GitShow.
+        <span className="text-2xl md:text-5xl md:text-left text-center text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mb-16">
+          What users say about us.
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
       </div>

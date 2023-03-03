@@ -35,7 +35,7 @@ export default function Hero(props) {
           <div>
             <button
               onClick={props.authenticateUser}
-              className="w-3/6 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope text-lg border button-85"
+              className="w-7/12 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope border button-85"
             >
               Get onboard! 🚂
             </button>
