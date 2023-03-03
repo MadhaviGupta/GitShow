@@ -4,7 +4,7 @@ import { BiHeart } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
-import db from "../firebase.config";
+import db from "../../firebase.config";
 import firebase from "firebase";
 import Modal from "./Modal";
 

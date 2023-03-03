@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import CreatePost from "../components/CreatePost";
-import Post from "../components/Post";
+import CreatePost from "../components/posts/CreatePost";
+import Post from "../components/posts/Post";
 import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
-import NoPost from "../components/NoPost";
+import NoPost from "../components/posts/NoPost";
 import db from "../firebase.config";
-import firebase from "firebase";
 import { useNavigate } from "react-router-dom";
 import { VscLoading } from "react-icons/vsc";
-import useProtectedRoute from "../features/useProtectedRoute";
+import useProtectedRoute from "../hooks/useProtectedRoute";
 
 export default function Home() {
   useProtectedRoute();
   let width = window.innerWidth;
   const [userData, setUserData] = useState([]);
   const [post, setPost] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -31,12 +30,18 @@ export default function Home() {
       });
   }, []);
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const navigate = useNavigate();
   const cookie = document.cookie;
   const fetchData = async () => {
     const response = await fetch(`https://api.github.com/users/${cookie}`);
     const data = await response.json();
-    setLoading(false);
     return setUserData(data);
   };
 
@@ -57,7 +62,9 @@ export default function Home() {
               bio={userData.bio}
             />
             {loading ? (
-              <VscLoading />
+              <div className="w-full flex justify-center items-center animate-spin h-96">
+                <VscLoading className="w-8 h-8" />
+              </div>
             ) : (
               post.map(
                 ({
@@ -99,8 +106,7 @@ export default function Home() {
                 }
               )
             )}
-
-            <NoPost />
+            {!loading && <NoPost />}
           </div>
           <ProfileCard
             avatar={userData.avatar_url}
@@ -135,45 +141,51 @@ export default function Home() {
               login={userData.login}
               bio={userData.bio}
             />
-            {post.map(
-              ({
-                id,
-                data: {
-                  logo,
-                  name,
-                  username,
-                  bio,
-                  like,
-                  likedBy,
-                  commentCnt,
-                  commentObj,
-                  description,
-                  image,
-                  githubLink,
-                  liveLink,
-                },
-              }) => {
-                return (
-                  <Post
-                    key={id}
-                    id={id}
-                    logo={logo}
-                    name={name}
-                    username={username}
-                    bio={bio}
-                    like={like}
-                    likedBy={likedBy}
-                    commentCnt={commentCnt}
-                    commentObj={commentObj}
-                    description={description}
-                    image={image}
-                    githubLink={githubLink}
-                    liveLink={liveLink}
-                  />
-                );
-              }
+            {loading ? (
+              <div className="w-full flex justify-center items-center animate-spin h-96">
+                <VscLoading className="w-8 h-8" />
+              </div>
+            ) : (
+              post.map(
+                ({
+                  id,
+                  data: {
+                    logo,
+                    name,
+                    username,
+                    bio,
+                    like,
+                    likedBy,
+                    commentCnt,
+                    commentObj,
+                    description,
+                    image,
+                    githubLink,
+                    liveLink,
+                  },
+                }) => {
+                  return (
+                    <Post
+                      key={id}
+                      id={id}
+                      logo={logo}
+                      name={name}
+                      username={username}
+                      bio={bio}
+                      like={like}
+                      likedBy={likedBy}
+                      commentCnt={commentCnt}
+                      commentObj={commentObj}
+                      description={description}
+                      image={image}
+                      githubLink={githubLink}
+                      liveLink={liveLink}
+                    />
+                  );
+                }
+              )
             )}
-            <NoPost />
+            {!loading && <NoPost />}
           </div>
           <Sidebar />
         </div>

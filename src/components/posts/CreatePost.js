@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiImage, FiGithub } from "react-icons/fi";
 import { HiLink } from "react-icons/hi";
-import db from "../firebase.config";
+import db from "../../firebase.config";
 import firebase from "firebase";
 
 export default function CreatePost(props) {

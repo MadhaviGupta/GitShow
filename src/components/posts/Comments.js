@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import user from "../assets/user.png";
+import user from "../../assets/user.png";
 
 export default function Comments(props) {
   //   const [userData, setUserData] = useState([]);
