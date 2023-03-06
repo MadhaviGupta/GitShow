@@ -24,11 +24,11 @@ export default function RepoInfo(props) {
           <div className="flex flex-col">
             <div className="flex my-1">
               <BsStarFill className="md:my-[3px] my-[2.5px] mx-1.5" />
-              <span>Star: {props.star_count}</span>
+              <span>{props.star_count > 1 ? "Stars" : "Star"}: {props.star_count}</span>
             </div>
             <div className="flex my-1">
               <BiGitRepoForked className="md:my-[3px] my-[2.5px] mx-1" />
-              Forks: {props.forks_count}
+              {props.forks_count > 1 ? "Forks" : "Fork"}: {props.forks_count}
             </div>
           </div>
         </div>

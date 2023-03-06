@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
+import { useRef } from "react";
+
 function TopProfileCard(props) {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-center items-center">
+      <div className="flex flex-col md:flex-row md:justify-center items-center w-96">
         <div
-          className="h-auto rounded-xl md:m-4 md:p-10 p-3 m-10 flex flex-col justify-center items-center
-          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-default hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-500/20"
+          className="h-auto rounded-xl md:m-4 md:p-8 p-3 m-10 flex flex-col justify-center items-center
+          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-pointer hover:shadow-2xl hover:shadow-gray-500/30"
         >
           <img
             src={props.avatar}
             alt="avatar"
             className="w-28 h-28 rounded-lg md:mb-4"
           />
-          <p className="text-2xl text-blue-200 flex font-bold font-manrope">
+          <p className="text-2xl text-blue-200 flex font-bold font-manrope mt-2">
             {props.name}
           </p>
-          <p className="text-slate-300 text-md font-medium tracking-wide italic mb-3">
+          <p className="text-slate-300 text-md font-medium tracking-wide italic mb-2">
             @{props.username}
           </p>
           <p className="text-white text-md font-medium tracking-wide text-center">
@@ -42,6 +44,7 @@ export default function TopProfile() {
   useEffect(() => {
     fetchData();
   }, []);
+  const ref = useRef(null);
 
   return (
     <>
@@ -50,26 +53,27 @@ export default function TopProfile() {
       </div>
       <div className="flex mx-4 justify-center">
         <img
-          // src="https://media.giphy.com/media/17JedU1gYFReg/giphy.gif"
           src="https://media.giphy.com/media/ffynNaSYx2yTC/giphy.gif"
           alt="find"
           className="rounded-xl my-10"
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center">
-        {user.slice(0, 2).map((userObj) => (
-          <a href={`https://www.github.com/${userObj.login}`}>
-            <TopProfileCard
-              key={userObj.name}
-              name={userObj.name}
-              username={userObj.login}
-              location={userObj.location}
-              followers={userObj.followers}
-              contri={userObj.contributions}
-              avatar={userObj.gravatar}
-            />
-          </a>
-        ))}
+      <div className="flex flex-col md:flex-row justify-center items-center">
+          <ul ref={ref} className="flex md:flex-row flex-col list-none md:overflow-x-scroll md:px-10">
+            {user.slice(0, 8).map((userObj) => (
+              <a href={`https://www.github.com/${userObj.login}`}>
+                <TopProfileCard
+                  key={userObj.name}
+                  name={userObj.name}
+                  username={userObj.login}
+                  location={userObj.location}
+                  followers={userObj.followers}
+                  contri={userObj.contributions}
+                  avatar={userObj.gravatar}
+                />
+              </a>
+            ))}
+          </ul>
       </div>
     </>
   );

@@ -59,7 +59,7 @@ export default function ProfileCard(props) {
       </div>
       <button
         onClick={githubSignout}
-        className="bg-black bg-opacity-50 hover:bg-opacity-100 text-purple-500 p-4 rounded-lg"
+        className="bg-black bg-opacity-80 p-4 text-lg rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
       >
         Log Out
       </button>

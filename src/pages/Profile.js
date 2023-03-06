@@ -104,7 +104,7 @@ export default function Profile(props) {
                     />
                     <button
                       onClick={githubSignout}
-                      className="bg-black bg-opacity-50 hover:bg-opacity-100 text-purple-500 p-4 rounded-lg w-3/6 m-auto hidden md:block"
+                      className="bg-black bg-opacity-80 text-purple-400 hover:bg-opacity-100 hover:text-purple-500 p-4 rounded-lg w-3/6 m-auto hidden md:block"
                     >
                       Log Out{" "}
                     </button>
@@ -195,7 +195,7 @@ export default function Profile(props) {
                 </span>
               </div>
               <div className="mt-4 md:mt-20 h-[1px] bg-slate-600 md:w-5/6 mx-auto"></div>
-              <div className="flex w-full md:w-4/5 mx-auto justify-around">
+              <div className="flex w-full md:w-4/5 mx-auto justify-around md:mt-3">
                 <div
                   className={`flex items-center p-2 cursor-pointer hover:text-slate-300 ${
                     content === "post" && "border-b-[1px] border-white"

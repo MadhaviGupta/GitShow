@@ -5,9 +5,11 @@ import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 
 export default function Navbar(props) {
+  let featureLink = "/" + "#features";
+  let peopleLink = "/" + "#people";
   let Links = [
-    { name: "Features", link: "#features" },
-    { name: "Users", link: "#people" },
+    { name: "Features", link: featureLink },
+    { name: "Users", link: peopleLink },
     { name: "Support", link: "/contact" },
     { name: "Blog", link: "/blog" },
   ];

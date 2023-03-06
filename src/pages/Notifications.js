@@ -32,9 +32,8 @@ export default function Notifications() {
 
   return (
     <div
-      className={`w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end ${
-        loading ? "h-screen" : "h-full"
-      } text-white`}
+      className={`w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end
+        h-screen text-white`}
     >
       <Sidebar />
       <div className="flex md:w-5/6 w-full justify-center">
