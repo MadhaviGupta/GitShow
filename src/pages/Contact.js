@@ -68,11 +68,18 @@ function ContactUs() {
         className="rounded-lg hidden md:block md:w-5/12"
       />
 
-      <form onSubmit={{}} className="text-white md:w-3/6 ">
+      <form
+        target="_blank"
+        // action="https://formsubmit.co/gitshowbysmg@gmail.com"
+        action="https://usebasin.com/f/854c7ce9e472"
+        method="POST"
+        className="text-white md:w-3/6"
+      >
         <div className="flex flex-col my-2">
           <span className="text-md my-1.5 font-bold">Name</span>
           <input
             type="text"
+            name="name"
             placeholder="Harry Potter"
             className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
           ></input>
@@ -81,6 +88,7 @@ function ContactUs() {
           <span className="text-md my-1.5 font-bold">Email</span>
           <input
             type="email"
+            name="email"
             placeholder="harrypotter934@gmail.com"
             className="bg-blue-100 placeholder-slate-600 h-12 p-4 rounded-lg text-sm text-black"
           ></input>
@@ -90,6 +98,8 @@ function ContactUs() {
           <textarea
             className="bg-blue-100 placeholder-slate-600 p-3 rounded-lg text-sm text-black"
             placeholder="Your message here"
+            name="message"
+            required
           ></textarea>
         </div>
         <div className="flex justify-center mt-10">
