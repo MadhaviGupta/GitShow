@@ -4,15 +4,15 @@ import { useRef } from "react";
 function TopProjectCard(props) {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-center items-center w-96">
+      <div className="bg-white/70 flex flex-col md:flex-row md:justify-center items-center w-96 rounded-2xl mx-2 my-4 hover:bg-white/90 transition-opacity ease-in duration-300">
         <div
-          className="h-96 w-96 rounded-xl md:m-4 md:p-8 p-3 m-10 flex flex-col justify-center items-center
-          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-pointer hover:shadow-2xl hover:shadow-gray-500/30"
+          className="h-72 md:h-96 w-96 rounded-xl md:m-4 md:p-8 p-5 m-10 flex flex-col justify-center items-center
+          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-pointer"
         >
-          <p className="text-2xl text-blue-200 mb-5 flex font-bold font-manrope">
+          <p className="text-2xl text-blue-600 mb-5 flex font-extrabold font-manrope">
             {props.name}
           </p>
-          <p className="text-white text-md font-medium tracking-wide">
+          <p className="text-black text-sm md:text-base font-medium tracking-wide">
             {props.desc}
           </p>
         </div>
@@ -25,11 +25,11 @@ export default function TopProjects() {
   let projects = [
     {
       name: "TensorFlow",
-      desc: "Tensorflow is an open-source software library by Google created for tasks with heavy numerical computations. It helps support machine learning. And because of its phenomenal support and use in Machine Learning & Deep Neural Networks, it has many contributors. Also, now most developers use this library, and as it is open-sourced, they keep contributing to it.",
+      desc: "Tensorflow is an open-source software library by Google created for tasks with heavy numerical computations. It helps support machine learning. And because of its phenomenal support and use in Machine Learning & Deep Neural Networks, it has many contributors.",
     },
     {
       name: "d3",
-      desc: "It is a JavaScript library for visualizing data with the help of web standards. Also, it helps you bring data to life using SVG, Canvas, and HTML. Moreover, It combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation. This will provide you with the freedom to design the right visual interface for your data.",
+      desc: "It is a JavaScript library for visualizing data with the help of web standards. Also, it helps you bring data to life using SVG, Canvas, and HTML. Moreover, It combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation. ",
     },
     {
       name: "React Native",
@@ -37,7 +37,7 @@ export default function TopProjects() {
     },
     {
       name: "Linux",
-      desc: "You all must know about Linux. It is one of the most used operating systems which is open-sourced. And no other than Linus Torvalds is one such hero who started this initiative, and because of him, we can use Linux these days. This invention of Torvalds changed the world completely. And one more interesting thing is that he also created Git in 2005 to develop the Linux Kernel.",
+      desc: "You all must know about Linux. It is one of the most used operating systems which is open-sourced. And no other than Linus Torvalds is one such hero who started this initiative, and because of him, we can use Linux these days. This invention of Torvalds changed the world completely. ",
     },
   ];
 
@@ -49,7 +49,7 @@ export default function TopProjects() {
       >
         Find Top GitHub Projects
       </div>
-      <div className="flex mx-4 justify-center">
+      <div className="hidden md:flex mx-4 justify-center">
         <img
           src="https://media.giphy.com/media/I7sbqlUBc4hSE/giphy.gif"
           alt="find"
@@ -59,7 +59,7 @@ export default function TopProjects() {
       <div className="flex flex-col md:flex-row justify-center items-center">
         <ul
           ref={ref}
-          className="flex md:flex-row flex-col list-none md:overflow-x-scroll md:px-10"
+          className="scrollbar flex w-[25rem] md:w-full list-none overflow-x-scroll pb-6"
         >
           {projects.map((project) => (
             <TopProjectCard

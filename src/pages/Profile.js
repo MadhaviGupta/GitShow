@@ -48,7 +48,7 @@ export default function Profile(props) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -166,7 +166,7 @@ export default function Profile(props) {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center mt-4 md:hidden text-lg">
+                <div className="flex flex-col items-center mt-4 md:hidden md:text-lg">
                   {userData.blog && (
                     <div className="flex">
                       Website:{" "}
@@ -202,7 +202,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("post")}
                 >
-                  <MdGridOn className="text-3xl md:text-lg md:mx-2" />
+                  <MdGridOn className="text-2xl md:text-lg md:mx-2" />
                   <span className="hidden md:block">Posts</span>
                 </div>
                 <div
@@ -211,7 +211,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("repo")}
                 >
-                  <BsFolder2Open className="text-3xl md:text-lg md:mx-2" />
+                  <BsFolder2Open className="text-2xl md:text-lg md:mx-2" />
                   <span className="hidden md:block">Repositories </span>
                 </div>
               </div>

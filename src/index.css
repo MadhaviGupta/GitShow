@@ -115,15 +115,17 @@ code {
 }
 
 
-::-webkit-scrollbar {
-  height: 5px;
+.scrollbar::-webkit-scrollbar {
+  /* display: none; */
+  margin-top: 20px;
+  height: 2px;
   width: 5px;
   background: #fff3;
   -webkit-border-radius: 1ex;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: #5749d2;
   -webkit-border-radius: 1ex;
 }
 
