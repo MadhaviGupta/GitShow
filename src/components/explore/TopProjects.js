@@ -40,11 +40,10 @@ export default function TopProjects() {
       desc: "You all must know about Linux. It is one of the most used operating systems which is open-sourced. And no other than Linus Torvalds is one such hero who started this initiative, and because of him, we can use Linux these days. This invention of Torvalds changed the world completely. ",
     },
   ];
-
   return (
     <>
       <div
-        id="#projects"
+        id="projects"
         className="text-4xl font-inter text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4"
       >
         Find Top GitHub Projects

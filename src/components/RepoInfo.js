@@ -11,8 +11,8 @@ export default function RepoInfo(props) {
         {/* commitcount remaining to add */}
         <div className="flex justify-between">
           <div>
-            <a href={props.html_url} className="flex">
-              <span className="text-xl hover:underline">{props.name}</span>
+            <a href={props.url} className="flex">
+              <span className="text-xl hover:underline cursor-pointer">{props.name}</span>
               <HiOutlineExternalLink className="md:my-[3px] my-[4px] mx-1.5 text-2xl" />
             </a>
             {props.desc && (

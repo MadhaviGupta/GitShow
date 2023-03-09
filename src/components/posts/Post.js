@@ -6,7 +6,7 @@ import { HiLink } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
 import db from "../../firebase.config";
 import firebase from "firebase";
-import Modal from "./Modal";
+import CommentModal from "./CommentModal";
 
 export default function Post(props) {
   const [like, setLike] = useState(false);
@@ -180,7 +180,7 @@ export default function Post(props) {
           </div>
         </div>
       </div>
-      <Modal
+      <CommentModal
         logo={props.logo}
         name={props.username}
         description={props.description}

@@ -36,7 +36,7 @@ export default function Explore() {
             >
               <input
                 className="h-12 w-full md:w-3/5 m-1 p-2 md:p-3 rounded-xl bg-blue-400 bg-opacity-10 text-slate-50"
-                placeholder="Search here..."
+                placeholder="Find your peers here..."
                 value={searchip}
                 onChange={(e) => setSearchIp(e.target.value)}
               ></input>

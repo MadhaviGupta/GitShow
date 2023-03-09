@@ -9,6 +9,7 @@ import RepoInfo from "../components/RepoInfo";
 import Post from "../components/posts/Post";
 import db from "../firebase.config";
 import useProtectedRoute from "../hooks/useProtectedRoute";
+import { FiLink } from "react-icons/fi";
 
 export default function Profile(props) {
   useProtectedRoute();
@@ -169,7 +170,7 @@ export default function Profile(props) {
                 <div className="flex flex-col items-center mt-4 md:hidden md:text-lg">
                   {userData.blog && (
                     <div className="flex">
-                      Website:{" "}
+                      <FiLink className="m-1" />
                       <a href={link} className="ml-1 text-blue-400">
                         {userData.blog}
                       </a>
@@ -183,7 +184,7 @@ export default function Profile(props) {
                   )}
                 </div>
               </div>
-              <div className="flex items-center mt-6 justify-center md:hidden">
+              <div className="flex mt-6 text-center md:hidden">
                 <div className="w-1/3 px-3 py-4 bg-black bg-opacity-50 rounded-l-lg">
                   Repos: {userData.public_repos}
                 </div>
@@ -202,7 +203,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("post")}
                 >
-                  <MdGridOn className="text-2xl md:text-lg md:mx-2" />
+                  <MdGridOn className="text-2xl md:text-lg md:mx-2 mt-2.5" />
                   <span className="hidden md:block">Posts</span>
                 </div>
                 <div
@@ -211,7 +212,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("repo")}
                 >
-                  <BsFolder2Open className="text-2xl md:text-lg md:mx-2" />
+                  <BsFolder2Open className="text-2xl md:text-lg md:mx-2 mt-2.5" />
                   <span className="hidden md:block">Repositories </span>
                 </div>
               </div>

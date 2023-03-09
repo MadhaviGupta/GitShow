@@ -1,13 +1,14 @@
 import React from "react";
 import user from "../../assets/user.png";
+import { useRef } from "react";
 
 function TestimonialCard(props) {
   return (
-    <div className="md:w-2/6 min-h-[20rem] text-blue-800 hover:text-blue-400 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-2 p-5 flex shadow-xl">
+    <div className="w-96 min-w-[19rem] h-auto min-h-[20rem] text-blue-800 hover:text-blue-400 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-2 p-5 shadow-xl">
       <div className="flex flex-col items-center text-center">
         <img src={user} alt="user" className="w-12 h-12" />
         <p className="m-2 text-2xl font-semibold">{props.name}</p>
-        <p className="text-sm text-gray-500 mb-4">{props.desg}</p>
+        <p className="text-sm text-gray-600 font-semibold mb-4">{props.desg}</p>
         <p className="">{props.desc}</p>
       </div>
     </div>
@@ -15,6 +16,39 @@ function TestimonialCard(props) {
 }
 
 export default function Testimonials() {
+  const ref = useRef(null);
+  let people = [
+    {
+      name: "Utkarsh Chourasia",
+      desg: "GoLang Developer",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+    {
+      name: "Yash Sehgal",
+      desg: "Full Stack Developer, Clamp",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+    {
+      name: "Uttam Singh",
+      desg: "DevRel, Flare",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+    {
+      name: "Ayush Soni",
+      desg: "Full Stack Developer, Money",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+    {
+      name: "Sujal Samai",
+      desg: "React Developer, XYZ",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+    {
+      name: "Vanshika Juneja",
+      desg: "Frontend Developer, ABC",
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+    },
+  ];
   return (
     <>
       <div
@@ -27,35 +61,20 @@ export default function Testimonials() {
         </span>
       </div>
       <div className="h-auto mx-10 md:mx-48">
-        <div className="flex flex-col md:flex-row justify-around h-auto">
-          <TestimonialCard
-            name="Utkarsh Chourasia"
-            desg="GoLang Developer"
-            desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          dolore, eveniet doloribus sapiente quaerat libero fugiat, enim
-          voluptas nisi eos quidem soluta "
-          />
-          <TestimonialCard
-            name="Yash Sehgal"
-            desg="Full Stack Developer, Clamp"
-            desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          dolore, eveniet doloribus sapiente quaerat libero fugiat, enim
-          voluptas nisi eos quidem soluta"
-          />
-          <TestimonialCard
-            name="Uttam Singh"
-            desg="DevRel, Flare"
-            desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          dolore, eveniet doloribus sapiente quaerat libero fugiat, enim
-          voluptas nisi eos quidem soluta"
-          />
-          {/* <TestimonialCard
-            name="Ayush Soni"
-            desg="Full Stack Developer, Money"
-            desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          dolore, eveniet doloribus sapiente quaerat libero fugiat, enim
-          voluptas nisi eos quidem soluta"
-          /> */}
+        <div className="flex flex-col md:flex-row w-full h-auto">
+          <ul
+            ref={ref}
+            className="scrollbar flex w-[25rem] md:w-full list-none overflow-x-scroll pb-6"
+          >
+            {people.map((obj) => (
+              <TestimonialCard
+                key={obj.name}
+                name={obj.name}
+                desg={obj.desg}
+                desc={obj.desc}
+              />
+            ))}
+          </ul>
         </div>
       </div>
     </>

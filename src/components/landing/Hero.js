@@ -22,7 +22,7 @@ export default function Hero(props) {
           </span>
           🪄
         </h1>
-        <h4 className="text-blue-100 text-xl text-left font-manrope">
+        <h4 className="text-blue-100 text-xl text-left font-manrope tracking-wide">
           Show <span className="font-milonga tracking-wide text-2xl">what</span>{" "}
           you are,{" "}
           <span className="font-milonga tracking-wide text-2xl">where</span> it
@@ -35,7 +35,7 @@ export default function Hero(props) {
           <div>
             <button
               onClick={props.authenticateUser}
-              className="w-7/12 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope border button-85"
+              className="w-5/12 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope button-85"
             >
               Get onboard! 🚂
             </button>

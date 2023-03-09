@@ -2,7 +2,7 @@ import React from "react";
 import { RxCross1 } from "react-icons/rx";
 import Comments from "./Comments";
 
-export default function Modal(props) {
+export default function CommentModal(props) {
   return (
     <>
       {props.showModal ? (
