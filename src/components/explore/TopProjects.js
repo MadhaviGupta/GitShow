@@ -10,7 +10,9 @@ function TopProjectCard(props) {
           <div className="p-2 flex flex-col ">
             <p className="text-2xl text-blue-600 mb-5 flex items-center justify-between font-extrabold font-manrope">
               {props.name}
-              <TbExternalLink className="text-slate-600 cursor-pointer" />
+              <a href={props.github} target="_blank">
+                <TbExternalLink className="text-slate-600 cursor-pointer" />
+              </a>
             </p>
             <p className="text-sm md:text-[0.9rem] font-medium tracking-wide">
               {props.desc}
