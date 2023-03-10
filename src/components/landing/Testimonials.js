@@ -60,11 +60,11 @@ export default function Testimonials() {
           <hr className="my-2 opacity-25 w-full"></hr>
         </span>
       </div>
-      <div className="h-auto mx-10 md:mx-48">
+      <div className="h-auto mx-16 md:mx-56">
         <div className="flex flex-col md:flex-row w-full h-auto">
           <ul
             ref={ref}
-            className="scrollbar flex sm:w-[20rem] md:w-full list-none overflow-x-scroll pb-6"
+            className="scrollbar flex md:w-full list-none overflow-x-scroll pb-6"
           >
             {people.map((obj) => (
               <TestimonialCard

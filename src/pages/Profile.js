@@ -79,9 +79,7 @@ export default function Profile(props) {
   }
   return (
     <>
-      <div
-        className="flex flex-col md:justify-center md:flex-row bg-[#1B2430] font-inter h-auto min-h-screen bg-cover md:px-40"
-      >
+      <div className="flex flex-col md:justify-center md:flex-row bg-[#1B2430] font-inter h-auto min-h-screen bg-cover md:px-40">
         <Sidebar />
         <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
           <h1 className="text-2xl font-semibold w-3/12 flex justify-center">
@@ -236,14 +234,15 @@ export default function Profile(props) {
                       return (
                         <Post
                           key={id}
+                          id={id}
                           logo={logo}
                           name={name}
                           username={username}
-                          bio={bio}
                           like={like}
                           likedBy={likedBy}
                           commentCnt={commentCnt}
                           commentObj={commentObj}
+                          bio={bio}
                           description={description}
                           image={image}
                           githubLink={githubLink}

@@ -4,10 +4,10 @@ import { useRef } from "react";
 function TopProfileCard(props) {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-center items-center w-96">
+      <div className="flex flex-col md:flex-row md:justify-center items-center">
         <div
-          className="bg-white/70 w-80 h-96 rounded-xl md:m-4 md:p-8 p-3 m-8 flex flex-col justify-center items-center
-          transition-all ease-in duration-300 cursor-pointer hover:bg-white/90"
+          className="bg-transparent/40 w-80 h-[21rem] border-4 border-slate-800 rounded-xl md:m-3 md:p-8 p-3 m-8 flex flex-col justify-center items-center
+          transition-all ease-in duration-300 cursor-pointer hover:bg-white/70"
         >
           <img
             src={props.avatar}
@@ -20,7 +20,7 @@ function TopProfileCard(props) {
           <p className="text-slate-600 text-md font-medium tracking-wide italic mb-2">
             @{props.username}
           </p>
-          <p className="text-blue-900 text-md font-medium tracking-wide text-center">
+          <p className="text-blue-800 text-md font-medium tracking-wide text-center">
             {props.followers}+ followers <br />
             {props.contri}+ contributions
             <br />

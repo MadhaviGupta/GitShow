@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "./firebase.config";
 import Notifications from "./pages/Notifications";
+import Messaging from "./pages/Messaging";
 import Contact from "./pages/Contact";
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/notifications" element={<Notifications />} />
+      <Route path="/messages" element={<Messaging />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

@@ -19,8 +19,8 @@ export default function Sidebar() {
     if (path === "/notifications") {
       setActive("notifications");
     }
-    if (path === "/message") {
-      setActive("message");
+    if (path === "/messages") {
+      setActive("messages");
     }
     if (path === "/profile") {
       setActive("profile");
@@ -84,7 +84,7 @@ export default function Sidebar() {
           <Link to={"/messages"}>
             <div
               className={`flex ${
-                active === "message"
+                active === "messages"
                   ? "text-purple-400 bg-black rounded-lg"
                   : "hover:text-purple-400 hover:bg-black hover:rounded-lg"
               } p-2`}

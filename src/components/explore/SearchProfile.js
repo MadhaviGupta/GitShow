@@ -13,7 +13,7 @@ export default function SearchProfile(props) {
   return (
     <>
       <div className="flex justify-center">
-        <div className="flex flex-col items-center text-white bg-black bg-opacity-5 backdrop-blur-lg rounded-2xl w-full md:w-3/5 p-5 mt-10 md:m-10">
+        <div className="flex flex-col items-center text-white bg-black bg-opacity-5 backdrop-blur-lg rounded-2xl w-full p-5 mt-10 md:m-10">
           <img
             src={props.avatar}
             alt="Avatar not available."

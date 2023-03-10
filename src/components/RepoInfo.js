@@ -12,8 +12,10 @@ export default function RepoInfo(props) {
         <div className="flex justify-between">
           <div>
             <a href={props.url} className="flex">
-              <span className="text-xl hover:underline cursor-pointer">{props.name}</span>
-              <HiOutlineExternalLink className="md:my-[3px] my-[4px] mx-1.5 text-2xl" />
+              <span className="text-xl hover:underline cursor-pointer text-blue-600 font-extrabold">
+                {props.name}
+              </span>
+              <HiOutlineExternalLink className="md:my-[3px] my-[4px] mx-1.5 text-2xl text-slate-600" />
             </a>
             {props.desc && (
               <div className="flex md:mt-2 text-slate-400 text-sm">
@@ -23,7 +25,7 @@ export default function RepoInfo(props) {
           </div>
           <div className="flex flex-col">
             <div className="flex my-1">
-              <BsStarFill className="md:my-[3px] my-[2.5px] mx-1.5" />
+              <BsStarFill className="md:my-[3px] my-[2.5px] mx-1.5 text-yellow-300" />
               <span>
                 {props.star_count > 1 ? "Stars" : "Star"}: {props.star_count}
               </span>
