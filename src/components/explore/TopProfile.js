@@ -4,9 +4,9 @@ import { useRef } from "react";
 function TopProfileCard(props) {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-center items-center w-96 mx-4">
+      <div className="flex flex-col md:flex-row md:justify-center items-center w-96">
         <div
-          className="bg-white/70 w-full h-96 rounded-xl md:m-4 md:p-8 p-3 m-10 flex flex-col justify-center items-center
+          className="bg-white/70 w-80 h-96 rounded-xl md:m-4 md:p-8 p-3 m-8 flex flex-col justify-center items-center
           transition-all ease-in duration-300 cursor-pointer hover:bg-white/90"
         >
           <img
@@ -48,7 +48,7 @@ export default function TopProfile() {
 
   return (
     <>
-      <div className="text-4xl font-inter text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4">
+      <div className="flex justify-center items-center text-2xl font-inter md:text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4 md:w-[48rem]">
         Most Active GitHub Users
       </div>
       <div className="md:flex mx-4 justify-center hidden">
@@ -58,12 +58,12 @@ export default function TopProfile() {
           className="rounded-xl my-10"
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col md:flex-row mx-4 w-[23rem] md:w-[48rem]">
         <ul
           ref={ref}
-          className="scrollbar flex list-none w-[25rem] md:w-full overflow-x-scroll md:px-10 mb-10"
+          className="scrollbar flex list-none md:w-full overflow-x-scroll mb-10"
         >
-          {user.slice(0, 8).map((userObj) => (
+          {user.slice(0, 10).map((userObj) => (
             <a href={`https://www.github.com/${userObj.login}`}>
               <TopProfileCard
                 key={userObj.name}

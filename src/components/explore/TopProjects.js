@@ -4,17 +4,18 @@ import { useRef } from "react";
 function TopProjectCard(props) {
   return (
     <>
-      <div className="bg-white/70 flex flex-col md:flex-row md:justify-center items-center w-96 rounded-2xl mx-2 my-4 hover:bg-white/90 transition-opacity ease-in duration-300">
-        <div
-          className="h-72 md:h-96 w-96 rounded-xl md:m-4 md:p-8 p-5 m-10 flex flex-col justify-center items-center
-          hover:bg-opacity-70 transition-all ease-in duration-300 cursor-pointer"
-        >
-          <p className="text-2xl text-blue-600 mb-5 flex font-extrabold font-manrope">
-            {props.name}
-          </p>
-          <p className="text-black text-sm md:text-base font-medium tracking-wide">
-            {props.desc}
-          </p>
+      <div className="flex flex-col md:flex-row md:justify-center items-center w-96 mx-2">
+        <div className="bg-white/70 w-80 h-96 rounded-xl md:m-4 md:p-8 p-3 m-8 flex flex-col justify-center items-center transition-all ease-in duration-300 hover:bg-white/90 ">
+          <div
+            className="p-4 flex flex-col items-center"
+          >
+            <p className="text-2xl text-blue-600 mb-5 flex font-extrabold font-manrope">
+              {props.name}
+            </p>
+            <p className="text-black text-sm md:text-base font-medium tracking-wide">
+              {props.desc}
+            </p>
+          </div>
         </div>
       </div>
     </>
@@ -44,7 +45,7 @@ export default function TopProjects() {
     <>
       <div
         id="projects"
-        className="text-4xl font-inter text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4"
+        className="flex justify-center items-center text-2xl font-inter md:text-center md:text-4xl text-slate-50 bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text font-bold mt-20 md:mb-4 m-4 md:w-[48rem]"
       >
         Find Top GitHub Projects
       </div>
@@ -55,10 +56,10 @@ export default function TopProjects() {
           className="rounded-xl my-10"
         ></img>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col md:flex-row mx-4 w-[23rem] md:w-[48rem]">
         <ul
           ref={ref}
-          className="scrollbar flex w-[25rem] md:w-full list-none overflow-x-scroll pb-6"
+          className="scrollbar flex list-none md:w-full overflow-x-scroll mb-10"
         >
           {projects.map((project) => (
             <TopProjectCard

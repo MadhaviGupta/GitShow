@@ -64,7 +64,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row w-full h-auto">
           <ul
             ref={ref}
-            className="scrollbar flex w-[25rem] md:w-full list-none overflow-x-scroll pb-6"
+            className="scrollbar flex sm:w-[20rem] md:w-full list-none overflow-x-scroll pb-6"
           >
             {people.map((obj) => (
               <TestimonialCard

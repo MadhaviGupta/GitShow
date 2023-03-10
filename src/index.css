@@ -118,7 +118,7 @@ code {
 .scrollbar::-webkit-scrollbar {
   /* display: none; */
   margin-top: 20px;
-  height: 2px;
+  height: 5px;
   width: 5px;
   background: #fff3;
   -webkit-border-radius: 1ex;
