@@ -52,7 +52,7 @@ GitShow uses a number of open source projects to work properly:
    npm install
    ```
 4. In the project directory, you can now run the Project
-   `    npm start
+   `npm start
    `
    Runs the app in the development mode.\
    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
