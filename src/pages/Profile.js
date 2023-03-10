@@ -201,7 +201,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("post")}
                 >
-                  <MdGridOn className="text-2xl md:text-lg md:mx-2 mt-2.5" />
+                  <MdGridOn className="text-2xl md:text-lg md:mx-2 md:mt-0 mt-2.5" />
                   <span className="hidden md:block">Posts</span>
                 </div>
                 <div
@@ -210,7 +210,7 @@ export default function Profile(props) {
                   }`}
                   onClick={() => setContent("repo")}
                 >
-                  <BsFolder2Open className="text-2xl md:text-lg md:mx-2 mt-2.5" />
+                  <BsFolder2Open className="text-2xl md:text-lg md:mx-2 md:mt-0 mt-2.5" />
                   <span className="hidden md:block">Repositories </span>
                 </div>
               </div>
