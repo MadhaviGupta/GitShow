@@ -3,42 +3,36 @@ import Navbar from "../components/landing/Navbar";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 const faqs = [
   {
-    // id: 1,
     name: "WhatIsGitShow",
     question: "What is GitShow?",
     answer:
       "GitShow is a GitHub based social media application in which you can showcase your repositories and projects to fellow coders and followers. You can make posts, check what fellow coders are creating, chat with them and much more!",
   },
   {
-    // id: 2,
     name: "HowToUse",
     question: "How to use GitShow?",
     answer:
       "You first need to login to GitShow using your GitHub account. Here, you can make posts regarding your projects. You can like others' posts and review them via making comments.",
   },
   {
-    // id: 3,
     name: "CreatePost",
     question: "How to create a post in GitShow?",
     answer:
       "Once you log in to GitShow, you'll be directed to the Home feed. There, click on the 'Write something' section, write about your project there, click on 'Add Links' to add image, GitHub and Live link of your project and then click on 'Post' button, to post the content.",
   },
   {
-    // id: 4,
     name: "SearchProfile",
     question: "How to search a profie in GitShow?",
     answer:
       "After logging in to GitShow, click on the 'Explore' button in the sidebar, you'll be navigated to the Explore page, click on 'Search here' section and then enter the username of user you want to search and then hit enter!",
   },
   {
-    id: 5,
     name: "ViewProfile",
     question: "How to view my profie in GitShow?",
     answer:
       "After logging in to GitShow, click on the 'Profile' button in the sidebar, you'll be navigated to the Profile page, where you'll find your profile, your posts and repositories.",
   },
   {
-    id: 6,
     name: "DeletePost",
     question: "How to delete a post in GitShow?",
     answer:

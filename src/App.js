@@ -8,6 +8,7 @@ import { auth, provider } from "./firebase.config";
 import Notifications from "./pages/Notifications";
 import Messaging from "./pages/Messaging";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 
 export default function App() {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ export default function App() {
       <Route path="/messages" element={<Messaging />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<Blog />} />
     </Routes>
   );
 }
