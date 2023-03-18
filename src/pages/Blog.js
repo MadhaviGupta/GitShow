@@ -10,11 +10,53 @@ export default function Blog() {
     <>
       <div className="flex flex-col bg-[#1B2430] font-inter h-auto min-h-screen bg-cover">
         <Navbar />
+        <div className="md:hidden flex flex-col items-center">
+          <div
+            className={`md:w-96 w-72 h-auto text-blue-800 hover:text-blue-400 cursor-default ${
+              content === "whatsgitshow" ? "bg-black" : "bg-blue-100"
+            } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl md:my-4 md:mx-6 my-2 md:p-5 p-3 md:mt-40 mt-28 hover:cursor-pointer`}
+            onClick={() => setContent("whatsgitshow")}
+          >
+            <span className="md:text-3xl text-lg font-semibold text-blue-500 font-inter">
+              🪄 What's GitShow?
+            </span>
+          </div>
+          <div
+            className={`md:w-96 w-72 h-auto text-blue-800 hover:text-blue-400 cursor-default ${
+              content === "whatgitshowdoes" ? "bg-black" : "bg-blue-100"
+            } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl md:my-4 md:mx-6 my-2 md:p-5 p-3 hover:cursor-pointer`}
+            onClick={() => setContent("whatgitshowdoes")}
+          >
+            <span className="md:text-3xl text-lg font-semibold text-blue-500 font-inter">
+              🪄 What GitShow does?
+            </span>
+          </div>
+          <div
+            className={`md:w-96 w-72 h-auto text-blue-800 hover:text-blue-400 cursor-default ${
+              content === "whatgitshowmadeof" ? "bg-black" : "bg-blue-100"
+            } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl md:my-4 md:mx-6 my-2 md:p-5 p-3  hover:cursor-pointer`}
+            onClick={() => setContent("whatgitshowmadeof")}
+          >
+            <span className="md:text-3xl text-lg font-semibold text-blue-500 font-inter">
+              🪄 What's GitShow made of?
+            </span>
+          </div>
+          <div
+            className={`md:w-96 w-72 h-auto text-blue-800 hover:text-blue-400 cursor-default ${
+              content === "whoweare" ? "bg-black" : "bg-blue-100"
+            } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl md:my-4 md:mx-6 my-2 md:p-5 p-3  hover:cursor-pointer`}
+            onClick={() => setContent("whoweare")}
+          >
+            <span className="md:text-3xl text-lg font-semibold text-blue-500 font-inter">
+              🪄 Who we are?
+            </span>
+          </div>
+        </div>
         <div className="flex">
           <div className="flex flex-col items-center text-4xl font-bold tracking-wide overflow-y-hidden p-4">
             {content === "whatsgitshow" ? (
               <>
-                <div className="flex flex-col mt-36">
+                <div className="flex flex-col md:mt-36 mt-10">
                   <span className="text-4xl md:text-5xl font-bold text-white font-inter">
                     😀 What's{" "}
                     <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
@@ -36,7 +78,7 @@ export default function Blog() {
             )}
             {content === "whatgitshowdoes" ? (
               <>
-                <div className="flex flex-col mt-36">
+                <div className="flex flex-col md:mt-36 mt-10">
                   <span className="bg-gradient-to-br text-4xl md:text-5xl font-bold text-white font-inter">
                     🤔 What{" "}
                     <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
@@ -107,7 +149,7 @@ export default function Blog() {
             )}
             {content === "whatgitshowmadeof" ? (
               <>
-                <div className="flex flex-col mt-36">
+                <div className="flex flex-col md:mt-36 mt-10">
                   <span className="m-4 bg-gradient-to-br text-4xl md:text-5xl font-bold text-white font-inter">
                     🤓 What's{" "}
                     <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
@@ -122,26 +164,26 @@ export default function Blog() {
                   <br />
                   <div className="flex flex-col text-xl tracking-normal text-slate-300 font-semibold mt-3">
                     <div className="flex mt-4">
-                      <FaReact className="text-xl mr-2 my-1" />
+                      <FaReact className="md:text-xl text-5xl mr-2 md:my-1  my-[-10px]" />
                       ReactJS - A declarative, efficient, and flexible JS
                       library for building user interfaces.
                     </div>
                     <br />
                     <div className="flex">
-                      <SiTailwindcss className="text-2xl mr-2 my-0.5" />
+                      <SiTailwindcss className="md:text-2xl text-6xl mr-2 md:my-0.5 my-[-16px]" />
                       Tailwind CSS - A utility-first CSS framework packed with
                       classes to build any design, directly in your markup.
                     </div>
                     <br />
                     <div className="flex">
-                      <SiFirebase className="text-4xl mr-2 my-[-5px]" />
+                      <SiFirebase className="md:text-4xl text-8xl mr-2 md:my-[-5px] my-[-34px]" />
                       Firebase - A Backend-as-a-Service solution both for mobile
                       and web-based applications that includes services for
                       building, testing, and managing apps.
                     </div>
                     <br />
                     <div className="flex">
-                      <BsGithub className="text-2xl mr-2 my-0.5" />
+                      <BsGithub className="md:text-2xl text-6xl mr-2 md:my-0.5  my-[-15px]" />
                       Github API - API to create integrations, retrieve data,
                       and automate your workflows through Github.
                     </div>
@@ -153,7 +195,7 @@ export default function Blog() {
             )}
             {content === "whoweare" ? (
               <>
-                <div className="flex flex-col mt-36">
+                <div className="flex flex-col md:mt-36 mt-10">
                   <span className="bg-gradient-to-br text-4xl md:text-5xl font-bold text-white font-inter">
                     😉 Who{" "}
                     <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
@@ -169,31 +211,49 @@ export default function Blog() {
                   social media applications do, to build an application where
                   people can find their peer programmers, share their ideas,
                   review their projects. And that's how GitShow came into
-                  action. 
+                  action.
                   <br />
                   <div className="text-2xl mt-6">
-                  Find our social media profiles:
+                    Find our social media profiles:
                     <div className="flex text-xl mt-2 text-slate-300">
                       Sujal Samai -
-                      <a href="https://www.github.com/SujalSamai" className="hover:text-blue-300">  
+                      <a
+                        href="https://www.github.com/SujalSamai"
+                        className="hover:text-blue-300"
+                      >
                         <BsGithub className="mx-2 my-1" />
                       </a>
-                      <a href="https://twitter.com/SujalSamai"className="hover:text-blue-300">
+                      <a
+                        href="https://twitter.com/SujalSamai"
+                        className="hover:text-blue-300"
+                      >
                         <BsTwitter className="mx-2 my-1" />
                       </a>
-                      <a href="https://www.linkedin.com/in/sujal-samai/"className="hover:text-blue-300">
+                      <a
+                        href="https://www.linkedin.com/in/sujal-samai/"
+                        className="hover:text-blue-300"
+                      >
                         <BsLinkedin className="mx-2 my-1" />
                       </a>
                     </div>
                     <div className="flex text-xl mt-1 text-slate-300">
                       Madhavi Gupta -
-                      <a href="https://www.github.com/MadhaviGupta"className="hover:text-blue-300">
+                      <a
+                        href="https://www.github.com/MadhaviGupta"
+                        className="hover:text-blue-300"
+                      >
                         <BsGithub className="mx-2 my-1" />{" "}
                       </a>
-                      <a href="https://twitter.com/Madhaviig1"className="hover:text-blue-300">
+                      <a
+                        href="https://twitter.com/Madhaviig1"
+                        className="hover:text-blue-300"
+                      >
                         <BsTwitter className="mx-2 my-1" />
                       </a>
-                      <a href="https://www.linkedin.com/in/madhavi-gupta-6b9358219/"className="hover:text-blue-300">
+                      <a
+                        href="https://www.linkedin.com/in/madhavi-gupta-6b9358219/"
+                        className="hover:text-blue-300"
+                      >
                         <BsLinkedin className="mx-2 my-1" />
                       </a>
                     </div>
@@ -204,7 +264,7 @@ export default function Blog() {
               ""
             )}
           </div>
-          <div>
+          <div className="md:block hidden">
             <div
               className={`w-96 h-auto text-blue-800 hover:text-blue-400 cursor-default ${
                 content === "whatsgitshow" ? "bg-black" : "bg-blue-100"
