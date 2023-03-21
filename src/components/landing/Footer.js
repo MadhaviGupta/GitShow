@@ -2,7 +2,7 @@ import React from "react";
 
 function FooterList(props) {
   return (
-    <div className="mx-6 md:mx-12">
+    <div className="mx-5 md:mx-12">
       <p className="font-semibold md:text-lg underline my-2 font-manrope tracking-wider">
         {props.header}
       </p>
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <div className="flex md:p-3 justify-around items-center">
             <FooterList
-              header="Who we are"
+              header="Company"
               l1="About us"
               link1="#"
               l2="Privacy"
@@ -48,7 +48,7 @@ export default function Footer() {
               link3="#"
             />
             <FooterList
-              header="What we offer"
+              header="Features"
               l1="Projects"
               link1="#projects"
               l2="Messaging"

@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 function TestimonialCard(props) {
   return (
-    <div className="w-96 min-w-[19rem] h-auto min-h-[20rem] text-blue-800 hover:text-blue-400 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-6 p-5 shadow-xl">
+    <div className="h-[20rem] min-w-[19rem] text-blue-800 hover:text-blue-400 cursor-default bg-blue-100 bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-3 p-5 shadow-xl">
       <div className="flex flex-col items-center text-center">
         <img src={user} alt="user" className="w-12 h-12" />
         <p className="m-2 text-2xl font-semibold">{props.name}</p>
@@ -64,7 +64,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row w-full h-auto">
           <ul
             ref={ref}
-            className="scrollbar flex md:w-full list-none overflow-x-scroll pb-6"
+            className="scrollbar flex w-full list-none overflow-x-scroll pb-6"
           >
             {people.map((obj) => (
               <TestimonialCard

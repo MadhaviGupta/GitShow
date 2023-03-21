@@ -14,28 +14,28 @@ export default function Hero(props) {
         src="https://cdn.pixabay.com/photo/2018/06/15/11/16/hogwarts-3476786_960_720.png"
         alt="hero-img"
       ></img>
-      <div className="md:w-6/12 md:px-10 py-6 absolute top-48 md:top-36 md:left-64 pl-6">
-        <h1 className="text-5xl md:text-7xl text-slate-50 font-bold my-12 md:my-16 text-left">
+      <div className="md:w-6/12 md:px-10 py-6 absolute top-48 md:top-36 md:left-64 md:pl-6 text-center">
+        <h1 className="text-6xl md:text-7xl text-slate-50 font-bold my-12 md:my-16">
           Welcome to{" "}
           <span className="bg-gradient-to-br from-blue-400 to-orange-500 text-transparent bg-clip-text main-animation">
             GitShow
           </span>
           🪄
         </h1>
-        <h4 className="text-blue-100 text-xl text-left font-manrope tracking-wide">
+        <h4 className="text-blue-100 text-xl font-manrope tracking-wide">
           Show <span className="font-milonga tracking-wide text-2xl">what</span>{" "}
           you are,{" "}
           <span className="font-milonga tracking-wide text-2xl">where</span> it
           is needed.
         </h4>
-        <div className="md:mt-10 mt-10 flex flex-col text-left md:w-3/6 md:static">
+        <div className="md:mt-10 mt-10 flex flex-col md:w-3/6 md:static">
           <h3 className="text-2xl text-blue-200 mb-5 font-manrope font-bold">
             Feeling Excited?
           </h3>
           <div>
             <button
               onClick={props.authenticateUser}
-              className="w-5/12 mt-5 md:mt-2 md:w-7/12 p-3 md:p-4 font-medium font-manrope button-85"
+              className="w-7/12 mt-5 md:mt-2 p-3 md:p-4 font-medium font-manrope button-85"
             >
               Get onboard! 🚂
             </button>
