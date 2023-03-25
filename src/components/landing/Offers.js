@@ -40,14 +40,14 @@ export default function Offers() {
           />
         </div>
         {/* card2 */}
-        <div className="mx-4 md:flex md:my-6 md:mx-0 justify-center items-center -my-56 md:bg-black md:h-screen">
+        <div className="mx-4 md:flex md:my-6 md:mx-0 justify-center items-center -my-56 md:bg-black/30 md:h-screen">
           <img
             src="https://media1.giphy.com/media/BJmTtZL4hova8/giphy.gif?cid=ecf05e477mlnbtni0phqh48ekfkxjp7i3pjy9jmgp51fn6qs&rid=giphy.gif&ct=g"
             alt="harry"
             className="rounded-2xl shadow-xl md:w-1/3 h-80 md:m-3 opacity-25 md:opacity-100 relative bottom-16 md:static z-30"
           />
           <div
-            className="md:w-1/3 h-80 md:bg-black bg-opacity-20 cursor-default rounded-2xl md:m-3 p-10 flex flex-col justify-center items-end text-right hover:bg-opacity-70 transition-all ease-in duration-300 delay-90 hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-800/80 relative bottom-96 md:static"
+            className="md:w-1/3 h-80 bg-opacity-20 cursor-default rounded-2xl md:m-3 p-10 flex flex-col justify-center items-end text-right hover:bg-opacity-70 transition-all ease-in duration-300 delay-90 hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-800/80 relative bottom-96 md:static"
             data-aos={`${window.innerWidth > 768 ? "fade-left" : "fade-right"}`}
           >
             <p className="text-2xl md:text-5xl text-blue-200 mb-5 font-bold font-manrope flex justify-center w-2/3">
