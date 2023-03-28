@@ -6,7 +6,7 @@ function TopProfileCard(props) {
     <>
       <div className="flex flex-col md:flex-row md:justify-center items-center">
         <div
-          className="bg-transparent/40 w-96 h-[21rem] border-4 border-slate-800 rounded-xl md:m-3 md:p-8 p-3 mx-4 my-6 flex flex-col justify-center items-center
+          className="bg-transparent/40 w-80 md:w-96 h-[21rem] border-4 border-slate-800 rounded-xl md:m-3 md:p-8 p-3 mx-4 my-6 flex flex-col justify-center items-center
           transition-all ease-in duration-300 cursor-pointer hover:bg-white/70"
         >
           <img

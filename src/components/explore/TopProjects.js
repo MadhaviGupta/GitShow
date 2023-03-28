@@ -6,7 +6,7 @@ function TopProjectCard(props) {
   return (
     <>
       <div className="flex flex-col md:flex-row md:justify-center items-center">
-        <div className="bg-transparent/70 w-96 h-80 rounded-xl border-4 border-slate-800 md:m-3 md:p-2 p-3 mx-4 my-6 flex flex-col justify-end items-center transition-all ease-in duration-300 hover:bg-white/90 text-white/70 hover:text-black">
+        <div className="bg-transparent/70 w-80 md:w-96 h-80 rounded-xl border-4 border-slate-800 md:m-3 md:p-2 p-3 mx-4 my-6 flex flex-col justify-end items-center transition-all ease-in duration-300 hover:bg-white/90 text-white/70 hover:text-black">
           <div className="p-2 flex flex-col ">
             <p className="text-2xl text-blue-600 mb-5 flex items-center justify-between font-extrabold font-manrope">
               {props.name}
