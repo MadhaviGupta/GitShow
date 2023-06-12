@@ -76,11 +76,11 @@ export default function Footer() {
             Made with 💖, React.js, Tailwind & Firebase.
             <br />
             Built by{" "}
-            <a href="https://www.github.com/SujalSamai" className="underline">
+            <a href="https://www.github.com/SujalSamai" className="underline" target="_blank">
               Sujal
             </a>{" "}
             and{" "}
-            <a href="https://www.github.com/MadhaviGupta" className="underline">
+            <a href="https://www.github.com/MadhaviGupta" className="underline" target="_blank">
               Madhavi
             </a>
             .

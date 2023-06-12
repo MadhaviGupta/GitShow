@@ -10,6 +10,7 @@ export default function CreatePost(props) {
   const [githubLink, setGithubLink] = useState("");
   const [liveLink, setLiveLink] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +67,6 @@ export default function CreatePost(props) {
             <FiImage className="w-8 h-8 rounded-[50%] ml-3" />
             <input
               className="w-full h-10 m-3 ml-5 p-3 rounded-md bg-blue-400 bg-opacity-10"
-              placeholder="Paste Image Link.."
               value={image}
               onChange={(e) => setImage(e.target.value)}
             ></input>
@@ -97,7 +97,7 @@ export default function CreatePost(props) {
             onClick={() => setClicked(!clicked)}
             className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
           >
-            {clicked ? "Hide" : "Add"} Links
+            {clicked ? "Hide" : "Add"} Links/Images
           </button>
           <button
             type="submit"

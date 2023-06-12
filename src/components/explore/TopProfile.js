@@ -64,7 +64,7 @@ export default function TopProfile() {
           className="scrollbar flex list-none md:w-full overflow-x-scroll mb-10"
         >
           {user.slice(0, 10).map((userObj) => (
-            <a href={`https://www.github.com/${userObj.login}`}>
+            <a href={`https://www.github.com/${userObj.login}`} target="_blank">
               <TopProfileCard
                 key={userObj.name}
                 name={userObj.name}
