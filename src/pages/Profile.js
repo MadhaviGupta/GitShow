@@ -150,7 +150,11 @@ export default function Profile(props) {
                       {userData.blog && (
                         <div className="flex">
                           Website:{" "}
-                          <a href={link} className="ml-1 text-blue-400" target="_blank">
+                          <a
+                            href={link}
+                            className="ml-1 text-blue-400"
+                            target="_blank"
+                          >
                             {userData.blog}
                           </a>
                         </div>
@@ -168,7 +172,11 @@ export default function Profile(props) {
                   {userData.blog && (
                     <div className="flex">
                       <FiLink className="m-1" />
-                      <a href={link} className="ml-1 text-blue-400" target="_blank">
+                      <a
+                        href={link}
+                        className="ml-1 text-blue-400"
+                        target="_blank"
+                      >
                         {userData.blog}
                       </a>
                     </div>
@@ -213,7 +221,11 @@ export default function Profile(props) {
                   <span className="hidden md:block">Repositories </span>
                 </div>
               </div>
-              {(content === "post" && post.length) !== 0 ? "" : <NoPostCreated />}
+              {(content === "post" && post.length) !== 0 ? (
+                ""
+              ) : (
+                <NoPostCreated />
+              )}
               {content === "post"
                 ? post.map(
                     ({

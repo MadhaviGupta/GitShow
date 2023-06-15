@@ -3,14 +3,13 @@ import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar(props) {
-  let featureLink = "/" + "#features";
-  let peopleLink = "/" + "#people";
   let Links = [
-    { name: "Features", link: featureLink },
-    { name: "Users", link: peopleLink },
-    { name: "Support", link: "/contact" },
+    { name: "Features", link: "/#features" },
+    { name: "Users", link: "/#people" },
+    { name: "Support", link: "/contact#support" },
     { name: "Blog", link: "/blog" },
   ];
   const [open, setOpen] = useState(false);
@@ -18,11 +17,13 @@ export default function Navbar(props) {
     <nav className="flex px-2 items-center justify-between md:justify-around h-20 md:h-28 bg-slate-900 bg-opacity-30 backdrop-blur-lg drop-shadow-2xl md:mb-20 z-50 fixed w-full">
       <div className="w-2/12 h-full md:w-4/6 flex justify-start font-manrope items-center">
         <div className="md:p-0 md:w-2/12 w-11/12 md:flex content-center items-center">
-          <img
-            className="md:w-28 md:h-28 md:p-4 p-1 h-16 w-16"
-            src={logo}
-            alt="Gitshow logo"
-          ></img>
+          <a href="/">
+            <img
+              className="md:w-28 md:h-28 md:p-4 p-1 h-16 w-16"
+              src={logo}
+              alt="Gitshow logo"
+            ></img>
+          </a>
         </div>
         <div
           onClick={() => setOpen(!open)}
@@ -40,12 +41,13 @@ export default function Navbar(props) {
               key={link.name}
               className="md:my-0 my-6 flex justify-center mt-10"
             >
-              <a
+              <HashLink
                 className="md:m-5 text-white hover:text-blue-300"
-                href={link.link}
+                to={link.link}
+                smooth
               >
                 {link.name}
-              </a>
+              </HashLink>
             </li>
           ))}
         </ul>

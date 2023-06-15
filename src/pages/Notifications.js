@@ -46,12 +46,8 @@ export default function Notifications() {
       <div className="flex md:w-5/6 w-full justify-center">
         <div className="md:w-4/6 w-full md:ml-4 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3 p-4 md:p-6">
           <h1 className="text-2xl font-bold mb-8">Notifications</h1>
-          {post.length !== 0 ? (
+          {post.length === 0 ? (
             <NoNotification />
-          ) : loading ? (
-            <div className="w-full flex justify-center items-center animate-spin h-96">
-              <VscLoading className="w-8 h-8" />
-            </div>
           ) : (
             post.map(
               ({ id, data: { name, username, likedBy, commentObj } }) => {

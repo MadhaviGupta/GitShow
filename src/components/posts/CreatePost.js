@@ -63,14 +63,14 @@ export default function CreatePost(props) {
         </div>
 
         <div className={`w-full ${clicked ? "static" : "hidden"}`}>
-          <div className="flex w-full items-center">
+          {/* <div className="flex w-full items-center">
             <FiImage className="w-8 h-8 rounded-[50%] ml-3" />
             <input
               className="w-full h-10 m-3 ml-5 p-3 rounded-md bg-blue-400 bg-opacity-10"
               value={image}
               onChange={(e) => setImage(e.target.value)}
             ></input>
-          </div>
+          </div> */}
           <div className="flex w-full items-center">
             <FiGithub className="w-8 h-8 ml-3 rounded-[50%]" />
             <input
@@ -80,6 +80,45 @@ export default function CreatePost(props) {
               onChange={(e) => setGithubLink(e.target.value)}
             ></input>
           </div>
+
+          <div>
+            {selectedImage && (
+              <div>
+                <div className="flex justify-center">
+                  <img
+                    alt="not found"
+                    width={"250px"}
+                    src={URL.createObjectURL(selectedImage)}
+                    className="m-4"
+                  />
+                </div>
+                <button
+                  className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  Remove
+                </button>
+              </div>
+            )}
+            <label
+              htmlFor="file-upload"
+              className="bg-black bg-opacity-80 p-2 rounded-lg text-purple-400 hover:bg-opacity-100 hover:text-purple-500"
+            >
+              Upload image
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              accept="image/*"
+              value={selectedImage}
+              style={{ display: "none" }}
+              onChange={(event) => {
+                console.log(event.target.files[0]);
+                setSelectedImage(event.target.files[0]);
+              }}
+            />
+          </div>
+
           <div className="flex w-full items-center">
             <HiLink className="w-8 h-8 ml-3 rounded-[50%]" />
             <input

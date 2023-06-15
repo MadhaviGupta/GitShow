@@ -19,7 +19,7 @@ export default function App() {
       .then((userAuth) => {
         githubUsername = userAuth.additionalUserInfo.username;
         document.cookie = githubUsername;
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         var errorCode = error.code;
