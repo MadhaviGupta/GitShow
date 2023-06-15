@@ -3,13 +3,14 @@ import { FiGithub } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
-import { HashLink } from "react-router-hash-link";
 
 export default function Navbar(props) {
+  let featureLink = "/" + "#features";
+  let peopleLink = "/" + "#people";
   let Links = [
-    { name: "Features", link: "/#features" },
-    { name: "Users", link: "/#people" },
-    { name: "Support", link: "/contact#support" },
+    { name: "Features", link: featureLink },
+    { name: "Users", link: peopleLink },
+    { name: "Support", link: "/contact" },
     { name: "Blog", link: "/blog" },
   ];
   const [open, setOpen] = useState(false);
@@ -41,13 +42,12 @@ export default function Navbar(props) {
               key={link.name}
               className="md:my-0 my-6 flex justify-center mt-10"
             >
-              <HashLink
+              <a
                 className="md:m-5 text-white hover:text-blue-300"
-                to={link.link}
-                smooth
+                href={link.link}
               >
                 {link.name}
-              </HashLink>
+              </a>
             </li>
           ))}
         </ul>
