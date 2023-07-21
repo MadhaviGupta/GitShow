@@ -48,9 +48,7 @@ export default function Home() {
   if (width > 768) {
     return (
       <>
-        <div
-          className="flex flex-col justify-center md:flex-row bg-[#1B2430] h-auto min-h-screen md:px-40"
-        >
+        <div className="flex flex-col justify-center md:flex-row bg-[#1B2430] h-auto min-h-screen md:px-40">
           <Sidebar />
           <div className="md:w-6/12 m-3 ml-0 md:m-3 text-white px-4 py-1 rounded-2xl">
             <CreatePost

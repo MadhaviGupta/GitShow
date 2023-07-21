@@ -9,6 +9,7 @@ export default function Notifications() {
   useProtectedRoute();
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [postLen, setPostLen] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -27,18 +28,19 @@ export default function Notifications() {
             data: doc.data(),
           }))
         );
+        setPostLen(post.length);
       });
   });
 
   return (
-    <div
-      className="w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end h-auto min-h-screen text-white"
-    >
+    <div className="w-full font-manrope tracking-wide flex flex-row bg-[#1B2430] bg-cover md:justify-end h-auto min-h-screen text-white">
       <Sidebar />
       <div className="flex md:w-5/6 w-full justify-center">
         <div className="md:w-4/6 w-full md:ml-4 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3 p-4 md:p-6">
           <h1 className="text-2xl font-bold mb-8">Notifications</h1>
-          {loading ? (
+          {postLen === 0 ? (
+            <h3>No Notifications as of Now</h3>
+          ) : loading ? (
             <div className="w-full flex justify-center items-center animate-spin h-96">
               <VscLoading className="w-8 h-8" />
             </div>

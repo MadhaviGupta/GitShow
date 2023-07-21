@@ -9,7 +9,9 @@ function TestimonialCard(props) {
         <img src={user} alt="user" className="w-12 h-12" />
         <p className="m-2 text-2xl font-semibold">{props.name}</p>
         <p className="text-sm text-gray-600 font-semibold mb-4">{props.desg}</p>
-        <p className="">{props.desc}</p>
+        <p className="max-h-36 text-justify text-sm py-1 font-semibold">
+          {props.desc}
+        </p>
       </div>
     </div>
   );
@@ -21,32 +23,17 @@ export default function Testimonials() {
     {
       name: "Utkarsh Chourasia",
       desg: "GoLang Developer",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+      desc: "I think GitShow is a great extension of GitHub's Explore page. Apart from finding new new project, with GitShow, I can get updates directly from some of favourite projects.",
     },
     {
-      name: "Yash Sehgal",
-      desg: "Full Stack Developer, Clamp",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+      name: "Shristi Gupta",
+      desg: "Full Stack Developer",
+      desc: "The UI/UX of project is very creative & eye-catching. The animation on the 'Get onboard' button is my favourite. I personally think that such themes make people interested in working upon it's environment. A big appreciation for the creators from my side.",
     },
     {
-      name: "Uttam Singh",
-      desg: "DevRel, Flare",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
-    },
-    {
-      name: "Ayush Soni",
-      desg: "Full Stack Developer, Money",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
-    },
-    {
-      name: "Sujal Samai",
-      desg: "React Developer, XYZ",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
-    },
-    {
-      name: "Vanshika Juneja",
-      desg: "Frontend Developer, ABC",
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis dolore, eveniet doloribus sapiente quaerat libero fugiat, enim voluptas nisi eos quidem soluta",
+      name: "Sunidhi Vyas",
+      desg: "Frontend Developer",
+      desc: "This app is really very helpful ,with the help of this I have just come to know about others project and can get an excellent idea for my project.",
     },
   ];
   return (

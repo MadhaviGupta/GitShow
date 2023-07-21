@@ -5,14 +5,13 @@ import { useNavigate } from "react-router-dom";
 export default function ProfileCard(props) {
   const navigate = useNavigate();
   function githubSignout() {
-    document.cookie = "";
     firebase
       .auth()
       .signOut()
       .then(
         function () {
           console.log("Signout successful!");
-          console.log(document.cookie);
+          document.cookie = "";
           navigate("/");
         },
         function (error) {

@@ -176,7 +176,9 @@ export default function Post(props) {
               <FaRegCommentDots className="text-xl mr-2 text-white hover:text-blue-300" />
             )}
 
-            <p className="text-white hover:text-blue-300 hover:underline">Comment</p>
+            <p className="text-white hover:text-blue-300 hover:underline">
+              Comment
+            </p>
           </div>
         </div>
       </div>
