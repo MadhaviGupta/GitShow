@@ -274,7 +274,7 @@ export default function Blog() {
                 content === "whatsgitshow"
                   ? "bg-black text-2xl"
                   : "bg-blue-100 text-xl"
-              } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-6 p-5 mt-40 hover:cursor-pointer`}
+              } bg-opacity-90 hover:bg-black transition-all duration-600 ease-out rounded-xl my-4 mx-6 p-5 mt-40 hover:cursor-pointer`}
               onClick={() => setContent("whatsgitshow")}
             >
               <span className={`font-semibold text-blue-500 font-inter`}>
@@ -286,7 +286,7 @@ export default function Blog() {
                 content === "whatgitshowdoes"
                   ? "bg-black text-2xl"
                   : "bg-blue-100 text-xl"
-              } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
+              } bg-opacity-90 hover:bg-black transition-all duration-600 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
               onClick={() => setContent("whatgitshowdoes")}
             >
               <span className="font-semibold text-blue-500 font-inter">
@@ -298,7 +298,7 @@ export default function Blog() {
                 content === "whatgitshowmadeof"
                   ? "bg-black text-2xl"
                   : "bg-blue-100 text-xl"
-              } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
+              } bg-opacity-90 hover:bg-black transition-all duration-600 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
               onClick={() => setContent("whatgitshowmadeof")}
             >
               <span className="font-semibold text-blue-500 font-inter">
@@ -310,7 +310,7 @@ export default function Blog() {
                 content === "whoweare"
                   ? "bg-black text-2xl"
                   : "bg-blue-100 text-xl"
-              } bg-opacity-90 hover:bg-black transition-all duration-1000 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
+              } bg-opacity-90 hover:bg-black transition-all duration-600 ease-out rounded-xl my-4 mx-6 p-5 hover:cursor-pointer`}
               onClick={() => setContent("whoweare")}
             >
               <span className="font-semibold text-blue-500 font-inter">

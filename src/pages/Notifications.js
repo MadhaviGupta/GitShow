@@ -4,7 +4,17 @@ import db from "../firebase.config";
 import NotificationCard from "../components/NotificationCard";
 import useProtectedRoute from "../hooks/useProtectedRoute";
 import { VscLoading } from "react-icons/vsc";
-
+import { AiFillNotification } from "react-icons/ai";
+function NoNotification() {
+  return (
+    <div>
+      <div className="flex justify-center text-2xl mt-20">
+        <AiFillNotification className="m-2" />
+        <div className="m-1 font-bold">No notifications</div>
+      </div>
+    </div>
+  );
+}
 export default function Notifications() {
   useProtectedRoute();
   const [post, setPost] = useState([]);
@@ -38,12 +48,8 @@ export default function Notifications() {
       <div className="flex md:w-5/6 w-full justify-center">
         <div className="md:w-4/6 w-full md:ml-4 h-auto bg-black bg-opacity-20 backdrop-blur-lg rounded-2xl flex flex-col my-3 p-4 md:p-6">
           <h1 className="text-2xl font-bold mb-8">Notifications</h1>
-          {postLen === 0 ? (
-            <h3>No Notifications as of Now</h3>
-          ) : loading ? (
-            <div className="w-full flex justify-center items-center animate-spin h-96">
-              <VscLoading className="w-8 h-8" />
-            </div>
+          {post.length === 0 ? (
+            <NoNotification />
           ) : (
             post.map(
               ({ id, data: { name, username, likedBy, commentObj } }) => {

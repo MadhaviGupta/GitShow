@@ -10,6 +10,7 @@ import Post from "../components/posts/Post";
 import db from "../firebase.config";
 import useProtectedRoute from "../hooks/useProtectedRoute";
 import { FiLink } from "react-icons/fi";
+import NoPostCreated from "../components/NoPostCreated";
 
 export default function Profile(props) {
   useProtectedRoute();
@@ -81,7 +82,7 @@ export default function Profile(props) {
     <>
       <div className="flex flex-col md:justify-center md:flex-row bg-[#1B2430] font-inter h-auto min-h-screen bg-cover md:px-40">
         <Sidebar />
-        <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
+        <div className="bg-black font-manrope tracking-wide bg-opacity-20 w-full h-full min-h-screen md:w-4/6 md:rounded-2xl p-5 md:mt-3 mx-auto md:mx-0 md:ml-56 text-slate-100">
           <h1 className="text-2xl font-semibold w-3/12 flex justify-center">
             Profile
           </h1>
@@ -149,7 +150,11 @@ export default function Profile(props) {
                       {userData.blog && (
                         <div className="flex">
                           Website:{" "}
-                          <a href={link} className="ml-1 text-blue-400">
+                          <a
+                            href={link}
+                            className="ml-1 text-blue-400"
+                            target="_blank"
+                          >
                             {userData.blog}
                           </a>
                         </div>
@@ -167,7 +172,11 @@ export default function Profile(props) {
                   {userData.blog && (
                     <div className="flex">
                       <FiLink className="m-1" />
-                      <a href={link} className="ml-1 text-blue-400">
+                      <a
+                        href={link}
+                        className="ml-1 text-blue-400"
+                        target="_blank"
+                      >
                         {userData.blog}
                       </a>
                     </div>
@@ -212,6 +221,11 @@ export default function Profile(props) {
                   <span className="hidden md:block">Repositories </span>
                 </div>
               </div>
+              {(content === "post" && post.length) !== 0 ? (
+                ""
+              ) : (
+                <NoPostCreated />
+              )}
               {content === "post"
                 ? post.map(
                     ({

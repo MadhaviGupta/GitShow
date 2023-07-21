@@ -24,14 +24,14 @@ export default function SearchProfile(props) {
           </div>
           <div className="md:text-lg italic tracking-wide flex m-2">
             @
-            <a href={`https://github.com/${props.login}`} className="underline">
+            <a href={`https://github.com/${props.login}`} className="underline" target="_blank">
               {props.login}
             </a>
           </div>
           {props.blog && (
             <div className="flex md:text-lg m-1.5">
               <FiLink className="m-1 md:w-5 md:h-5" />
-              <a href={link} className="underline">
+              <a href={link} className="underline" target="_blank">
                 {props.blog}
               </a>
             </div>
@@ -60,6 +60,7 @@ export default function SearchProfile(props) {
               <a
                 href={`https://twitter.com/${props.twitter_username}`}
                 className="underline"
+                target="_blank"
               >
                 {props.twitter_username}
               </a>

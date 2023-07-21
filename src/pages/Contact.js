@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../components/landing/Navbar";
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 const faqs = [
   {
     name: "WhatIsGitShow",
@@ -111,8 +110,6 @@ function ContactUs() {
 
 export default function Contact() {
   const [content, setContent] = useState(true);
-  const [data, setData] = useState(faqs);
-  // content == true ? show FAQs : show Contact Form
   const handleContent = () => {
     setContent(!content);
   };
@@ -120,7 +117,10 @@ export default function Contact() {
     <>
       <Navbar />
       <div className="bg-[#1B2430] font-manrope h-full bg-cover pb-40">
-        <div className="flex justify-center text-center text-4xl font-bold tracking-wide overflow-y-hidden ">
+        <div
+          className="flex justify-center text-center text-4xl font-bold tracking-wide overflow-y-hidden"
+          id="support"
+        >
           <div className="flex flex-col mt-36">
             <span className="m-4 bg-gradient-to-br text-4xl md:text-5xl font-bold text-white font-inter">
               How can we help you?
