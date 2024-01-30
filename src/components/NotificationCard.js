@@ -13,7 +13,7 @@ export default function NotificationCard(props) {
               className="p-4 bg-black bg-opacity-40 my-1 rounded-lg flex items-center"
               >
                 <FaHeart className="text-red-500 mr-5" />
-                {user} has liked your post
+                {user} has liked your post!
               </p>
             )
             );
